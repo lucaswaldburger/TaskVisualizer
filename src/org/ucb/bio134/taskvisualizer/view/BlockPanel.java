@@ -1,37 +1,55 @@
-package org.ucb.bio134.taskvisualizer.view;
+package org.ucb.bio134.taskvisualizer.view.panels;
 
-import org.ucb.bio134.taskvisualizer.model.BlockConfig;
+import org.ucb.bio134.taskvisualizer.model.*;
+import org.ucb.bio134.taskvisualizer.view.View;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class BlockPanel extends JPanel {
     private JPanel currentDisplay;
-    private BlockConfig plateConfig;
+    private Config config;
+    private String blockName;
 
-    public BlockPanel() {
+    public BlockPanel(String blockName, BlockType blockType) {
+        this.blockName = blockName;
         setLayout(null);
+        calcConfig(blockType);
         currentDisplay = createEmptyBlock();
         removePlate();
     }
 
+    private void calcConfig(BlockType type) {
+        if (type == BlockType.RACK) {
+            this.config = RackConfig.getInstance();
+        } else if (type == BlockType.DECK) {
+            this.config = DeckConfig.getInstance();
+        } else {
+            throw new IllegalArgumentException("Invalid configuration type");
+        }
+    }
+
     private JPanel createEmptyBlock() {
         JPanel out = new JPanel();
-        out.setBackground(Color.BLACK);
-        JLabel label = new JLabel("BLOCK");
+        out.setBackground(Color.WHITE);
+        JLabel label = new JLabel(blockName);
         out.add(label, BorderLayout.CENTER);
-        out.setBounds(0, 0, View.plateWidth, View.plateHeight);
+        System.out.println(config);
+        out.setBounds(0, 0, config.getWidth(), config.getHeight());
         return out;
     }
-    private JPanel createAddBlockPanel(String platename) {
-        JPanel out = new JPanel();
-        out.setBackground(new Color(0,0,50));
-        JLabel label = new JLabel(platename);
-        label.setForeground(Color.WHITE);
-        out.add(label, BorderLayout.CENTER);
-        out.setBounds(0, 0, View.plateWidth, View.plateHeight);
-        return out;
+
+    private JPanel createAddPlatePanel(String plateName, ContainerType type) {
+        PlatePanel platePanel = new PlatePanel(type);
+        platePanel.setBounds(0,0,View.plateWidth,View.plateHeight);
+//        platePanel.setBackground(new Color(0,0,50));
+//        JLabel label = new JLabel(plateName);
+//        label.setForeground(Color.WHITE);
+//        platePanel.add(label, BorderLayout.CENTER);
+        platePanel.setBounds(0, 0, View.plateWidth, View.plateHeight);
+        return platePanel;
     }
+
     public void reset() {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -45,8 +63,8 @@ public class BlockPanel extends JPanel {
         });
     }
 
-    public void addPlate(String plateName) {
-        currentDisplay = this.createAddBlockPanel(plateName);
+    public void addPlate(String plateName, ContainerType type) {
+        currentDisplay = this.createAddPlatePanel(plateName, type);
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -57,6 +75,7 @@ public class BlockPanel extends JPanel {
             }
         });
     }
+
     //Relay requested from View in response to an "removePlate" step
     private void removePlate() {
         currentDisplay = this.createEmptyBlock();
