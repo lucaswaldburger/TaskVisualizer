@@ -1,33 +1,19 @@
 package org.ucb.bio134.taskvisualizer.model;
 
-public class DeckConfig implements BlockConfig{
-    public final double pixels_per_cm = 38; //7.874;
+public class DeckConfig implements Config{
 
-    //Dimensions in units of cm
-    public final double monitor_width = 45.72;
-    public final double monitor_height = 30.48;
-
-    public final double plate_offset_x = 6;
-    public final double plate_offset_y = 1;
-
-    public final double plate_spacing_x = 14;
-    public final double plate_spacing_y = 9;
-
-    public final int num_rows = 2;  //Number of plate positions horizontally
-    public final int num_cols = 2; //Number of plate positions vertically
-
-    private final double xoffset = 1.438;
-    private final double yoffset = 1.124;
-    private final double wellwidth = 0.9;
-    private final double wellheight = 0.9;
-    private final double width = 12.776;
-    private final double height = 8.548;
+    private final int xoffset = 5;
+    private final int yoffset = 5;
     private final int numRows = 2;
     private final int numCols = 2;
+    private final int width = 400 * numCols;
+    private final int height = 200 * numRows + yoffset;
+    private final int wellheight = height/numRows;
+    private final int wellwidth = width/numCols;
 
     private static DeckConfig config;
 
-    private DeckConfig() {
+    public DeckConfig() {
     }
 
     public static DeckConfig getInstance() {
@@ -50,22 +36,22 @@ public class DeckConfig implements BlockConfig{
     }
 
     @Override
-    public double getSubBlockWidth() {
+    public int getSubBlockWidth() {
         return wellwidth;
     }
 
     @Override
-    public double getSubBlockHeight() {
+    public int getSubBlockHeight() {
         return wellheight;
     }
 
     @Override
-    public double getHeight() {
+    public int getHeight() {
         return height;
     }
 
     @Override
-    public double getWidth() {
+    public int getWidth() {
         return width;
     }
 

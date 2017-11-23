@@ -3,6 +3,7 @@ package org.ucb.bio134.taskvisualizer.model;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.util.Pair;
+import org.ucb.c5.semiprotocol.model.Container;
 
 /**
  *
@@ -14,29 +15,34 @@ public class Block {
     private final Plate[][] plates;
     private final Map<String, Pair<Integer,Integer>> nameToPos;
     private BlockType type;
-    private BlockConfig config;
-    
-    public Block(String type) {
-        calcType(type);
+    private Config config;
+
+    public Block(BlockType type) {
+        this.type = type;
+        configBlock();
         plates = new Plate[config.getNumRows()][config.getNumCols()];
         nameToPos = new HashMap<>();
     }
     
-    public void addPlate(String plateName, int row, int col) throws Exception {
+    public void addPlate(String plateName, Container plate, int row, int col) throws Exception {
         if(plates[row][col] != null) {
             throw new Exception();
         }
-        //TODO: Check type of plate and configure accordingly
-        plates[row][col] = new Plate(plateName, PCRBlockConfig.getInstance());
+        // Check type of plate and configure accordingly
+        if (plate.toString().contains("pcr")) {
+            plates[row][col] = new Plate(plateName, PCRPlateConfig.getInstance(),type);
+        } else if  (plate.toString().contains("eppendorf")) {
+            plates[row][col] = new Plate(plateName, TubePlateConfig.getInstance(),type);
+        } else {
+            throw new IllegalArgumentException("Invalid plate type added");
+        }
         nameToPos.put(plateName, new Pair(row, col));
     }
 
-    private void calcType(String type) {
-        if (type.toUpperCase().equals("DECK")) {
-            this.type = BlockType.DECK;
+    private void configBlock() {
+        if (type.equals(BlockType.DECK)) {
             config = DeckConfig.getInstance();
-        } else if (type.toUpperCase().equals("RACK")) {
-            this.type = BlockType.RACK;
+        } else if (type.equals(BlockType.RACK)) {
             config = RackConfig.getInstance();
         } else {
             throw new IllegalArgumentException("Invalid block type");
@@ -66,7 +72,7 @@ public class Block {
     }
 
     /**
-     * Heper method for location in the form of plate_name/A2
+     * Helper method for location in the form of plate_name/A2
      * 
      * @param location plate_name/A2
      * @return the Well object in its Plate

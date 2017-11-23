@@ -7,7 +7,7 @@ package org.ucb.bio134.taskvisualizer.model;
  * @author Lucas M. Waldburger
  */
 
-public enum BlockType {
-    RACK,
-    DECK
+public enum ContainerType {
+    PCR,
+    TUBE
 }

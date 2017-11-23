@@ -1,18 +1,28 @@
 package org.ucb.bio134.taskvisualizer.model;
 
-public class RackConfig implements BlockConfig{
-    private final double xoffset = 1.438;
-    private final double yoffset = 1.124;
-    private final double subBlockWidth = 0.9;
-    private final double subBlockHeight = 0.9;
-    private final double width = 200;
-    private final double height = 100;
+import org.ucb.bio134.taskvisualizer.view.View;
+
+/**
+ *
+ *
+ * @author J. Christopher Anderson
+ * @author Lucas M. Waldburger
+ */
+
+public class RackConfig implements Config {
+    private final double xoffset = 5;
+    private final double yoffset = 5;
+    private final int subBlockWidth = 50;
+    private final int subBlockHeight = 50;
     private final int numRows = 2;
     private final int numCols = 1;
+    private final int width = View.plateWidth * numCols;
+    private final int height = View.plateHeight * numRows;
+
 
     private static RackConfig config;
 
-    private RackConfig() {
+    public RackConfig() {
     }
 
     public static RackConfig getInstance() {
@@ -34,22 +44,22 @@ public class RackConfig implements BlockConfig{
     }
 
     @Override
-    public double getSubBlockWidth() {
+    public int getSubBlockWidth() {
         return subBlockWidth;
     }
 
     @Override
-    public double getSubBlockHeight() {
+    public int getSubBlockHeight() {
         return subBlockHeight;
     }
 
     @Override
-    public double getHeight() {
+    public int getHeight() {
         return height;
     }
 
     @Override
-    public double getWidth() {
+    public int getWidth() {
         return width;
     }
 
