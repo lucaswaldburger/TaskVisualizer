@@ -22,6 +22,7 @@ public class BlockPanel extends JPanel {
     private void calcConfig(BlockType type) {
         if (type == BlockType.RACK) {
             this.config = RackConfig.getInstance();
+
         } else if (type == BlockType.DECK) {
             this.config = DeckConfig.getInstance();
         } else {

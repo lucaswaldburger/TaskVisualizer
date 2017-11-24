@@ -30,9 +30,9 @@ public class Block {
         }
         // Check type of plate and configure accordingly
         if (plate.toString().contains("pcr")) {
-            plates[row][col] = new Plate(plateName, PCRPlateConfig.getInstance(),type);
+            plates[row][col] = new Plate(plateName, ContainerType.PCR,PCRPlateConfig.getInstance(),type);
         } else if  (plate.toString().contains("eppendorf")) {
-            plates[row][col] = new Plate(plateName, TubePlateConfig.getInstance(),type);
+            plates[row][col] = new Plate(plateName, ContainerType.TUBE,TubePlateConfig.getInstance(),type);
         } else {
             throw new IllegalArgumentException("Invalid plate type added");
         }

@@ -1,0 +1,1 @@
+addContainer	pcr_plate_96	alibaba_oligos	deck/A1	FALSEaddContainer	pcr_plate_96	alibaba_pcrs_1	deck/B2	FALSE

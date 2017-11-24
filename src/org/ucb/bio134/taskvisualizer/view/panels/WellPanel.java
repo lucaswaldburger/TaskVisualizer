@@ -1,10 +1,16 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Border;
 import org.ucb.bio134.taskvisualizer.model.Config;
+import org.ucb.bio134.taskvisualizer.model.ContainerType;
+import org.ucb.bio134.taskvisualizer.model.Well;
 import org.ucb.bio134.taskvisualizer.view.View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class WellPanel extends JPanel {
     private JPanel currentDisplay;
@@ -19,12 +25,21 @@ public class WellPanel extends JPanel {
     }
     private JPanel createEmptyWell() {
         JPanel out = new JPanel();
-//        out.setBackground(Color.WHITE);
-//        JLabel label = new JLabel("WELL");
-//        out.add(label, BorderLayout.CENTER);
-//        out.setBounds(0, 0, View.wellWidth, View.wellHeight);
+
+
+
+
+
+
+        out.setOpaque(false);
+//        String labelText = String.valueOf(well.getVolume());
+        JLabel label = new JLabel();
+        out.add(label, BorderLayout.CENTER);
+        out.setBounds(View.wellWidth/2,View.wellHeight/2 , View.wellWidth, View.wellHeight);
         return out;
     }
+
+
     private JPanel createAddPlatePanel(String platename) {
         JPanel out = new JPanel();
         out.setBackground(new Color(0,0,50));
@@ -47,6 +62,7 @@ public class WellPanel extends JPanel {
 
         super.paintComponent(g);
         g.setColor(currentColor);
+        g.drawOval(0,0,g.getClipBounds().width,g.getClipBounds().height);
         g.fillOval(0, 0, getWidth(), getHeight());
     }
     public void reset() {
@@ -85,7 +101,10 @@ public class WellPanel extends JPanel {
     public void colorWell(Color color, int wellRow, int wellCol) {
         currentColor = color;
         repaint();
-
+    }
+    public void highlightWell(Color color, int wellRow, int wellCol) {
+        JPanel out = new JPanel();
+        out.setBorder(BorderFactory.createLineBorder(Color.pink));
     }
     public void addWell(String plateName) {
         currentDisplay = this.createAddPlatePanel(plateName);

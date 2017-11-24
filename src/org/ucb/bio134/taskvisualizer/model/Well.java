@@ -10,7 +10,6 @@ import java.util.HashMap;
  * @author Lucas M. Waldburger
  */
 public class Well {
-
     private final HashMap<String, Double> contents;
     private Double currentVolume;
     private String tubeName;
@@ -79,6 +78,10 @@ public class Well {
         } else {
             return false;
         }
+    }
+
+    public String getTubeName() {
+        return tubeName;
     }
 
     public Container getTube() {

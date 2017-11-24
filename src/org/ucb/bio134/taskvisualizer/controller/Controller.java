@@ -3,6 +3,7 @@ package org.ucb.bio134.taskvisualizer.controller;
 import javafx.util.Pair;
 import org.ucb.bio134.taskvisualizer.model.Block;
 import org.ucb.bio134.taskvisualizer.model.BlockType;
+import org.ucb.bio134.taskvisualizer.model.ContainerType;
 import org.ucb.bio134.taskvisualizer.model.Well;
 import org.ucb.bio134.taskvisualizer.view.View;
 import org.ucb.c5.semiprotocol.ParseSemiprotocol;
@@ -41,7 +42,7 @@ public class Controller {
         pcrRack = new HashMap<>();
         this.deck = new Block(BlockType.DECK);
         green = new Color(76,153,0);
-        green = new Color(204,0,0);
+        red = new Color(204,0,0);
 
 
         view.initiate();
@@ -51,6 +52,21 @@ public class Controller {
                 try {
                     goNext();
                     System.out.println("Mouse go next");
+                } catch (Exception ex) {
+                    System.err.println("Error going forward");
+                    ex.printStackTrace();
+                }
+            }
+        });
+        view.getPlayButton().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    for (int i = 0; i < protocol.getSteps().size();i++) {
+                        goNext();
+                        System.out.println("Mouse go next");
+                    }
+
                 } catch (Exception ex) {
                     System.err.println("Error going forward");
                     ex.printStackTrace();
@@ -75,12 +91,12 @@ public class Controller {
                         addcon.getTubetype().equals(Container.eppendorf_2mL) )
                         && !tubeRack.containsValue(position)) {
                     tubeRack.put(addcon.getName(),position);
-                    view.colorWell("tubeRack",green,position.getKey(),position.getValue());
+                    view.colorWell(ContainerType.TUBE,BlockType.RACK,green,position.getKey(),position.getValue());
                 } else if (addcon.getTubetype().equals(Container.pcr_tube) && !pcrRack.containsValue(position)) {
                     pcrRack.put(addcon.getName(),position);
-                    view.colorWell("pcrRack",green,position.getKey(),position.getValue());
+                    view.colorWell(ContainerType.PCR,BlockType.RACK,green,position.getKey(),position.getValue());
                 } else if (addcon.getTubetype().equals(Container.pcr_plate_96)) {
-                    view.addPlate(addcon.getName(), position.getKey(), position.getValue());
+                    view.addPlate(addcon.getName(),ContainerType.PCR, position.getKey(), position.getValue());
                 }
                 System.out.println(addcon.getTubetype());
                 System.out.println(Well.parseWellLabel(addcon.getLocation()));
@@ -125,12 +141,13 @@ public class Controller {
                 Dispense disp = (Dispense) task;
                 break;
         }
+        view.notify(task);
         currPos++;
 
     }
     public static void main(String[] args) throws Exception {
         //Load the protocol
-        String text = FileUtils.readResourceFile("semiprotocol/data/full_deck_test.txt");
+        String text = FileUtils.readResourceFile("semiprotocol/data/full_workspace_test.txt");
         ParseSemiprotocol parser = new ParseSemiprotocol();
         parser.initiate();
         Semiprotocol protocol = parser.run(text);
@@ -141,20 +158,5 @@ public class Controller {
 
         //Create the Controller and initiate the GUI
         Controller controller = new Controller(protocol, view);
-
-//        Controller controller = new Controller(view);
-//        view.colorWell(Color.PINK,1,1);
-//        view.colorWell(green,1,4);
-//        view.colorWell(green,2,4);
-//
-//        view.colorWell(green,0,6);
-//        view.colorWell(green,1,6);
-//        view.colorWell(green,2,6);
-//
-//        view.colorWell(green,4,3);
-//        view.colorWell(green,5,4);
-//        view.colorWell(green,5,5);
-//        view.colorWell(green,5,6);
-//        view.colorWell(green,4,7);
     }
 }

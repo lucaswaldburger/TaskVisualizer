@@ -2,10 +2,10 @@ package org.ucb.bio134.taskvisualizer.view.panels;
 
 import org.ucb.bio134.taskvisualizer.model.*;
 import org.ucb.bio134.taskvisualizer.view.View;
+import org.ucb.c5.semiprotocol.model.Container;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -18,7 +18,7 @@ public class PlatePanel extends JPanel {
     private JPanel currentDisplay;
     private Config config;
     private WellPanel[][] wells;
-    private Color empty;
+    private Color emptyColor;
     private Color green;
 
 
@@ -26,7 +26,7 @@ public class PlatePanel extends JPanel {
         setLayout(null);
         calcConfig(type);
         currentDisplay = createEmptyPosition();
-        empty = new Color(160,160,160);
+        emptyColor = new Color(160,160,160);
         green = new Color(76,153,0);
         wells = new WellPanel[config.getNumRows()][config.getNumCols()];
         removePlate();
@@ -44,7 +44,7 @@ public class PlatePanel extends JPanel {
 
     private JPanel createEmptyPosition() {
         JPanel out = new JPanel();
-        out.setBackground(Color.PINK);
+        out.setBackground(Color.DARK_GRAY);
         JLabel label = new JLabel("Empty");
         out.add(label, BorderLayout.CENTER);
         out.setBounds(0, 0, config.getWidth(), config.getHeight());
@@ -67,8 +67,10 @@ public class PlatePanel extends JPanel {
                 int xpos = View.windowOffset + col * config.getSubBlockWidth();
                 int ypos = View.windowOffset + row * config.getSubBlockHeight();
                 //Create and add the panel
-                wells[row][col] = new WellPanel(empty);
+                wells[row][col] = new WellPanel(emptyColor);
                 wells[row][col].setBounds(xpos ,ypos , config.getSubBlockWidth(), config.getSubBlockHeight());
+
+
             }
         }
         return wells;

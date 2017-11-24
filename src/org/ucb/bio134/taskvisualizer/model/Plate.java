@@ -15,7 +15,7 @@ public class Plate {
 
     Config config;
 
-    public Plate(String plateName, Config config, BlockType block) {
+    public Plate(String plateName, ContainerType plateType, Config config, BlockType block) {
         this.name = plateName;
         this.config = config;
         this.block = block;
