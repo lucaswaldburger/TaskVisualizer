@@ -4,15 +4,16 @@ import org.ucb.bio134.taskvisualizer.model.*;
 import org.ucb.bio134.taskvisualizer.view.View;
 import org.ucb.c5.semiprotocol.model.Container;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
+import java.awt.*;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.border.LineBorder;
 
 /**
  *
  * @author J. Christopher Anderson
+ * @author Lucas M. Waldburger
  */
 public class PlatePanel extends JPanel {
     private JPanel currentDisplay;
@@ -21,17 +22,25 @@ public class PlatePanel extends JPanel {
     private Color emptyColor;
     private Color green;
 
-
+    /**
+     *
+     * @param type
+     */
     public PlatePanel(ContainerType type) {
-        setLayout(null);
+        setLayout(new GridBagLayout());
         calcConfig(type);
         currentDisplay = createEmptyPosition();
         emptyColor = new Color(160,160,160);
         green = new Color(76,153,0);
+
         wells = new WellPanel[config.getNumRows()][config.getNumCols()];
         removePlate();
     }
 
+    /**
+     *
+     * @param type
+     */
     private void calcConfig(ContainerType type) {
         if (type == ContainerType.PCR) {
             this.config = PCRPlateConfig.getInstance();
@@ -42,25 +51,43 @@ public class PlatePanel extends JPanel {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     private JPanel createEmptyPosition() {
         JPanel out = new JPanel();
-        out.setBackground(Color.DARK_GRAY);
+        out.setBackground(new Color(160,160,160));
         JLabel label = new JLabel("Empty");
-        out.add(label, BorderLayout.CENTER);
+        label.setOpaque(false);
+        label.setVerticalTextPosition(JLabel.CENTER);
+        label.setHorizontalTextPosition(JLabel.CENTER);
+        out.add(label);
         out.setBounds(0, 0, config.getWidth(), config.getHeight());
         return out;
     }
 
+    /**
+     *
+     * @param platename
+     * @return
+     */
     private JPanel createAddPlatePanel(String platename) {
         JPanel out = new JPanel();
         out.setBackground(new Color(0,0,50));
         JLabel label = new JLabel(platename);
-        label.setForeground(Color.WHITE);
+        label.setForeground(new Color(0,0,50));
         out.add(label, BorderLayout.CENTER);
         out.setBounds(0, 0, config.getWidth()/config.getNumCols(), config.getHeight()/config.getNumRows());
         return out;
     }
 
+    /**
+     *
+     * @param rows
+     * @param cols
+     * @return
+     */
     public WellPanel[][] addWells(int rows, int cols) {
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
@@ -73,6 +100,9 @@ public class PlatePanel extends JPanel {
 
             }
         }
+        return wells;
+    }
+    public WellPanel[][] getWells() {
         return wells;
     }
 

@@ -10,7 +10,7 @@ import org.ucb.c5.utils.FileUtils;
 
 /**
  * This is the executable that would run the TaskDesigner and then
- * instantiate the PipetteAid and update the Inventory
+ * instantiate the PipetteAid and updateCounter the Inventory
  * 
  * It is not needed for the project at hand, so it is not fully implemented
  * 

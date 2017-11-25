@@ -96,7 +96,6 @@ public class MouseEventDemo extends JPanel
     }
     
     public MouseEventDemo() {
-        super(new GridLayout(0,1));
         blankArea = new BlankArea(Color.YELLOW);
         add(blankArea);
         textArea = new JTextArea();

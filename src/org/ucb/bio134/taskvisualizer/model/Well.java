@@ -17,6 +17,9 @@ public class Well {
     private double maxVol;
     private ContainerType plateType;
 
+    /**
+     *
+     */
     public Well() {
         this.tubeName = null;
         this.currentVolume = 0.0;
@@ -25,6 +28,12 @@ public class Well {
         this.contents = new HashMap<>();
     }
 
+    /**
+     *
+     * @param tubeName
+     * @param tube
+     * @param plateType
+     */
     public Well(String tubeName, Container tube, ContainerType plateType) {
         this.tubeName = tubeName;
         this.tube = tube;
@@ -35,6 +44,10 @@ public class Well {
         this.contents = new HashMap<>();
     }
 
+    /**
+     *
+     * @param container
+     */
     public void calcMaxVolume(Container container) {
         if (tube.toString().contains("eppendorf") && plateType != ContainerType.TUBE) {
             throw new IllegalArgumentException("Cannot add tube to non-tube plate");
@@ -54,6 +67,10 @@ public class Well {
             this.maxVol = 200.0 * 96;
     }
 
+    /**
+     *
+     * @param plateType
+     */
     private void calcType(ContainerType plateType) {
         if (plateType.toString().contains("eppendorf")) {
             this.plateType = ContainerType.TUBE;
@@ -64,6 +81,10 @@ public class Well {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isEmpty() {
         if (tube == null) {
             return true;
@@ -72,8 +93,12 @@ public class Well {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isFull() {
-        if (currentVolume == maxVol) {
+        if (currentVolume >= maxVol) {
             return true;
         } else {
             return false;
@@ -96,6 +121,15 @@ public class Well {
         return maxVol;
     }
 
+    public HashMap getContents() {return contents; }
+
+    /**
+     *
+     * @param source
+     * @param amount
+     * @throws Exception
+     */
+
     public void addVolume(String source, Double amount) throws Exception {
         //Check if the well has enough space for the additional volume
         if (currentVolume + amount > maxVol) {
@@ -109,9 +143,12 @@ public class Well {
             }
         }
     }
-
-    public HashMap getContents() {return contents; }
-
+    /**
+     *
+     * @param source
+     * @param amount
+     * @throws Exception
+     */
     public void removeVolume(String source, Double amount) throws Exception {
         // Check for sufficient volume
         if (currentVolume - amount < 0.0) {
@@ -126,6 +163,12 @@ public class Well {
         }
     }
 
+    /**
+     *
+     * @param location
+     * @return
+     * @throws Exception
+     */
     public static Pair<Integer, Integer> parseWellLabel(String location)  throws Exception {
         String A1 = location;
         if(A1.contains("/")) {
@@ -150,6 +193,11 @@ public class Well {
         return new Pair(row, col);
     }
 
+    /**
+     *
+     * @param srcWell
+     * @return
+     */
     public static String calcWellLabel(Pair<Integer, Integer> srcWell) {
         int col = srcWell.getValue() + 1;
         int irow = 65 + srcWell.getKey();

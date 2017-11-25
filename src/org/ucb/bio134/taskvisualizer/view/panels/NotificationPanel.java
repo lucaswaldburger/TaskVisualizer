@@ -16,8 +16,10 @@ public class NotificationPanel extends JPanel {
     private static final Font secondary_font = new Font("Helvetica", 1, 22);
     private static final Font body_font = new Font("Helvetica", 3, 18);
     private static final Font emphasis_font = new Font("Helvetica", 1, 40);
-    
-    
+
+    /**
+     *
+     */
     public NotificationPanel() {
         setBackground(Color.lightGray);
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -42,14 +44,18 @@ public class NotificationPanel extends JPanel {
         
         add(Box.createVerticalGlue());
     }
-    
+
+    /**
+     *
+     */
     public void showComplete() {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+                removeAll();
                 add(Box.createVerticalGlue());
 
-                JLabel lbl1 = new JLabel("done.");
+                JLabel lbl1 = new JLabel("Done");
                 lbl1.setFont(emphasis_font);
                 add(lbl1);
                 
@@ -58,7 +64,11 @@ public class NotificationPanel extends JPanel {
             }
         });
     }
-    
+
+    /**
+     *
+     * @param step
+     */
     public void notify(Task step) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -123,7 +133,12 @@ public class NotificationPanel extends JPanel {
             }
         });
     }
-    
+
+    /**
+     *
+     * @param platenameslashA1
+     * @return
+     */
     private static String calcWellLabel(String platenameslashA1) {
         String well = platenameslashA1;
         if(well.contains("/")) {

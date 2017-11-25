@@ -22,8 +22,6 @@ public class TubePlateConfig implements Config {
     private final int wellheight = height/numRows;
     private final int wellwidth = width/numCols;
 
-
-
     private static TubePlateConfig config;
 
     public TubePlateConfig() {

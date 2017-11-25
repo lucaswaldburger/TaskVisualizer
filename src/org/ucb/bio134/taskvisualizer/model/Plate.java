@@ -5,6 +5,11 @@ import org.ucb.c5.semiprotocol.model.Container;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ *
+ * @author Lucas M. Waldburger
+ */
 public class Plate {
     private final String name;
     private final Well[][] wells;
@@ -15,6 +20,13 @@ public class Plate {
 
     Config config;
 
+    /**
+     *
+     * @param plateName
+     * @param plateType
+     * @param config
+     * @param block
+     */
     public Plate(String plateName, ContainerType plateType, Config config, BlockType block) {
         this.name = plateName;
         this.config = config;
@@ -30,6 +42,14 @@ public class Plate {
         }
     }
 
+    /**
+     *
+     * @param containerName
+     * @param container
+     * @param row
+     * @param col
+     * @throws Exception
+     */
     public void addTube(String containerName, Container container, int row, int col) throws Exception {
         if(wells[row][col] != null) {
             throw new Exception();

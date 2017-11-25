@@ -11,6 +11,11 @@ public class BlockPanel extends JPanel {
     private Config config;
     private String blockName;
 
+    /**
+     *
+     * @param blockName
+     * @param blockType
+     */
     public BlockPanel(String blockName, BlockType blockType) {
         this.blockName = blockName;
         setLayout(null);
@@ -19,6 +24,10 @@ public class BlockPanel extends JPanel {
         removePlate();
     }
 
+    /**
+     *
+     * @param type
+     */
     private void calcConfig(BlockType type) {
         if (type == BlockType.RACK) {
             this.config = RackConfig.getInstance();
@@ -30,6 +39,10 @@ public class BlockPanel extends JPanel {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     private JPanel createEmptyBlock() {
         JPanel out = new JPanel();
         out.setBackground(Color.WHITE);
@@ -40,6 +53,12 @@ public class BlockPanel extends JPanel {
         return out;
     }
 
+    /**
+     *
+     * @param plateName
+     * @param type
+     * @return
+     */
     private JPanel createAddPlatePanel(String plateName, ContainerType type) {
         PlatePanel platePanel = new PlatePanel(type);
         platePanel.setBounds(0,0,View.plateWidth,View.plateHeight);
@@ -64,6 +83,11 @@ public class BlockPanel extends JPanel {
         });
     }
 
+    /**
+     *
+     * @param plateName
+     * @param type
+     */
     public void addPlate(String plateName, ContainerType type) {
         currentDisplay = this.createAddPlatePanel(plateName, type);
         SwingUtilities.invokeLater(new Runnable() {
@@ -77,7 +101,9 @@ public class BlockPanel extends JPanel {
         });
     }
 
-    //Relay requested from View in response to an "removePlate" step
+    /**
+     * Relay requested from View in response to an "removePlate" step
+     */
     private void removePlate() {
         currentDisplay = this.createEmptyBlock();
         SwingUtilities.invokeLater(new Runnable() {
