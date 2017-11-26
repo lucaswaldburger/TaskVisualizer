@@ -14,6 +14,9 @@ import java.util.HashMap;
  */
 public class SemiprotocolPriceSimulator {
     private PriceCalculator priceCalculator = new PriceCalculator();
+    private HashMap<Reagent, Double> reagentCount;
+    private HashMap<Container, Integer> containerCount;
+    private HashMap<Tip, Integer> tipCount;
 
     /**
      *
@@ -21,55 +24,50 @@ public class SemiprotocolPriceSimulator {
      */
     public void initiate() throws Exception {
         priceCalculator.initiate();
+        reagentCount = new HashMap<>();
+        containerCount = new HashMap<>();
+        tipCount = new HashMap<>();
     }
 
     /**
      *
-     * @param protocol
+     * @param task
      * @return
      * @throws Exception
      */
-    public double run(Semiprotocol protocol) throws Exception {
-
-        HashMap<Reagent, Double> localReagentCount = new HashMap<>();
-        HashMap<Container, Integer> localContainerCount = new HashMap<>();
-        HashMap<Tip, Integer> localTipCount = new HashMap<>();
-
+    public double run(Task task) throws Exception {
         Tip tip;
         Reagent reagent;
         double volume;
 
-        for (Task task : protocol.getSteps() ) {
-            LabOp labOp = task.getOperation();
-            switch (labOp) {
-                case addContainer:
-                    AddContainer ac = (AddContainer) task;
-                    updateContainerCount(localContainerCount, ac);
-                    break;
-                case removeContainer:
-                    RemoveContainer rc = (RemoveContainer) task;
-                    break;
-                case transfer:
-                    Transfer t = (Transfer) task;
-                    tip = getTip(t.getVolume());
-                    updateTipCount(localTipCount, tip);
-                    break;
-                case dispense:
-                    Dispense d = (Dispense) task;
-                    tip = getTip(d.getVolume());
-                    reagent = d.getReagent();
-                    volume = d.getVolume();
-                    updateTipCount(localTipCount, tip);
-                    updateReagentCount(localReagentCount, reagent, volume);
-                    break;
-                case multichannel:
-                    Multichannel m = (Multichannel) task;
-                    break;
+        LabOp labOp = task.getOperation();
+        switch (labOp) {
+            case addContainer:
+                AddContainer ac = (AddContainer) task;
+                updateContainerCount(containerCount, ac);
+                break;
+            case removeContainer:
+                RemoveContainer rc = (RemoveContainer) task;
+                break;
+            case transfer:
+                Transfer t = (Transfer) task;
+                tip = getTip(t.getVolume());
+                updateTipCount(tipCount, tip);
+                break;
+            case dispense:
+                Dispense d = (Dispense) task;
+                tip = getTip(d.getVolume());
+                reagent = d.getReagent();
+                volume = d.getVolume();
+                updateTipCount(tipCount, tip);
+                updateReagentCount(reagentCount, reagent, volume);
+                break;
+            case multichannel:
+                Multichannel m = (Multichannel) task;
+                break;
             }
-        }
-
-        return priceCalculator.run(localReagentCount, localContainerCount,
-                localTipCount);
+        return priceCalculator.run(reagentCount, containerCount,
+                tipCount);
     }
 
     /**
@@ -118,7 +116,12 @@ public class SemiprotocolPriceSimulator {
         }
     }
 
-    private Tip getTip(double volume) {
+    /**
+     *
+     * @param volume
+     * @return
+     */
+    public Tip getTip(double volume) {
         if (volume <= 20) {
             return Tip.P20;
         } else if (volume > 20 && volume <= 200) {
@@ -144,13 +147,13 @@ public class SemiprotocolPriceSimulator {
         parser.initiate();
         Semiprotocol protocol = parser.run(text);
 
-        SemiprotocolPriceSimulator sim = new SemiprotocolPriceSimulator();
-        sim.initiate();
-        double price = sim.run(protocol);
-        System.out.println("$" + price);
-        sim.getReagentTotal();
-        sim.getTubeTotal();
-        sim.getTipTotal();
+//        SemiprotocolPriceSimulator sim = new SemiprotocolPriceSimulator();
+//        sim.initiate();
+//        double price = sim.run(protocol);
+//        System.out.println("$" + price);
+//        sim.getReagentTotal();
+//        sim.getTubeTotal();
+//        sim.getTipTotal();
 
     }
 }

@@ -4,7 +4,6 @@ package org.ucb.bio134.taskvisualizer.model;
  * This handles configuration information about a 4x6 tube plate. It is a
  * static singleton holding constants currently.
  *
- *
  * Dimensions (in centimeters) from:
  * https://www.fishersci.com/shop/products/nalgene-microcentrifuge-tube-rack-resmer-manufacturing-technology/14809160
  *
@@ -33,7 +32,6 @@ public class TubePlateConfig implements Config {
         } else {
             config = new TubePlateConfig();
         }
-
         return config;
     }
 

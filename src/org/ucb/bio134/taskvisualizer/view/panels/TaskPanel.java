@@ -10,6 +10,7 @@ import java.awt.*;
 /**
  *
  * @author J. Christopher Anderson
+ * @author Lucas M. Waldburger
  */
 public class TaskPanel extends JPanel {
 

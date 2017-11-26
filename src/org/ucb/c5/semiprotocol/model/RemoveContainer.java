@@ -5,16 +5,22 @@ package org.ucb.c5.semiprotocol.model;
  * @author J. Christopher Anderson
  */
 public class RemoveContainer implements Task {
-    private final String container;
+    private final Container tubeType;
+    private final String name;
 
-    public RemoveContainer(String container) {
-        this.container = container;
+    public RemoveContainer(String containerName, Container containerType) {
+        this.name = containerName;
+        this.tubeType = containerType;
     }
 
-    public String getContainer() {
-        return container;
+    public Container getTubeType() {
+        return tubeType;
     }
-    
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public LabOp getOperation() {
         return LabOp.removeContainer;
@@ -24,7 +30,7 @@ public class RemoveContainer implements Task {
     public String toString() {
         StringBuilder out = new StringBuilder();
         out.append(getOperation()).append("\t");
-        out.append(container);
+        out.append(tubeType);
         return out.toString();
     }
 }

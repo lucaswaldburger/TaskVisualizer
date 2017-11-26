@@ -7,7 +7,6 @@ package org.ucb.bio134.taskvisualizer.model;
  * Dimensions (and image) derived from:
  * http://www.bio-rad.com/en-ch/sku/hsr9905-hard-shell-96-well-pcr-plates-low-profile-clear-white-barcoded
  *
- *
  * TODO: Add 384 well plate configuration
  *
  * Dimensions (and image) derived from:

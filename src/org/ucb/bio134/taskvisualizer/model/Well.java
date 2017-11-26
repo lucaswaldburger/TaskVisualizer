@@ -10,7 +10,8 @@ import java.util.HashMap;
  * @author Lucas M. Waldburger
  */
 public class Well {
-    private final HashMap<String, Double> contents;
+    private HashMap<String, Double> contents;
+    private HashMap<String, Double> mixture;
     private Double currentVolume;
     private String tubeName;
     private Container tube;
@@ -26,6 +27,20 @@ public class Well {
         this.maxVol = 0.0;
         this.tube = null;
         this.contents = new HashMap<>();
+        this.mixture = new HashMap<>();
+    }
+
+    /**
+     *
+     * @param plateType
+     */
+    public Well(ContainerType plateType) {
+        this.tubeName = null;
+        this.tube = null;
+        this.plateType = plateType;
+        this.currentVolume = 0.0;
+        this.contents = new HashMap<>();
+        this.mixture = new HashMap<>();
     }
 
     /**
@@ -37,11 +52,35 @@ public class Well {
     public Well(String tubeName, Container tube, ContainerType plateType) {
         this.tubeName = tubeName;
         this.tube = tube;
+        this.plateType = plateType;
         calcMaxVolume(tube);
-        calcType(plateType);
+        this.currentVolume = 0.0;
+        this.contents = new HashMap<>();
+        this.mixture = new HashMap<>();
+    }
+
+    /**
+     *
+     * @param tubeName
+     * @param tube
+     */
+    public void addTube(String tubeName, Container tube) {
+        this.tubeName = tubeName;
+        this.tube = tube;
+        calcMaxVolume(tube);
+    }
+
+    /**
+     *
+     */
+    public void removeTube() {
+        this.tubeName = null;
+        this.tube = null;
+        this.tubeName = null;
         this.currentVolume = 0.0;
         this.maxVol = 0.0;
         this.contents = new HashMap<>();
+        this.mixture = new HashMap<>();
     }
 
     /**
@@ -64,22 +103,22 @@ public class Well {
         if (container == Container.pcr_strip)
             this.maxVol = 200.0 * 8;
         if (container == Container.pcr_plate_96)
-            this.maxVol = 200.0 * 96;
-    }
+            this.maxVol = 200.0 * 96; }
 
-    /**
-     *
-     * @param plateType
-     */
-    private void calcType(ContainerType plateType) {
-        if (plateType.toString().contains("eppendorf")) {
-            this.plateType = ContainerType.TUBE;
-        } else if (plateType.toString().contains("pcr")) {
-            this.plateType = ContainerType.PCR;
-        } else {
-            throw new IllegalArgumentException("Cannot determine well type");
-        }
-    }
+//    /**
+//     *
+//     * @param plateType
+//     */
+//    private void calcType(ContainerType plateType) {
+//        System.out.println(plateType);
+//        if (plateType.toString().contains("eppendorf")) {
+//            this.plateType = ContainerType.TUBE;
+//        } else if (plateType.toString().contains("pcr")) {
+//            this.plateType = ContainerType.PCR;
+//        } else {
+//            throw new IllegalArgumentException("Cannot determine well type");
+//        }
+//    }
 
     /**
      *
@@ -129,13 +168,13 @@ public class Well {
      * @param amount
      * @throws Exception
      */
-
     public void addVolume(String source, Double amount) throws Exception {
         //Check if the well has enough space for the additional volume
         if (currentVolume + amount > maxVol) {
-            throw new IllegalArgumentException("New volume exceeds maximum volume of container in well");
+            throw new Exception("New volume exceeds maximum volume of container in well");
         } else {
             currentVolume += amount;
+            mixture.put(source, amount/currentVolume);
             if (contents.containsKey(source)) {
                 contents.replace(source, contents.get(source) + amount);
             } else {
@@ -143,22 +182,21 @@ public class Well {
             }
         }
     }
+
     /**
      *
-     * @param source
      * @param amount
      * @throws Exception
      */
-    public void removeVolume(String source, Double amount) throws Exception {
+    public void removeVolume(Double amount) throws Exception {
         // Check for sufficient volume
+        System.out.println(currentVolume);
         if (currentVolume - amount < 0.0) {
-            throw new IllegalArgumentException("Removal of volume results in negative value");
+            throw new Exception("Removal of volume results in negative value");
         } else {
             currentVolume -= amount;
-            if (contents.containsKey(source)) {
-                contents.replace(source, contents.get(source) + amount);
-            } else {
-                contents.put(source,amount);
+            for (String content : contents.keySet()) {
+                contents.replace(content, mixture.get(content) * currentVolume);
             }
         }
     }

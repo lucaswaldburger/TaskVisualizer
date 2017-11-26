@@ -1,7 +1,7 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 /**
- *
+ * Public modifier has been removed since it is redundant.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -9,20 +9,20 @@ package org.ucb.bio134.taskvisualizer.model;
 
 public interface Config {
 
-    public double getXoffset();
+    double getXoffset();
 
-    public double getYoffset();
+    double getYoffset();
 
-    public int getSubBlockWidth();
+    int getSubBlockWidth();
 
-    public int getSubBlockHeight();
+    int getSubBlockHeight();
 
-    public int getWidth();
+    int getWidth();
 
-    public int getHeight();
+    int getHeight();
 
-    public int getNumRows();
+    int getNumRows();
 
-    public int getNumCols();
+    int getNumCols();
 }
 

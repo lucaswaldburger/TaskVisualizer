@@ -1,0 +1,7 @@
+addContainer	eppendorf_1p5mL	lw_mastermix	rack/A1	true
+dispense	water	lw_mastermix	9.0
+dispense	NEB_Buffer_2_10x	lw_mastermix	2.0
+dispense	SpeI	lw_mastermix	0.5
+dispense	DpnI	lw_mastermix	0.5
+addContainer	pcr_tube	lw_dig	rack/A1	true
+transfer	lw_mastermix	lw_dig	9.0

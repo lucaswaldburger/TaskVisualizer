@@ -50,7 +50,9 @@ public class ParseSemiprotocol {
     }
 
     private Task createRemoveContainer(String[] tabs) {
-        return new RemoveContainer(tabs[1]);
+        Container tubeType = Container.valueOf(tabs[1]);
+        String name = tabs[2];
+        return new RemoveContainer(name, tubeType);
     }
 
     private Task createTransfer(String[] tabs) {

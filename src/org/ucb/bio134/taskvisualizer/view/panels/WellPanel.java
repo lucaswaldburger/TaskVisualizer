@@ -6,31 +6,42 @@ import org.ucb.bio134.taskvisualizer.model.Config;
 import org.ucb.bio134.taskvisualizer.model.ContainerType;
 import org.ucb.bio134.taskvisualizer.model.Well;
 import org.ucb.bio134.taskvisualizer.view.View;
+import org.ucb.c5.semiprotocol.model.Container;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * @author Lucas M. Waldburger
+ * @author J. Christopher Anderson
+ */
 public class WellPanel extends JPanel implements MouseListener {
     private JPanel currentDisplay;
     private Color currentColor;
     private Config plateConfig;
     private Graphics2D g2d;
     private Well well;
-    private ContentPanel cp;
+    private Color green;
+    private Color emptyColor;
+    private Color red;
 
     /**
      *
-     * @param color
+     * @param containerType
      */
-    public WellPanel(Color color) {
+    public WellPanel(ContainerType containerType) {
         setLayout(null);
+        green = new Color(76,153,0);
+        emptyColor = new Color(160,160,160);
+        red = new Color(204,0,0);
         currentDisplay = createEmptyWell();
-        currentColor = color;
+        currentColor = emptyColor;
         removeWell();
-    }
+        well = new Well(containerType);
 
+    }
     /**
      *
      * @return
@@ -40,7 +51,6 @@ public class WellPanel extends JPanel implements MouseListener {
         out.setOpaque(false);
         out.addMouseListener(this);
         addMouseListener(this);
-        well = new Well();
 //        String labelText = String.valueOf(well.getVolume());
 //        JLabel label = new JLabel();
 //        out.add(label, BorderLayout.CENTER);
@@ -48,36 +58,72 @@ public class WellPanel extends JPanel implements MouseListener {
         return out;
     }
 
-    private void addVolume(String source, double volume) throws Exception{
+    /**
+     *
+     * @param source
+     * @param volume
+     * @throws Exception
+     */
+    public void addVolume(String source, double volume) throws Exception{
         well.addVolume(source, volume);
+        if (well.isFull()) {
+            currentColor = red;
+        }
     }
 
+    /**
+     *
+     * @param volume
+     * @throws Exception
+     */
+    public void removeVolume(double volume) throws Exception {
+        well.removeVolume(volume);
+    }
+
+    /**
+     *
+     * @param e
+     */
     public void mousePressed(MouseEvent e) {
         System.out.println("Mouse pressed (# of clicks: "
                 + e.getClickCount() + ")");
     }
 
+    /**
+     *
+     * @param e
+     */
     public void mouseReleased(MouseEvent e) {
         System.out.println("Mouse released (# of clicks: "
                 + e.getClickCount() + ")");
     }
 
+    /**
+     *
+     * @param e
+     */
     public void mouseEntered(MouseEvent e) {
-        View.contentPanel.displayContents();
         View.contentPanel.getContentsFromWell(well.getContents());
+        View.contentPanel.displayContents();
     }
 
+    /**
+     *
+     * @param e
+     */
     public void mouseExited(MouseEvent e) {
         View.contentPanel.hideContents();
     }
 
+    /**
+     *
+     * @param e
+     */
     public void mouseClicked(MouseEvent e) {
         System.out.println("Mouse clicked (# of clicks: "
                 + e.getClickCount() + ")");
     }
-    public void getContentPanel(ContentPanel contentPanel) {
-        this.cp = contentPanel;
-    }
+
     /**
      *
      * @param platename
@@ -113,6 +159,7 @@ public class WellPanel extends JPanel implements MouseListener {
         g.drawOval(0,0,g.getClipBounds().width,g.getClipBounds().height);
         g.fillOval(0, 0, getWidth(), getHeight());
     }
+
     public void reset() {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -128,47 +175,22 @@ public class WellPanel extends JPanel implements MouseListener {
 
     /**
      *
-     * @return
+     * @param tubeName
+     * @param tube
      */
-    private JPanel createBlackPanel() {
-        JPanel out = new JPanel();
-        out.setLayout(null);
-        out.setBackground(Color.BLACK);
-        out.setBounds(0, 0, View.plateWidth, View.plateHeight);
-        return out;
-    }
-
-    /**
-     *
-     * @param color
-     * @param row
-     * @param col
-     * @return
-     */
-    private JPanel createWellPanel(Color color, int row, int col) {
-        JPanel out = new JPanel();
-        out.setBackground(color);
-
-        double posX = plateConfig.getXoffset() + (col-0.5) * plateConfig.getSubBlockWidth();
-        double posy = plateConfig.getYoffset() + (row-0.5) * plateConfig.getSubBlockHeight();
-
-        int width = View.wellWidth;
-        int height = View.wellHeight;
-
-
-        out.setBounds(500, 500, width, height);
-        return out;
-    }
-
-    /**
-     *
-     * @param color
-     * @param wellRow
-     * @param wellCol
-     */
-    public void colorWell(Color color, int wellRow, int wellCol) {
-        currentColor = color;
+    public void addTubeColor(String tubeName, Container tube) {
+        well.addTube(tubeName, tube);
+        currentColor = green;
         repaint();
+    }
+
+    /**
+     *
+     * @param tubeName
+     */
+    public void removeTubeColor(String tubeName) {
+        well.removeTube();
+        currentColor = emptyColor;
     }
 
     /**
@@ -185,6 +207,11 @@ public class WellPanel extends JPanel implements MouseListener {
         g2d.fillOval(0,0,getWidth(), getHeight());
         repaint();
     }
+
+    /**
+     *
+     * @param plateName
+     */
     public void addWell(String plateName) {
         currentDisplay = this.createAddPlatePanel(plateName);
         SwingUtilities.invokeLater(new Runnable() {

@@ -1,14 +1,19 @@
 package org.ucb.bio134.taskvisualizer.view;
 
+import org.ucb.bio134.taskmaster.model.Tip;
 import org.ucb.bio134.taskvisualizer.model.*;
 import org.ucb.bio134.taskvisualizer.view.panels.*;
+import org.ucb.c5.semiprotocol.model.Container;
+import org.ucb.c5.semiprotocol.model.Reagent;
 import org.ucb.c5.semiprotocol.model.Task;
 
 
 import javax.swing.*;
 import java.awt.*;
 
-
+/**
+ *
+ */
 public class View extends JFrame {
     private WellPanel[][] tubeRackWells;
     private WellPanel[][] pcrRackWells;
@@ -19,12 +24,11 @@ public class View extends JFrame {
     private JButton endButton;
     private JButton simulateButton;
     private NotificationPanel notifPanel;
-    private CountPanel countPanel;
+    private PricePanel pricePanel;
     private BurdenPanel burdenPanel;
     private TaskPanel taskPanel;
     public static ContentPanel contentPanel;
     private PipettePanel pipettePanel;
-    private Color green;
 
     public static final int plateHeight = 200;
     public static final int plateWidth = 400;
@@ -59,7 +63,7 @@ public class View extends JFrame {
         setTitle("TaskVisualizer");
         // Add tube rack to the display showing all tube wells determined by tubePlateConfig
         PlatePanel tubeRack = new PlatePanel(ContainerType.TUBE);
-        tubeRackWells = tubeRack.addWells(tubePlateConfig.getNumRows(),tubePlateConfig.getNumCols());
+        tubeRackWells = tubeRack.addWells(tubePlateConfig.getNumRows(),tubePlateConfig.getNumCols(),ContainerType.TUBE);
         for (int row = 0; row < tubePlateConfig.getNumRows(); row++) {
             for (int col = 0; col < tubePlateConfig.getNumCols(); col++) {
                 getContentPane().add(tubeRackWells[row][col]);
@@ -68,7 +72,7 @@ public class View extends JFrame {
         getContentPane().add(tubeRack);
         // Add pcr rack to the display showing all pcr wells determined by pcrPlateConfig
         PlatePanel pcrRack = new PlatePanel(ContainerType.PCR);
-        pcrRackWells = pcrRack.addWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols());
+        pcrRackWells = pcrRack.addWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols(), ContainerType.PCR);
         for (int row = 0; row < pcrPlateConfig.getNumRows(); row++) {
             for (int col = 0; col < pcrPlateConfig.getNumCols(); col++) {
                 int xpos = windowOffset + wellWidth*col;
@@ -122,24 +126,28 @@ public class View extends JFrame {
         notifPanel.setBounds(windowOffset * 4 + plateWidth * 3, windowOffset, plateHeight, windowOffset + plateHeight * 2);
         getContentPane().add(notifPanel);
 
-        // Add the count panel to keep track of semiprotrocol price
-        countPanel = new CountPanel();
-        countPanel.setBounds(windowOffset * 2 + plateWidth,windowOffset * 3 + plateHeight * 2,plateWidth,plateHeight);
-        getContentPane().add(countPanel);
+        // Add the price panel to keep track of semiprotrocol price
+        pricePanel = new PricePanel();
+        pricePanel.setBounds(windowOffset * 2 + plateWidth,windowOffset * 3 + plateHeight * 2,plateWidth,plateHeight);
+        getContentPane().add(pricePanel);
 
+        // Add the burden panel to keep track of human burden (waiting on TZ's implementation)
         burdenPanel = new BurdenPanel();
         burdenPanel.setBounds(windowOffset * 3 + plateWidth * 2,windowOffset * 3 + plateHeight * 2 ,plateWidth,plateHeight);
         getContentPane().add(burdenPanel);
 
+        // Add the content panel to view the contents in a well when the user's mouse goes over it
         contentPanel = new ContentPanel();
         int cpH = plateHeight + 150 -wellHeight-windowOffset;
         contentPanel.setBounds(windowOffset,windowOffset * 4 + plateHeight * 2 + wellHeight ,plateWidth,plateHeight + 150 -wellHeight-windowOffset);
         getContentPane().add(contentPanel);
 
+        // Add the pipette panel to display the pipette currently being used
         pipettePanel = new PipettePanel();
         pipettePanel.setBounds(windowOffset * 4 + plateWidth * 3 ,windowOffset * 3 + plateHeight * 2 ,plateHeight,plateHeight);
         getContentPane().add(pipettePanel);
 
+        // Add the task panel to display the current task in the semiprotocol (useful for debugging)
         taskPanel = new TaskPanel();
         taskPanel.setBounds(windowOffset * 2 + plateWidth,windowOffset * 4 + plateHeight * 3 ,plateWidth * 2 + windowOffset * 2 + plateHeight,plateHeight + 150 - windowOffset - plateHeight);
         getContentPane().add(taskPanel);
@@ -163,36 +171,61 @@ public class View extends JFrame {
         return simulateButton;
     }
 
-
     /**
      *
-     *
+     * @param tubeName
+     * @param tube
      * @param containerType
-     * @param blockType
-     * @param color
      * @param wellRow
      * @param wellCol
      * @throws Exception
      */
-    public void colorWell(ContainerType containerType, BlockType blockType, Color color, int wellRow, int wellCol) throws Exception {
-        if (containerType.equals(ContainerType.TUBE) && blockType.equals(BlockType.RACK)) {
-            tubeRackWells[wellRow][wellCol].colorWell(color,wellRow,wellCol);
-            return;
-        }
-        if (containerType.equals(ContainerType.PCR) && blockType.equals(BlockType.RACK)) {
-            pcrRackWells[wellRow][wellCol].colorWell(color,wellRow,wellCol);
-        }
-    }
-    public void updateWell(ContainerType containerType, BlockType blockType, Color color, int wellRow, int wellCol, int volume) throws Exception {
-        if (containerType.equals(ContainerType.TUBE) && blockType.equals(BlockType.RACK)) {
-            tubeRackWells[wellRow][wellCol].colorWell(color,wellRow,wellCol);
-            return;
-        }
-        if (containerType.equals(ContainerType.PCR) && blockType.equals(BlockType.RACK)) {
-            pcrRackWells[wellRow][wellCol].colorWell(color,wellRow,wellCol);
+    public void addTubeToRack(String tubeName, Container tube, ContainerType containerType, int wellRow, int wellCol) throws Exception {
+        if (containerType.equals(ContainerType.TUBE)) {
+            tubeRackWells[wellRow][wellCol].addTubeColor(tubeName, tube);
+        } else if (containerType.equals(ContainerType.PCR)) {
+            pcrRackWells[wellRow][wellCol].addTubeColor(tubeName, tube);
+        } else {
+            throw new Exception("Cannot identify tube to be added to rack");
         }
     }
 
+    /**
+     *
+     * @param tubeName
+     * @param containerType
+     * @param wellRow
+     * @param wellCol
+     * @throws Exception
+     */
+    public void removeTubeFromRack(String tubeName, ContainerType containerType, int wellRow, int wellCol) throws Exception {
+        if (containerType.equals(ContainerType.TUBE)) {
+            tubeRackWells[wellRow][wellCol].removeTubeColor(tubeName);
+        } else if (containerType.equals(ContainerType.PCR)) {
+            pcrRackWells[wellRow][wellCol].removeTubeColor(tubeName);
+        } else {
+            throw new Exception("Cannot identify tube to be removed to rack");
+        }
+    }
+
+    /**
+     *
+     * @param reagent
+     * @param volume
+     * @param containerType
+     * @param row
+     * @param col
+     * @throws Exception
+     */
+    public void addVolToRack(Reagent reagent, double volume, ContainerType containerType, int row, int col) throws Exception{
+        if (containerType.equals(ContainerType.TUBE)) {
+            tubeRackWells[row][col].addVolume(reagent.toString(),volume);
+        } else if (containerType.equals(ContainerType.PCR)) {
+            pcrRackWells[row][col].addVolume(reagent.toString(),volume);
+        } else {
+            throw new Exception("Invalid rack element to add volume");
+        }
+    }
 
     /**
      *
@@ -204,7 +237,7 @@ public class View extends JFrame {
      */
     public void addPlate(String plateName, ContainerType plateType, int deckRow, int deckCol) throws Exception {
 //        platePanels[deckRow][deckCol].addPlate(plateName);
-        deckWells[deckRow][deckCol] = platePanels[deckRow][deckCol].addWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols());
+        deckWells[deckRow][deckCol] = platePanels[deckRow][deckCol].addWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols(), ContainerType.PCR);
         for (int row = 0; row < pcrPlateConfig.getNumRows(); row++) {
             for (int col = 0; col < pcrPlateConfig.getNumCols(); col++) {
                 int xpos = plateWidth + windowOffset * (deckCol + 2) + wellWidth*col + plateWidth * deckCol;
@@ -214,7 +247,18 @@ public class View extends JFrame {
             }
         }
         getContentPane().add(platePanels[deckRow][deckCol]);
+    }
 
+    /**
+     *
+     * @param plateName
+     * @param plateType
+     * @param deckRow
+     * @param deckCol
+     * @throws Exception
+     */
+    public void removePlate(String plateName, ContainerType plateType, int deckRow, int deckCol) throws Exception {
+        deckWells[deckRow][deckCol] = platePanels[deckRow][deckCol].removeWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols());
     }
 
     /**
@@ -259,27 +303,21 @@ public class View extends JFrame {
         notifPanel.showComplete();
         taskPanel.showComplete();
     }
-
-    /**
-     *
-     * @param step
-     */
     public void notify(Task step) {
         notifPanel.notify(step);
     }
     public void currentTask(Task step) {taskPanel.notify(step); }
-
-    /**
-     *
-     * @param reagentTotal
-     * @param containerTotal
-     * @param tipTotal
-     */
-    public void updateCounter(double reagentTotal, double containerTotal, double tipTotal) {
-        countPanel.update(reagentTotal,containerTotal, tipTotal);
+    public void updatePrice(double reagentTotal, double containerTotal, double tipTotal) {
+        pricePanel.update(reagentTotal,containerTotal, tipTotal);
     }
     public void updateBurden(int burdenCount) {
         burdenPanel.update(burdenCount);
+    }
+    public void updatePipette(Tip tip) {
+        pipettePanel.update(tip);
+    }
+    public void resetPipette() {
+        pipettePanel.reset();
     }
 }
 
