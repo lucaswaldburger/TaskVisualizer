@@ -58,6 +58,12 @@ public class WellPanel extends JPanel implements MouseListener {
         return out;
     }
 
+    public void uncolorWell() {
+        setBorder(BorderFactory.createLineBorder(Color.CYAN, 0));
+    }
+    public void colorWell() {
+        setBorder(BorderFactory.createLineBorder(Color.CYAN, 4));
+    }
     /**
      *
      * @param source
@@ -197,7 +203,7 @@ public class WellPanel extends JPanel implements MouseListener {
      *
      */
     public void highlightWell() {
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 4));
 //        Color borderColor = Color.PINK;
 //        g2d.setColor(borderColor);
 //        g2d.fillOval(0,0,getWidth()+100, getHeight()+100);
@@ -234,7 +240,7 @@ public class WellPanel extends JPanel implements MouseListener {
 //                JPanel wellPanel = createWellPanel(color, i, j);
 //                SwingUtilities.invokeLater(new Runnable() {
 //                    @Override
-//                    public void run() {
+//                    public void runProtocol() {
 //                        removeAll();
 //                        add(blackPanel);
 //

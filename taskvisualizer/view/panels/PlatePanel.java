@@ -1,13 +1,13 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
+import javafx.util.Pair;
 import org.ucb.bio134.taskvisualizer.model.*;
 import org.ucb.bio134.taskvisualizer.view.View;
 import org.ucb.c5.semiprotocol.model.Container;
 
 import java.awt.*;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+import java.util.HashSet;
+import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 /**
@@ -19,6 +19,7 @@ public class PlatePanel extends JPanel {
     private JPanel currentDisplay;
     private Config config;
     private WellPanel[][] wells;
+    private HashSet<Pair<Integer,Integer>> highlightedWells;
 
     /**
      *
@@ -96,6 +97,14 @@ public class PlatePanel extends JPanel {
             }
         }
         return wells;
+    }
+
+    public void colorWell( int row, int col) {
+        wells[row][col].highlightWell();
+    }
+
+    public void uncolorWell(int row, int col) {
+        wells[row][col].unhighlightWell();
     }
 
     public WellPanel[][] getWells() {

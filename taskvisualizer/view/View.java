@@ -35,6 +35,9 @@ public class View extends JFrame {
 
     private HashSet<Pair<Integer,Integer>> highlightedTube;
     private HashSet<Pair<Integer,Integer>> highlightedPCR;
+    private HashSet<Pair<Pair<Integer,Integer>,Pair<Integer,Integer>>> highlightedDeck;
+    private HashSet<Pair<Integer,Integer>> coloredTube;
+    private HashSet<Pair<Integer,Integer>> coloredPCR;
 
 
     public static final int plateHeight = 200;
@@ -67,6 +70,9 @@ public class View extends JFrame {
     public void initiate(){
         highlightedTube = new HashSet<>();
         highlightedPCR = new HashSet<>();
+        highlightedDeck = new HashSet<>();
+        coloredTube = new HashSet<>();
+        coloredPCR = new HashSet<>();
 
         getContentPane().setLayout(null);
         getContentPane().setBackground(new Color(96,96,96));
@@ -247,7 +253,7 @@ public class View extends JFrame {
         }
     }
 
-    public void highlightTransfer(ContainerType srcType, int srcRow, int srcCol, ContainerType dstType, int dstRow, int dstCol) throws Exception {
+    public void highlightRackTransfer(ContainerType srcType, int srcRow, int srcCol, ContainerType dstType, int dstRow, int dstCol) throws Exception {
         if (srcType.equals(ContainerType.TUBE)) {
             highlightedTube.add(new Pair(srcRow,srcCol));
             tubeRackWells[srcRow][srcCol].highlightWell();
@@ -268,15 +274,27 @@ public class View extends JFrame {
         }
     }
 
-    public void unhighlightTransfer() throws Exception {
+
+    public void unhighlightRackTransfer() throws Exception {
         for (Pair<Integer,Integer> position : highlightedTube) {
             tubeRackWells[position.getKey()][position.getValue()].unhighlightWell();
         }
         for (Pair<Integer,Integer> position : highlightedPCR) {
             pcrRackWells[position.getKey()][position.getValue()].unhighlightWell();
         }
+        for (Pair<Pair<Integer,Integer>,Pair<Integer,Integer>> position : highlightedDeck) {
+            platePanels[position.getKey().getKey()][position.getKey().getValue()].uncolorWell(position.getValue().getKey(),
+                    position.getValue().getValue());
+        }
+
+
     }
 
+
+    public void colorWell(int plateRow, int plateCol, int wellRow, int wellCol) throws Exception {
+        platePanels[plateRow][plateCol].colorWell(wellRow, wellCol);
+        highlightedDeck.add(new Pair(new Pair(plateRow, plateCol),new Pair(wellRow, wellCol)));
+    }
     /**
      *
      * @param plateName
@@ -337,7 +355,7 @@ public class View extends JFrame {
             tubeRackWells[wellRow][wellCol].highlightWell();
             return;
         }
-        if (containerType.equals(ContainerType.TUBE)) {
+        if (containerType.equals(ContainerType.PCR)) {
             pcrRackWells[wellRow][wellCol].highlightWell();
         }
     }
@@ -345,6 +363,26 @@ public class View extends JFrame {
 ////        platePanels[plateRow][plateCol].colorWell(color, wellRow, wellCol);
 //    }
 
+    public void colorWell(ContainerType containerType, int wellRow, int wellCol) throws Exception {
+        if (containerType.equals(ContainerType.TUBE)) {
+            tubeRackWells[wellRow][wellCol].colorWell();
+            coloredTube.add(new Pair(wellRow,wellCol));
+        } else if (containerType.equals(ContainerType.PCR)) {
+            pcrRackWells[wellRow][wellCol].colorWell();
+            coloredPCR.add(new Pair(wellRow,wellCol));
+        } else {
+            throw new Exception("cannot identify well to be colored");
+        }
+    }
+
+    public void uncolorWell() throws Exception {
+        for (Pair<Integer, Integer> positon : coloredTube) {
+            tubeRackWells[positon.getKey()][positon.getValue()].uncolorWell();
+        }
+        for (Pair<Integer, Integer> positon : coloredTube) {
+            pcrRackWells[positon.getKey()][positon.getValue()].uncolorWell();
+        }
+    }
     /**
      *
      */

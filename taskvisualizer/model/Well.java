@@ -4,6 +4,8 @@ import javafx.util.Pair;
 import org.ucb.c5.semiprotocol.model.Container;
 import org.ucb.c5.semiprotocol.model.Reagent;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.HashMap;
 
 /**
@@ -195,7 +197,7 @@ public class Well {
     public void removeVolume(Double amount) throws Exception {
         // Check for sufficient volume
         if (currentVolume - amount < 0.0) {
-            throw new Exception("Removal of volume from " + tubeName + " results in negative value since" +
+            throw new Exception("Removal of volume from " + tubeName + " results in negative value since " +
                     "volume to add is " + amount + " current volume is " + currentVolume);
         } else {
             currentVolume -= amount;

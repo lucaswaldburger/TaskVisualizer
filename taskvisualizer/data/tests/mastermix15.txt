@@ -1,0 +1,251 @@
+addContainer	eppendorf_1p5mL	ca0001	tube_rack0/A1	false
+addContainer	eppendorf_1p5mL	ca0000	tube_rack0/A2	false
+addContainer	eppendorf_1p5mL	ca0007	tube_rack0/A3	false
+addContainer	eppendorf_1p5mL	ca00010	tube_rack0/A4	false
+addContainer	eppendorf_1p5mL	ca0006	tube_rack0/A5	false
+addContainer	eppendorf_1p5mL	ca0009	tube_rack0/A6	false
+addContainer	eppendorf_1p5mL	ca00012	tube_rack0/A7	false
+addContainer	eppendorf_1p5mL	ca0008	tube_rack0/A8	false
+addContainer	eppendorf_1p5mL	ca00011	tube_rack0/A9	false
+addContainer	eppendorf_1p5mL	ca0003	tube_rack0/A10	false
+addContainer	eppendorf_1p5mL	ca00014	tube_rack0/A11	false
+addContainer	eppendorf_1p5mL	ca4239	tube_rack0/A12	false
+addContainer	eppendorf_1p5mL	ca0002	tube_rack0/B1	false
+addContainer	eppendorf_1p5mL	ca00013	tube_rack0/B2	false
+addContainer	eppendorf_1p5mL	ca0005	tube_rack0/B3	false
+addContainer	eppendorf_1p5mL	ca0004	tube_rack0/B4	false
+dispense	water	ca0001	300.0
+dispense	water	ca0000	300.0
+dispense	water	ca0007	300.0
+dispense	water	ca00010	300.0
+dispense	water	ca0006	300.0
+dispense	water	ca0009	300.0
+dispense	water	ca00012	300.0
+dispense	water	ca0008	300.0
+dispense	water	ca00011	300.0
+dispense	water	ca0003	300.0
+dispense	water	ca00014	300.0
+dispense	water	ca4239	300.0
+dispense	water	ca0002	300.0
+dispense	water	ca00013	300.0
+dispense	water	ca0005	300.0
+dispense	water	ca0004	300.0
+addContainer	eppendorf_1p5mL	10uM_ca0001	tube_rack0/B5	true
+addContainer	eppendorf_1p5mL	10uM_ca0000	tube_rack0/B6	true
+addContainer	eppendorf_1p5mL	10uM_ca0007	tube_rack0/B7	true
+addContainer	eppendorf_1p5mL	10uM_ca00010	tube_rack0/B8	true
+addContainer	eppendorf_1p5mL	10uM_ca0006	tube_rack0/B9	true
+addContainer	eppendorf_1p5mL	10uM_ca0009	tube_rack0/B10	true
+addContainer	eppendorf_1p5mL	10uM_ca00012	tube_rack0/B11	true
+addContainer	eppendorf_1p5mL	10uM_ca0008	tube_rack0/B12	true
+addContainer	eppendorf_1p5mL	10uM_ca00011	tube_rack0/C1	true
+addContainer	eppendorf_1p5mL	10uM_ca0003	tube_rack0/C2	true
+addContainer	eppendorf_1p5mL	10uM_ca00014	tube_rack0/C3	true
+addContainer	eppendorf_1p5mL	10uM_ca4239	tube_rack0/C4	true
+addContainer	eppendorf_1p5mL	10uM_ca0002	tube_rack0/C5	true
+addContainer	eppendorf_1p5mL	10uM_ca00013	tube_rack0/C6	true
+addContainer	eppendorf_1p5mL	10uM_ca0005	tube_rack0/C7	true
+addContainer	eppendorf_1p5mL	10uM_ca0004	tube_rack0/C8	true
+dispense	water	10uM_ca0001	990.0
+dispense	water	10uM_ca0000	990.0
+dispense	water	10uM_ca0007	990.0
+dispense	water	10uM_ca00010	990.0
+dispense	water	10uM_ca0006	990.0
+dispense	water	10uM_ca0009	990.0
+dispense	water	10uM_ca00012	990.0
+dispense	water	10uM_ca0008	990.0
+dispense	water	10uM_ca00011	990.0
+dispense	water	10uM_ca0003	990.0
+dispense	water	10uM_ca00014	990.0
+dispense	water	10uM_ca4239	990.0
+dispense	water	10uM_ca0002	990.0
+dispense	water	10uM_ca00013	990.0
+dispense	water	10uM_ca0005	990.0
+dispense	water	10uM_ca0004	990.0
+transfer	ca0001	10uM_ca0001	110.0	true
+transfer	ca0000	10uM_ca0000	110.0	true
+transfer	ca0007	10uM_ca0007	110.0	true
+transfer	ca00010	10uM_ca00010	110.0	true
+transfer	ca0006	10uM_ca0006	110.0	true
+transfer	ca0009	10uM_ca0009	110.0	true
+transfer	ca00012	10uM_ca00012	110.0	true
+transfer	ca0008	10uM_ca0008	110.0	true
+transfer	ca00011	10uM_ca00011	110.0	true
+transfer	ca0003	10uM_ca0003	110.0	true
+transfer	ca00014	10uM_ca00014	110.0	true
+transfer	ca4239	10uM_ca4239	110.0	true
+transfer	ca0002	10uM_ca0002	110.0	true
+transfer	ca00013	10uM_ca00013	110.0	true
+transfer	ca0005	10uM_ca0005	110.0	true
+transfer	ca0004	10uM_ca0004	110.0	true
+addContainer	eppendorf_1p5mL	pTargetF	tube_rack0/C9	false
+addContainer	eppendorf_1p5mL	20xdil_pTargetF	tube_rack0/C10	true
+dispense	water	20xdil_pTargetF	418.0
+transfer	pTargetF	20xdil_pTargetF	22.0	true
+addContainer	eppendorf_1p5mL	pcrMasterMix	tube_rack0/C11	true
+dispense	water	pcrMasterMix	470.25000000000006
+dispense	Q5_Polymerase_Buffer_5x	pcrMasterMix	165.0
+dispense	dNTPs_2mM	pcrMasterMix	82.5
+dispense	Q5_polymerase	pcrMasterMix	8.25
+addContainer	pcr_strip	pcrStrip0	pcr_rack/0	true
+addContainer	pcr_tube	pcrTube/0	pcr_rack/A2	true
+addContainer	pcr_tube	pcrTube/1	pcr_rack/B2	true
+addContainer	pcr_tube	pcrTube/2	pcr_rack/C2	true
+addContainer	pcr_tube	pcrTube/3	pcr_rack/D2	true
+addContainer	pcr_tube	pcrTube/4	pcr_rack/E2	true
+addContainer	pcr_tube	pcrTube/5	pcr_rack/F2	true
+addContainer	pcr_tube	pcrTube/6	pcr_rack/G2	true
+transfer	pcrmastermix	pcrStrip0/A	44.0	true
+transfer	pcrmastermix	pcrStrip0/B	44.0	false
+transfer	pcrmastermix	pcrStrip0/C	44.0	false
+transfer	pcrmastermix	pcrStrip0/D	44.0	false
+transfer	pcrmastermix	pcrStrip0/E	44.0	false
+transfer	pcrmastermix	pcrStrip0/F	44.0	false
+transfer	pcrmastermix	pcrStrip0/G	44.0	false
+transfer	pcrmastermix	pcrStrip0/H	44.0	false
+transfer	10uM_ca0000	pcrStrip0/0	2.5	true
+transfer	10uM_ca4239	pcrStrip0/0	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/0	1.0	true
+transfer	10uM_ca0001	pcrStrip0/1	2.5	true
+transfer	10uM_ca4239	pcrStrip0/1	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/1	1.0	true
+transfer	10uM_ca0002	pcrStrip0/2	2.5	true
+transfer	10uM_ca4239	pcrStrip0/2	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/2	1.0	true
+transfer	10uM_ca0003	pcrStrip0/3	2.5	true
+transfer	10uM_ca4239	pcrStrip0/3	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/3	1.0	true
+transfer	10uM_ca0004	pcrStrip0/4	2.5	true
+transfer	10uM_ca4239	pcrStrip0/4	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/4	1.0	true
+transfer	10uM_ca0005	pcrStrip0/5	2.5	true
+transfer	10uM_ca4239	pcrStrip0/5	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/5	1.0	true
+transfer	10uM_ca0006	pcrStrip0/6	2.5	true
+transfer	10uM_ca4239	pcrStrip0/6	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/6	1.0	true
+transfer	10uM_ca0007	pcrStrip0/7	2.5	true
+transfer	10uM_ca4239	pcrStrip0/7	2.5	true
+transfer	20xdil_pTargetF	pcrStrip0/7	1.0	true
+transfer	10uM_ca0008	pcrTube/0	2.5	true
+transfer	10uM_ca4239	pcrTube/0	2.5	true
+transfer	20xdil_pTargetF	pcrTube/0	1.0	true
+transfer	10uM_ca0009	pcrTube/1	2.5	true
+transfer	10uM_ca4239	pcrTube/1	2.5	true
+transfer	20xdil_pTargetF	pcrTube/1	1.0	true
+transfer	10uM_ca00010	pcrTube/2	2.5	true
+transfer	10uM_ca4239	pcrTube/2	2.5	true
+transfer	20xdil_pTargetF	pcrTube/2	1.0	true
+transfer	10uM_ca00011	pcrTube/3	2.5	true
+transfer	10uM_ca4239	pcrTube/3	2.5	true
+transfer	20xdil_pTargetF	pcrTube/3	1.0	true
+transfer	10uM_ca00012	pcrTube/4	2.5	true
+transfer	10uM_ca4239	pcrTube/4	2.5	true
+transfer	20xdil_pTargetF	pcrTube/4	1.0	true
+transfer	10uM_ca00013	pcrTube/5	2.5	true
+transfer	10uM_ca4239	pcrTube/5	2.5	true
+transfer	20xdil_pTargetF	pcrTube/5	1.0	true
+transfer	10uM_ca00014	pcrTube/6	2.5	true
+transfer	10uM_ca4239	pcrTube/6	2.5	true
+transfer	20xdil_pTargetF	pcrTube/6	1.0	true
+
+addContainer	eppendorf_1p5mL	digestionMasterMix	tube_rack0/C12	true
+dispense	water	digestionMasterMix	643.5
+dispense	NEB_Buffer_2_10x	digestionMasterMix	82.5
+dispense	SpeI	digestionMasterMix	8.25
+dispense	DpnI	digestionMasterMix	8.25
+addContainer	eppendorf_1p5mL	digestion_0	tube_rack0/D1	true
+addContainer	eppendorf_1p5mL	digestion_1	tube_rack0/D2	true
+addContainer	eppendorf_1p5mL	digestion_2	tube_rack0/D3	true
+addContainer	eppendorf_1p5mL	digestion_3	tube_rack0/D4	true
+addContainer	eppendorf_1p5mL	digestion_4	tube_rack0/D5	true
+addContainer	eppendorf_1p5mL	digestion_5	tube_rack0/D6	true
+addContainer	eppendorf_1p5mL	digestion_6	tube_rack0/D7	true
+addContainer	eppendorf_1p5mL	digestion_7	tube_rack0/D8	true
+addContainer	eppendorf_1p5mL	digestion_8	tube_rack0/D9	true
+addContainer	eppendorf_1p5mL	digestion_9	tube_rack0/D10	true
+addContainer	eppendorf_1p5mL	digestion_10	tube_rack0/D11	true
+addContainer	eppendorf_1p5mL	digestion_11	tube_rack0/D12	true
+addContainer	eppendorf_1p5mL	digestion_12	tube_rack0/E1	true
+addContainer	eppendorf_1p5mL	digestion_13	tube_rack0/E2	true
+addContainer	eppendorf_1p5mL	digestion_14	tube_rack0/E3	true
+transfer	digestionMasterMix	digestion_0	45.0	true
+transfer	digestionMasterMix	digestion_1	45.0	false
+transfer	digestionMasterMix	digestion_2	45.0	false
+transfer	digestionMasterMix	digestion_3	45.0	false
+transfer	digestionMasterMix	digestion_4	45.0	false
+transfer	digestionMasterMix	digestion_5	45.0	false
+transfer	digestionMasterMix	digestion_6	45.0	false
+transfer	digestionMasterMix	digestion_7	45.0	false
+transfer	digestionMasterMix	digestion_8	45.0	false
+transfer	digestionMasterMix	digestion_9	45.0	false
+transfer	digestionMasterMix	digestion_10	45.0	false
+transfer	digestionMasterMix	digestion_11	45.0	false
+transfer	digestionMasterMix	digestion_12	45.0	false
+transfer	digestionMasterMix	digestion_13	45.0	false
+transfer	digestionMasterMix	digestion_14	45.0	false
+transfer	pcrcleanup_0	digestion_0	5.0	true
+transfer	pcrcleanup_1	digestion_1	5.0	true
+transfer	pcrcleanup_2	digestion_2	5.0	true
+transfer	pcrcleanup_3	digestion_3	5.0	true
+transfer	pcrcleanup_4	digestion_4	5.0	true
+transfer	pcrcleanup_5	digestion_5	5.0	true
+transfer	pcrcleanup_6	digestion_6	5.0	true
+transfer	pcrcleanup_7	digestion_7	5.0	true
+transfer	pcrcleanup_8	digestion_8	5.0	true
+transfer	pcrcleanup_9	digestion_9	5.0	true
+transfer	pcrcleanup_10	digestion_10	5.0	true
+transfer	pcrcleanup_11	digestion_11	5.0	true
+transfer	pcrcleanup_12	digestion_12	5.0	true
+transfer	pcrcleanup_13	digestion_13	5.0	true
+transfer	pcrcleanup_14	digestion_14	5.0	true
+
+addContainer	eppendorf_1p5mL	ligationMasterMix	tube_rack0/E4	true
+dispense	water	ligationMasterMix	123.75000000000001
+dispense	T4_DNA_Ligase_Buffer_10x	ligationMasterMix	16.5
+dispense	T4_DNA_ligase	ligationMasterMix	8.25
+addContainer	eppendorf_1p5mL	ligation_0	tube_rack0/E5	true
+addContainer	eppendorf_1p5mL	ligation_1	tube_rack0/E6	true
+addContainer	eppendorf_1p5mL	ligation_2	tube_rack0/E7	true
+addContainer	eppendorf_1p5mL	ligation_3	tube_rack0/E8	true
+addContainer	eppendorf_1p5mL	ligation_4	tube_rack0/E9	true
+addContainer	eppendorf_1p5mL	ligation_5	tube_rack0/E10	true
+addContainer	eppendorf_1p5mL	ligation_6	tube_rack0/E11	true
+addContainer	eppendorf_1p5mL	ligation_7	tube_rack0/E12	true
+addContainer	eppendorf_1p5mL	ligation_8	tube_rack0/F1	true
+addContainer	eppendorf_1p5mL	ligation_9	tube_rack0/F2	true
+addContainer	eppendorf_1p5mL	ligation_10	tube_rack0/F3	true
+addContainer	eppendorf_1p5mL	ligation_11	tube_rack0/F4	true
+addContainer	eppendorf_1p5mL	ligation_12	tube_rack0/F5	true
+addContainer	eppendorf_1p5mL	ligation_13	tube_rack0/F6	true
+addContainer	eppendorf_1p5mL	ligation_14	tube_rack0/F7	true
+transfer	ligationMasterMix	ligation_0	9.0	true
+transfer	ligationMasterMix	ligation_1	9.0	false
+transfer	ligationMasterMix	ligation_2	9.0	false
+transfer	ligationMasterMix	ligation_3	9.0	false
+transfer	ligationMasterMix	ligation_4	9.0	false
+transfer	ligationMasterMix	ligation_5	9.0	false
+transfer	ligationMasterMix	ligation_6	9.0	false
+transfer	ligationMasterMix	ligation_7	9.0	false
+transfer	ligationMasterMix	ligation_8	9.0	false
+transfer	ligationMasterMix	ligation_9	9.0	false
+transfer	ligationMasterMix	ligation_10	9.0	false
+transfer	ligationMasterMix	ligation_11	9.0	false
+transfer	ligationMasterMix	ligation_12	9.0	false
+transfer	ligationMasterMix	ligation_13	9.0	false
+transfer	ligationMasterMix	ligation_14	9.0	false
+transfer	digestionCleanup_0	ligation_0	1.0	true
+transfer	digestionCleanup_1	ligation_1	1.0	true
+transfer	digestionCleanup_2	ligation_2	1.0	true
+transfer	digestionCleanup_3	ligation_3	1.0	true
+transfer	digestionCleanup_4	ligation_4	1.0	true
+transfer	digestionCleanup_5	ligation_5	1.0	true
+transfer	digestionCleanup_6	ligation_6	1.0	true
+transfer	digestionCleanup_7	ligation_7	1.0	true
+transfer	digestionCleanup_8	ligation_8	1.0	true
+transfer	digestionCleanup_9	ligation_9	1.0	true
+transfer	digestionCleanup_10	ligation_10	1.0	true
+transfer	digestionCleanup_11	ligation_11	1.0	true
+transfer	digestionCleanup_12	ligation_12	1.0	true
+transfer	digestionCleanup_13	ligation_13	1.0	true
+transfer	digestionCleanup_14	ligation_14	1.0	true

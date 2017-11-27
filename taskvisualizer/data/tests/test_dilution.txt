@@ -1,0 +1,4 @@
+addContainer	eppendorf_1p5mL	pTargetF	tube_rack0/C9	false
+addContainer	eppendorf_1p5mL	20xdil_pTargetF	tube_rack0/C10	true
+dispense	water	pTargetF	400.0
+transfer	pTargetF	20xdil_pTargetF	20.0	true

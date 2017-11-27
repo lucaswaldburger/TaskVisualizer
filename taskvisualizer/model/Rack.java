@@ -68,6 +68,17 @@ public class Rack {
         }
     }
 
+    public boolean containsTube(String tubeName,ContainerType containerType) {
+        if (containerType.equals(ContainerType.TUBE)) {
+            return tubeNameToPos.containsKey(tubeName);
+        } else if (containerType.equals(ContainerType.PCR)) {
+            return pcrNameToPos.containsKey(tubeName);
+        } else {
+            return false;
+        }
+    }
+
+
     /**
      *
      * @param tubeName
