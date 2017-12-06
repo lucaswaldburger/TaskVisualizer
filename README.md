@@ -3,7 +3,7 @@
 TaskVisualizer is a simulator to visualize the Semiprotocols from the TaskMaster 2.0. Unlike the PipetteAid, this will feature a PCR and tube rack and will verify the sequence of events from a semiprotocol by handling well volume and tubes already present in the workspace. TaskVisualizer will significantly reduce the time required to debug the results from TaskMaster 2.0 as well as future TaskMaster assignments.
 
 ## Unlike PipetteAid
-
+~~~
 Markup : * Additional functionality:
               * Play
               * Simulate
@@ -17,7 +17,7 @@ Markup : * Additional functionality:
               * Price at the current stage of the Semiprotocol
               * Human burden at the fcurrent stage of the Semiprotocl
               * Current pipette being used for Transfer and Dispense steps
-
+~~~
 ## Authors
 
 * **Lucas M. Waldburger** *TaskVisualizer MVC framework*
