@@ -24,10 +24,10 @@ TaskVisualizer is a simulator to visualize the Semiprotocols from the TaskMaster
 
 ## Workspace Representation
 * PCR plates and rack
- * 8 rows x 12 columns
+  * 8 rows x 12 columns
 * Tube rack
- * 6 rows x 8 columns (default)
- * 8 rows x 12 columns
+  * 6 rows x 8 columns (default)
+  * 8 rows x 12 columns
 * Deck is empty until Semiprotocol specifies the addition of a plate
 
 ## Challenges
