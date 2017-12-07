@@ -3,14 +3,13 @@ package org.ucb.bio134.taskvisualizer.view.panels;
 import javafx.util.Pair;
 import org.ucb.bio134.taskvisualizer.model.*;
 import org.ucb.bio134.taskvisualizer.view.View;
-import org.ucb.c5.semiprotocol.model.Container;
 
 import java.awt.*;
 import java.util.HashSet;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 
 /**
+ * Displays the Plate in the workspace.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -22,8 +21,9 @@ public class PlatePanel extends JPanel {
     private HashSet<Pair<Integer,Integer>> highlightedWells;
 
     /**
+     * Constructs the Plate Panel
      *
-     * @param type
+     * @param type of Plate used to determine appropriate configuration
      */
     public PlatePanel(ContainerType type) {
         setLayout(new GridBagLayout());
@@ -34,8 +34,9 @@ public class PlatePanel extends JPanel {
     }
 
     /**
+     * Determines the appropriate configuration for the Plate Panel
      *
-     * @param type
+     * @param type of Plate
      */
     private void calcConfig(ContainerType type) {
         if (type == ContainerType.PCR) {
@@ -48,6 +49,7 @@ public class PlatePanel extends JPanel {
     }
 
     /**
+     * Initial Display of the Plate
      *
      * @return
      */
@@ -63,35 +65,34 @@ public class PlatePanel extends JPanel {
         return out;
     }
 
-    /**
-     *
-     * @param platename
-     * @return
-     */
-    private JPanel createAddPlatePanel(String platename) {
-        JPanel out = new JPanel();
-        out.setBackground(new Color(0,0,50));
-        JLabel label = new JLabel(platename);
-        label.setForeground(new Color(0,0,50));
-        out.add(label, BorderLayout.CENTER);
-        out.setBounds(0, 0, config.getWidth()/config.getNumCols(), config.getHeight()/config.getNumRows());
-        return out;
-    }
+//    /**
+//     *
+//     * @param platename
+//     * @return
+//     */
+//    private JPanel createAddPlatePanel(String platename) {
+//        JPanel out = new JPanel();
+//        out.setBackground(new Color(0,0,50));
+//        JLabel label = new JLabel(platename);
+//        label.setForeground(new Color(0,0,50));
+//        out.add(label, BorderLayout.CENTER);
+//        out.setBounds(0, 0, config.getWidth()/config.getNumCols(), config.getHeight()/config.getNumRows());
+//        return out;
+//    }
 
     /**
+     * Adds Well Panels to the Plate Panel
      *
-     * @param rows
-     * @param cols
-     * @return
+     * @return WellPanels of the Plate Panel
      */
-    public WellPanel[][] addWells(int rows, int cols, ContainerType containerType) {
-        for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < cols; col++) {
-                int xpos = View.windowOffset + col * config.getSubBlockWidth();
-                int ypos = View.windowOffset + row * config.getSubBlockHeight();
+    public WellPanel[][] addWells() {
+        for (int row = 0; row < config.getNumRows(); row++) {
+            for (int col = 0; col < config.getNumCols(); col++) {
+                int xpos = View.windowOffset + col * config.getWellWidth();
+                int ypos = View.windowOffset + row * config.getWellHeight();
                 //Create and add the panel
-                wells[row][col] = new WellPanel(containerType);
-                wells[row][col].setBounds(xpos ,ypos , config.getSubBlockWidth(), config.getSubBlockHeight());
+                wells[row][col] = new WellPanel();
+                wells[row][col].setBounds(xpos ,ypos , config.getWellWidth(), config.getWellHeight());
 
 
             }
@@ -99,61 +100,60 @@ public class PlatePanel extends JPanel {
         return wells;
     }
 
-    public void colorWell( int row, int col) {
-        wells[row][col].highlightWell();
+    /**
+     * Adds a black border to the Well Panel
+     *
+     * @param row of Well Panel within Plate Panel to add border
+     * @param col of Well Panel within Plate Panel to add border
+     */
+    public void addBlackBorderToWell(int row, int col) {
+        wells[row][col].addBlackBorder();
     }
 
-    public void uncolorWell(int row, int col) {
-        wells[row][col].unhighlightWell();
+    /**
+     * Removes a black border to the Well Panel
+     *
+     * @param row of Well Panel within Plate Panel to remove border
+     * @param col of Well Panel within Plate Panel to remove border
+     */
+    public void removeBlackBorderFromWell(int row, int col) {
+        wells[row][col].removeBlackBorder();
     }
 
+    /**
+     * Returns all the Well Panels of a Plate Panel
+     *
+     * @return the Well Panels within a Plate Panel
+     */
     public WellPanel[][] getWells() {
         return wells;
     }
 
     //VIEW-RELAYED COMMANDS//
 
-    public void reset() {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                removeAll();
-                setBorder(null);
-                add(currentDisplay);
-                revalidate();
-                repaint();
-            }
-        });
-    }
-
+//    public void reset() {
+//        SwingUtilities.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                removeAll();
+//                setBorder(null);
+//                add(currentDisplay);
+//                revalidate();
+//                repaint();
+//            }
+//        });
+//    }
+//
     /**
+     * Removes Well Panel when Plate is taken out of the Deck
      *
-     * @param plateName
+     * @return the removed plate
      */
-    public void addPlate(String plateName) {
-        currentDisplay = this.createAddPlatePanel(plateName);
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                removeAll();
-                add(currentDisplay);
-                revalidate();
-                repaint();
-            }
-        });
-    }
-
-    /**
-     *
-     * @param rows
-     * @param cols
-     * @return
-     */
-    public WellPanel[][] removeWells(int rows, int cols) {
-        for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < cols; col++) {
-                int xpos = View.windowOffset + col * config.getSubBlockWidth();
-                int ypos = View.windowOffset + row * config.getSubBlockHeight();
+    public WellPanel[][] removeWells() {
+        for (int row = 0; row < config.getNumRows(); row++) {
+            for (int col = 0; col < config.getNumCols(); col++) {
+                int xpos = View.windowOffset + col * config.getWellWidth();
+                int ypos = View.windowOffset + row * config.getWellHeight();
                 //Create and add the panel
                 wells[row][col] = null;
             }
@@ -164,8 +164,8 @@ public class PlatePanel extends JPanel {
         return wells;
     }
 
-    //Relay requested from View in response to an "removePlate" step
-    private void removePlate() {
+    //Relay requested from View in response to a "removePlate" step
+    public void removePlate() {
         currentDisplay = this.createEmptyPosition();
         SwingUtilities.invokeLater(new Runnable() {
             @Override

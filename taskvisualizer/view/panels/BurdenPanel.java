@@ -1,13 +1,11 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
-import org.ucb.bio134.taskmaster.PriceCalculator;
-import org.ucb.bio134.taskmaster.SemiprotocolPriceSimulator;
-
 import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
 
 /**
+ * Panel in View used to display the current human burden in a Semiprotocol
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -16,14 +14,10 @@ public class BurdenPanel extends JPanel {
 
     private static final Font secondary_font = new Font("Helvetica", 1, 22);
     private static final Font body_font = new Font("Helvetica", 1, 18);
-    private static final Font emphasis_font = new Font("Helvetica", 1, 40);
-    private SemiprotocolPriceSimulator sps = new SemiprotocolPriceSimulator();
-    private PriceCalculator pc = new PriceCalculator();
-    DecimalFormat dc = new DecimalFormat("0");
-
+    private DecimalFormat dc = new DecimalFormat("0");
 
     /**
-     *
+     * Constructs the Burden Panel
      */
     public BurdenPanel() {
         setBackground(Color.lightGray);
@@ -49,8 +43,9 @@ public class BurdenPanel extends JPanel {
     }
 
     /**
+     * Updates the Burden Panel
      *
-     * @param burdenTotal
+     * @param burdenTotal total human burden up to and including the current Task
      */
     public void update(double burdenTotal) {
         removeAll();

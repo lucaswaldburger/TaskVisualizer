@@ -1,16 +1,14 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
-import org.ucb.bio134.taskmaster.PriceCalculator;
-import org.ucb.bio134.taskmaster.SemiprotocolPriceSimulator;
 import org.ucb.bio134.taskmaster.model.Tip;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.font.TextAttribute;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
+ * Informs the user which pipette is currently being used for Transfer and Dispense tasks
+ * in a Semiprotocol. This can be used for optimization in reducing the number of times
+ * the Semiprotocol alternates between different pipettes.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -23,7 +21,7 @@ public class PipettePanel extends JPanel {
     private static final Font emphasis_font = new Font("Helvetica", 1, 40);
 
     /**
-     *
+     * Constructs the Pipette Panel
      */
     public PipettePanel() {
         setBackground(Color.lightGray);
@@ -58,8 +56,9 @@ public class PipettePanel extends JPanel {
     }
 
     /**
+     * Updates the View with the pipette that is currently selected
      *
-     * @param selectedPipette
+     * @param selectedPipette tip corresponding to selected pipette
      */
     public void update(Tip selectedPipette) {
         removeAll();
@@ -105,7 +104,7 @@ public class PipettePanel extends JPanel {
     }
 
     /**
-     *
+     * Resets the view when the current task in a Semiprotocol is not a Dispense or Transfer
      */
     public void reset() {
         removeAll();

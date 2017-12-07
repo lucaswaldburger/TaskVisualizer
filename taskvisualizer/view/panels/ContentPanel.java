@@ -16,6 +16,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Defines the Contents Panel which allows the user to view the contents within a specific Well
+ * when moused over. The contents are hidden when no Well is moused over and disabled for plates
+ * in the Deck that are not new, since the contents already exist and are not predefined through
+ * the Semiprotocol.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -32,7 +36,7 @@ public class ContentPanel extends JPanel {
     private DecimalFormat dc;
 
     /**
-     *
+     * Constructs the Contents Panel
      */
     public ContentPanel() {
         setBackground(Color.lightGray);
@@ -51,15 +55,16 @@ public class ContentPanel extends JPanel {
     }
 
     /**
+     * Retrieves the Well contents from the Controller which is notified by the Model
      *
-     * @param contents
+     * @param contents well contents and corresponding volume
      */
     public void getContentsFromWell(HashMap<String,Double> contents) {
         this.wellContents = contents;
     }
 
     /**
-     *
+     * Displays the contents of a Well when moused over
      */
     public void displayContents() {
         removeAll();
@@ -73,7 +78,6 @@ public class ContentPanel extends JPanel {
         JTable table = new JTable(wellContents.size(),2);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-//        table.setFillsViewportHeight(true);
         int row=0;
         for(Map.Entry<String, Double> entry: wellContents.entrySet()){
             table.setValueAt(entry.getKey(),row,0);
@@ -81,7 +85,7 @@ public class ContentPanel extends JPanel {
             table.setValueAt(formattedVol,row,1);
             row++;
         }
-//        `
+
         JTableHeader header= table.getTableHeader();
         TableColumnModel colMod = header.getColumnModel();
         TableColumn contentCol = colMod.getColumn(0);
@@ -95,6 +99,10 @@ public class ContentPanel extends JPanel {
         revalidate();
         repaint();
     }
+
+    /**
+     * Hides the contents when mouse is not over a Well
+     */
     public void hideContents() {
         removeAll();
 

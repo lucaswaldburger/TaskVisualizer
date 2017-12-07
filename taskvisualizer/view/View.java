@@ -5,32 +5,35 @@ import org.ucb.bio134.taskmaster.model.Tip;
 import org.ucb.bio134.taskvisualizer.model.*;
 import org.ucb.bio134.taskvisualizer.view.panels.*;
 import org.ucb.c5.semiprotocol.model.Container;
-import org.ucb.c5.semiprotocol.model.Reagent;
 import org.ucb.c5.semiprotocol.model.Task;
 
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.HashMap;
 import java.util.HashSet;
 
 /**
+ * Describes the View for the TaskVisualizer.
  *
+ * @author J. Christopher Anderson
+ * @author Lucas M. Waldburger
  */
 public class View extends JFrame {
     private WellPanel[][] tubeRackWells;
     private WellPanel[][] pcrRackWells;
     private PlatePanel[][] platePanels;
     private WellPanel[][][][] deckWells;
+
     private JButton nextButton;
     private JButton playButton;
     private JButton endButton;
     private JButton simulateButton;
+
     private NotificationPanel notifPanel;
     private PricePanel pricePanel;
     private BurdenPanel burdenPanel;
     private TaskPanel taskPanel;
-    public static ContentPanel contentPanel;
+    private ContentPanel contentPanel;
     private PipettePanel pipettePanel;
 
     private HashSet<Pair<Integer,Integer>> highlightedTube;
@@ -38,7 +41,6 @@ public class View extends JFrame {
     private HashSet<Pair<Pair<Integer,Integer>,Pair<Integer,Integer>>> highlightedDeck;
     private HashSet<Pair<Integer,Integer>> coloredTube;
     private HashSet<Pair<Integer,Integer>> coloredPCR;
-
 
     public static final int plateHeight = 200;
     public static final int plateWidth = 400;
@@ -65,7 +67,7 @@ public class View extends JFrame {
     }
 
     /**
-     * Initiates the view module by adding all components to the displayed window.
+     * Initiates the View by adding all components to the displayed window.
      */
     public void initiate(){
         highlightedTube = new HashSet<>();
@@ -79,7 +81,7 @@ public class View extends JFrame {
         setTitle("TaskVisualizer");
         // Add tube rack to the display showing all tube wells determined by tubePlateConfig
         PlatePanel tubeRack = new PlatePanel(ContainerType.TUBE);
-        tubeRackWells = tubeRack.addWells(tubePlateConfig.getNumRows(),tubePlateConfig.getNumCols(),ContainerType.TUBE);
+        tubeRackWells = tubeRack.addWells();
         for (int row = 0; row < tubePlateConfig.getNumRows(); row++) {
             for (int col = 0; col < tubePlateConfig.getNumCols(); col++) {
                 getContentPane().add(tubeRackWells[row][col]);
@@ -88,7 +90,7 @@ public class View extends JFrame {
         getContentPane().add(tubeRack);
         // Add pcr rack to the display showing all pcr wells determined by pcrPlateConfig
         PlatePanel pcrRack = new PlatePanel(ContainerType.PCR);
-        pcrRackWells = pcrRack.addWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols(), ContainerType.PCR);
+        pcrRackWells = pcrRack.addWells();
         for (int row = 0; row < pcrPlateConfig.getNumRows(); row++) {
             for (int col = 0; col < pcrPlateConfig.getNumCols(); col++) {
                 int xpos = windowOffset + wellWidth*col;
@@ -189,123 +191,155 @@ public class View extends JFrame {
     }
 
     /**
+     *  Adds a tube to the Rack Well Panel
      *
-     * @param tubeName
-     * @param tube
-     * @param containerType
-     * @param wellRow
-     * @param wellCol
-     * @throws Exception
+     * @param tubeName name of the tube to be added
+     * @param tube container of the tube
+     * @param containerType either tube or pcr type of the tube being added
+     * @param wellRow row of the Rack Well Panel
+     * @param wellCol column of the Rack Well panel
+     * @throws Exception error identifying tube to be added to the Rack
      */
     public void addTubeToRack(String tubeName, Container tube, ContainerType containerType, int wellRow, int wellCol) throws Exception {
         if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[wellRow][wellCol].addTubeColor(tubeName, tube);
+            tubeRackWells[wellRow][wellCol].addTubeColor();
         } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[wellRow][wellCol].addTubeColor(tubeName, tube);
+            pcrRackWells[wellRow][wellCol].addTubeColor();
         } else {
             throw new Exception("Cannot identify tube to be added to rack");
         }
     }
 
     /**
+     * Removes a tube from the Rack Well Panel
      *
-     * @param tubeName
-     * @param containerType
-     * @param wellRow
-     * @param wellCol
-     * @throws Exception
+     * @param tubeName name of the tube to be removed
+     * @param containerType container type of the tube to be removed
+     * @param wellRow row of the Rack
+     * @param wellCol column of the Rack
+     * @throws Exception error locating the tube to be removed from the Rack
      */
     public void removeTubeFromRack(String tubeName, ContainerType containerType, int wellRow, int wellCol) throws Exception {
         if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[wellRow][wellCol].removeTubeColor(tubeName);
+            tubeRackWells[wellRow][wellCol].removeTubeColor();
         } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[wellRow][wellCol].removeTubeColor(tubeName);
+            pcrRackWells[wellRow][wellCol].removeTubeColor();
         } else {
-            throw new Exception("Cannot identify tube to be removed to rack");
+            throw new Exception("Cannot locate tube to be removed to rack");
         }
     }
+
+//    /**
+//     *
+//     * @param source
+//     * @param volume
+//     * @param containerType
+//     * @param row
+//     * @param col
+//     * @throws Exception
+//     */
+//    public void addVolume(String source, double volume, ContainerType containerType, int row, int col) throws Exception{
+//        if (containerType.equals(ContainerType.TUBE)) {
+//            tubeRackWells[row][col].addVolume(source,volume);
+//
+//        } else if (containerType.equals(ContainerType.PCR)) {
+//            pcrRackWells[row][col].addVolume(source,volume);
+//        } else {
+//            throw new Exception("Invalid rack element to add volume");
+//        }
+//    }
+//    public void removeVolume(double volume, ContainerType containerType, int row, int col) throws Exception{
+//        if (containerType.equals(ContainerType.TUBE)) {
+//            tubeRackWells[row][col].removeVolume(volume);
+//        } else if (containerType.equals(ContainerType.PCR)) {
+//            pcrRackWells[row][col].removeVolume(volume);
+//        } else {
+//            throw new Exception("Invalid rack element to add volume");
+//        }
+//    }
 
     /**
+     * Adds a border to Well Panels involved in the current Transfer step of the Semiprotocol
      *
-     * @param source
-     * @param volume
-     * @param containerType
-     * @param row
-     * @param col
+     * @param srcType container type of the source well
+     * @param srcRow row of the source well
+     * @param srcCol column of the source well
+     * @param dstType container type of the destination well
+     * @param dstRow row of the destination well
+     * @param dstCol column of the destination well
      * @throws Exception
      */
-    public void addVolume(String source, double volume, ContainerType containerType, int row, int col) throws Exception{
-        if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[row][col].addVolume(source,volume);
-        } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[row][col].addVolume(source,volume);
-        } else {
-            throw new Exception("Invalid rack element to add volume");
-        }
-    }
-    public void removeVolume(double volume, ContainerType containerType, int row, int col) throws Exception{
-        if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[row][col].removeVolume(volume);
-        } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[row][col].removeVolume(volume);
-        } else {
-            throw new Exception("Invalid rack element to add volume");
-        }
-    }
-
     public void highlightRackTransfer(ContainerType srcType, int srcRow, int srcCol, ContainerType dstType, int dstRow, int dstCol) throws Exception {
         if (srcType.equals(ContainerType.TUBE)) {
-            highlightedTube.add(new Pair(srcRow,srcCol));
-            tubeRackWells[srcRow][srcCol].highlightWell();
+            highlightedTube.add(new Pair<>(srcRow,srcCol));
+            tubeRackWells[srcRow][srcCol].addBlackBorder();
         } else if (srcType.equals(ContainerType.PCR)) {
-            highlightedPCR.add(new Pair(srcRow,srcCol));
-            pcrRackWells[srcRow][srcCol].highlightWell();
+            highlightedPCR.add(new Pair<>(srcRow,srcCol));
+            pcrRackWells[srcRow][srcCol].addBlackBorder();
         } else {
             throw new Exception("Invalid rack element to add volume");
         }
         if (dstType.equals(ContainerType.TUBE)) {
-            highlightedTube.add(new Pair(dstRow,dstCol));
-            tubeRackWells[dstRow][dstCol].highlightWell();
+            highlightedTube.add(new Pair<>(dstRow,dstCol));
+            tubeRackWells[dstRow][dstCol].addBlackBorder();
         } else if (dstType.equals(ContainerType.PCR)) {
-            highlightedPCR.add(new Pair(dstRow,dstCol));
-            pcrRackWells[dstRow][dstCol].highlightWell();
+            highlightedPCR.add(new Pair<>(dstRow,dstCol));
+            pcrRackWells[dstRow][dstCol].addBlackBorder();
         } else {
             throw new Exception("Invalid rack element to add volume");
         }
     }
 
-
-    public void unhighlightRackTransfer() throws Exception {
+    /**
+     * Removes a black border from the Well Panel of a corresponding Plate Panel
+     *
+     * @throws Exception error locating
+     */
+    public void removeBlackBorderFromWells() throws Exception {
         for (Pair<Integer,Integer> position : highlightedTube) {
-            tubeRackWells[position.getKey()][position.getValue()].unhighlightWell();
+            tubeRackWells[position.getKey()][position.getValue()].removeBlackBorder();
         }
         for (Pair<Integer,Integer> position : highlightedPCR) {
-            pcrRackWells[position.getKey()][position.getValue()].unhighlightWell();
+            pcrRackWells[position.getKey()][position.getValue()].removeBlackBorder();
         }
         for (Pair<Pair<Integer,Integer>,Pair<Integer,Integer>> position : highlightedDeck) {
-            platePanels[position.getKey().getKey()][position.getKey().getValue()].uncolorWell(position.getValue().getKey(),
+            platePanels[position.getKey().getKey()][position.getKey().getValue()].removeBlackBorderFromWell(position.getValue().getKey(),
                     position.getValue().getValue());
         }
 
 
     }
-
-
-    public void colorWell(int plateRow, int plateCol, int wellRow, int wellCol) throws Exception {
-        platePanels[plateRow][plateCol].colorWell(wellRow, wellCol);
-        highlightedDeck.add(new Pair(new Pair(plateRow, plateCol),new Pair(wellRow, wellCol)));
+    /**
+     * Adds a black border to the Well Panel of a corresponding Plate Panel
+     *
+     * @param plateRow row of the Plate Panel containing the Well Panel
+     * @param plateCol column of the Plate Panel containing the Well Panel
+     * @param wellRow row of the Well Panel to add black border
+     * @param wellCol column of the Well Panel to add black border
+     * @throws Exception error locating Well Panel
+     */
+    public void addBlackBorderToWells(int plateRow, int plateCol, int wellRow, int wellCol) throws Exception {
+        if(platePanels[plateRow][plateCol] == null) {
+            throw new Exception("Error adding black border to well");
+        }
+        platePanels[plateRow][plateCol].addBlackBorderToWell(wellRow, wellCol);
+        highlightedDeck.add(new Pair<>(new Pair<>(plateRow, plateCol),new Pair<>(wellRow, wellCol)));
     }
     /**
+     * Add Plate Panel to the workspace
      *
-     * @param plateName
-     * @param plateType
-     * @param deckRow
-     * @param deckCol
-     * @throws Exception
+     * @param plateName name of the plate
+     * @param plateType plate type
+     * @param deckRow row of the Plate Panel within the Deck
+     * @param deckCol column of the Plate Panel within the Deck
+     * @throws Exception error adding plate to the Deck
      */
     public void addPlate(String plateName, ContainerType plateType, int deckRow, int deckCol) throws Exception {
 //        platePanels[deckRow][deckCol].addPlate(plateName);
-        deckWells[deckRow][deckCol] = platePanels[deckRow][deckCol].addWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols(), ContainerType.PCR);
+        if (deckWells[deckRow][deckCol] != null) {
+            throw new Exception("Error adding plate to the deck");
+        }
+        deckWells[deckRow][deckCol] = platePanels[deckRow][deckCol].addWells();
         for (int row = 0; row < pcrPlateConfig.getNumRows(); row++) {
             for (int col = 0; col < pcrPlateConfig.getNumCols(); col++) {
                 int xpos = plateWidth + windowOffset * (deckCol + 2) + wellWidth*col + plateWidth * deckCol;
@@ -316,94 +350,145 @@ public class View extends JFrame {
         }
         getContentPane().add(platePanels[deckRow][deckCol]);
     }
-
     /**
+     * Remove Plate Panel from the workspace
      *
-     * @param plateName
-     * @param plateType
-     * @param deckRow
-     * @param deckCol
-     * @throws Exception
+     * @param plateName name of the plate
+     * @param plateType plate type
+     * @param deckRow row of the Plate Panel within the Deck
+     * @param deckCol column of the Plate Panel within the Deck
+     * @throws Exception error locating plate in Deck
      */
     public void removePlate(String plateName, ContainerType plateType, int deckRow, int deckCol) throws Exception {
-        deckWells[deckRow][deckCol] = platePanels[deckRow][deckCol].removeWells(pcrPlateConfig.getNumRows(),pcrPlateConfig.getNumCols());
+        if (deckWells[deckRow][deckCol] == null) {
+            throw new Exception("Cannot locate plate to remove from the deck");
+        }
+        deckWells[deckRow][deckCol] = platePanels[deckRow][deckCol].removeWells();
     }
 
-    /**
-     *
-     * @param color
-     * @param plateRow
-     * @param plateCols
-     * @param wellRow
-     * @param wellCol
-     */
+//    /**
+//     *
+//     * @param color
+//     * @param plateRow
+//     * @param plateCols
+//     * @param wellRow
+//     * @param wellCol
+//     */
 //    public void highlightDeck(Color color, int plateRow, int plateCols, int wellRow, int wellCol) {
 //        //TODO: TEST HIGHLIGHT DECK WELL FUNCTIONALITY
-//        platePanels[plateRow][plateCols].getWells()[wellRow][wellCol].highlightWell(color, wellRow, wellCol);
+//        platePanels[plateRow][plateCols].getWells()[wellRow][wellCol].addBlackBorder(color, wellRow, wellCol);
 //    }
 
+//    /**
+//     *
+//     * @param color
+//     * @param containerType
+//     * @param wellRow
+//     * @param wellCol
+//     */
+//    public void highlightRack(Color color, ContainerType containerType, int wellRow, int wellCol) {
+//        //TODO: TEST HIGHLIGHT RACK WELL FUNCTIONALITY
+//        if (containerType.equals(ContainerType.TUBE)) {
+//            tubeRackWells[wellRow][wellCol].addBlackBorder();
+//            return;
+//        }
+//        if (containerType.equals(ContainerType.PCR)) {
+//            pcrRackWells[wellRow][wellCol].addBlackBorder();
+//        }
+//    }
+//    public void addCyanBorder(Color color, int plateRow, int plateCol, int wellRow, int wellCol) throws Exception {
+////        platePanels[plateRow][plateCol].addCyanBorder(color, wellRow, wellCol);
+//    }
     /**
+     * Adds a cyan border to the Well Panel of a corresponding Plate Panel
      *
-     * @param color
-     * @param containerType
-     * @param wellRow
-     * @param wellCol
+     * @param containerType whether well is tube or pcr type
+     * @param wellRow row of the Well Panel to add black border
+     * @param wellCol column of the Well Panel to add black border
+     * @throws Exception error locating Well Panel
      */
-    public void highlightRack(Color color, ContainerType containerType, int wellRow, int wellCol) {
-        //TODO: TEST HIGHLIGHT RACK WELL FUNCTIONALITY
+    public void addCyanBorderToWell(ContainerType containerType, int wellRow, int wellCol) throws Exception {
         if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[wellRow][wellCol].highlightWell();
-            return;
-        }
-        if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[wellRow][wellCol].highlightWell();
-        }
-    }
-//    public void colorWell(Color color, int plateRow, int plateCol, int wellRow, int wellCol) throws Exception {
-////        platePanels[plateRow][plateCol].colorWell(color, wellRow, wellCol);
-//    }
-
-    public void colorWell(ContainerType containerType, int wellRow, int wellCol) throws Exception {
-        if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[wellRow][wellCol].colorWell();
-            coloredTube.add(new Pair(wellRow,wellCol));
+            tubeRackWells[wellRow][wellCol].addCyanBorder();
+            coloredTube.add(new Pair<>(wellRow,wellCol));
         } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[wellRow][wellCol].colorWell();
-            coloredPCR.add(new Pair(wellRow,wellCol));
+            pcrRackWells[wellRow][wellCol].addCyanBorder();
+            coloredPCR.add(new Pair<>(wellRow,wellCol));
         } else {
             throw new Exception("cannot identify well to be colored");
         }
     }
 
-    public void uncolorWell() throws Exception {
+    public void removeCyanBorderFromWell() throws Exception {
         for (Pair<Integer, Integer> positon : coloredTube) {
-            tubeRackWells[positon.getKey()][positon.getValue()].uncolorWell();
+            tubeRackWells[positon.getKey()][positon.getValue()].removeCyanBorder();
         }
         for (Pair<Integer, Integer> positon : coloredTube) {
-            pcrRackWells[positon.getKey()][positon.getValue()].uncolorWell();
+            pcrRackWells[positon.getKey()][positon.getValue()].removeCyanBorder();
         }
     }
     /**
-     *
+     * Displays completion message and final state of the workspace when the end of the
+     * Semiprotocol is reached
      */
     public void endProtocol() {
 //        reset();
         notifPanel.showComplete();
         taskPanel.showComplete();
     }
-    public void notify(Task step) {
+
+    /**
+     * Updates the Notification Panel
+     *
+     * @param step current Task in the Semiprotocol
+     */
+    public void notifyNotifPanel(Task step) {
         notifPanel.notify(step);
     }
-    public void currentTask(Task step) {taskPanel.notify(step); }
-    public void updatePrice(double reagentTotal, double containerTotal, double tipTotal) {
+
+    /**
+     * Updates the Task Panel with the current Task in the Semiprotocol
+     *
+     * @param step current Task in the Semiprotocol
+     */
+    public void notifyTaskPanel(Task step) {taskPanel.notify(step); }
+
+    /**
+     * Updates the Price Panel with the current total price of the
+     * Semiprotocol
+     *
+     * @param reagentTotal current reagent cost
+     * @param containerTotal current container cost
+     * @param tipTotal current tip cost
+     */
+    public void notifyPricePanel(double reagentTotal, double containerTotal, double tipTotal) {
         pricePanel.update(reagentTotal,containerTotal, tipTotal);
     }
+
+    /**
+     * Updates the Burden Panel with the current total human burden
+     * of the Semiprotocol
+     *
+     * @param burdenCount the current human burden
+     */
     public void updateBurden(int burdenCount) {
         burdenPanel.update(burdenCount);
     }
+
+    /**
+     * Updates the Pipette Panel when the current Task is a Dispense
+     * or Transfer step
+     *
+     * @param tip of corresponding pipette being used
+     */
     public void updatePipette(Tip tip) {
         pipettePanel.update(tip);
     }
+
+    /**
+     * Resets the Pipette Panel when the current Task is not a Dispense
+     * or Transfer step
+     */
     public void resetPipette() {
         pipettePanel.reset();
     }

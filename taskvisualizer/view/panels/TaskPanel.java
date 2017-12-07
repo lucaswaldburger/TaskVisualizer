@@ -1,13 +1,12 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
-import org.ucb.c5.semiprotocol.model.AddContainer;
 import org.ucb.c5.semiprotocol.model.Task;
-import org.ucb.c5.semiprotocol.model.Transfer;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
+ * Similar to Notification Panel. Displays the current task below the workspace for debugging purposes.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -19,7 +18,7 @@ public class TaskPanel extends JPanel {
     private static final Font emphasis_font = new Font("Helvetica", 1, 40);
 
     /**
-     *
+     * Constructs the Task Panel
      */
     public TaskPanel() {
         setBackground(Color.lightGray);
@@ -45,7 +44,7 @@ public class TaskPanel extends JPanel {
     }
 
     /**
-     *
+     * Display when Semiprotocol is completed
      */
     public void showComplete() {
         SwingUtilities.invokeLater(new Runnable() {
@@ -76,8 +75,9 @@ public class TaskPanel extends JPanel {
     }
 
     /**
+     * Displays the current task in the Semiprotocol
      *
-     * @param step
+     * @param step the current task
      */
     public void notify(Task step) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -105,19 +105,5 @@ public class TaskPanel extends JPanel {
                 repaint();
             }
         });
-    }
-
-    /**
-     *
-     * @param platenameslashA1
-     * @return
-     */
-    private static String calcWellLabel(String platenameslashA1) {
-        String well = platenameslashA1;
-        if(well.contains("/")) {
-            String[] splitted = well.split("/");
-            well = splitted[1];
-        }
-        return well;
     }
 }

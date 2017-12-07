@@ -1,16 +1,12 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
-import org.ucb.bio134.taskmaster.PriceCalculator;
-import org.ucb.bio134.taskmaster.SemiprotocolPriceSimulator;
-import org.ucb.c5.semiprotocol.model.AddContainer;
-import org.ucb.c5.semiprotocol.model.Task;
-import org.ucb.c5.semiprotocol.model.Transfer;
-
 import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
 
 /**
+ * Panel in View used to display the current price of the Semiprotocol
+
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -19,13 +15,10 @@ public class PricePanel extends JPanel {
 
     private static final Font secondary_font = new Font("Helvetica", 1, 22);
     private static final Font body_font = new Font("Helvetica", 1, 18);
-    private static final Font emphasis_font = new Font("Helvetica", 1, 40);
-    private SemiprotocolPriceSimulator sps = new SemiprotocolPriceSimulator();
-    private PriceCalculator pc = new PriceCalculator();
-    DecimalFormat dc = new DecimalFormat("0.00");
+    private DecimalFormat dc = new DecimalFormat("0.00");
 
     /**
-     *
+     * Constructs the Price Panel
      */
     public PricePanel() {
         setBackground(Color.lightGray);
@@ -59,10 +52,11 @@ public class PricePanel extends JPanel {
     }
 
     /**
+     * Updates the Price Panel for the current Task
      *
-     * @param reagentTotal
-     * @param containerTotal
-     * @param tipTotal
+     * @param reagentTotal current cost of reagents
+     * @param containerTotal current cost of containers
+     * @param tipTotal current cost of containers
      */
     public void update(double reagentTotal, double containerTotal, double tipTotal) {
         removeAll();

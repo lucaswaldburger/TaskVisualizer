@@ -1,12 +1,6 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
-import javafx.scene.layout.Background;
-import javafx.scene.layout.Border;
-import org.ucb.bio134.taskvisualizer.model.Config;
-import org.ucb.bio134.taskvisualizer.model.ContainerType;
-import org.ucb.bio134.taskvisualizer.model.Well;
 import org.ucb.bio134.taskvisualizer.view.View;
-import org.ucb.c5.semiprotocol.model.Container;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,24 +8,27 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
+ * Displays the Well as a filled circle with a color. For the Rack, a green circle represents that a tube
+ * is present, cyan and black borders mean that it is selected in the current Task, and a red circle indicates that the
+ * tube is overflowing (volume of contents exceeds the maximum volume of the container). For now, the
+ * overflow throws an Exception rather than coloring the Well.
+ *
  * @author Lucas M. Waldburger
  * @author J. Christopher Anderson
  */
 public class WellPanel extends JPanel implements MouseListener {
     private JPanel currentDisplay;
     private Color currentColor;
-    private Config plateConfig;
     private Graphics2D g2d;
-    private Well well;
     private Color green;
     private Color emptyColor;
     private Color red;
 
+
     /**
-     *
-     * @param containerType
+     * Constructs the Well Panel
      */
-    public WellPanel(ContainerType containerType) {
+    public WellPanel() {
         setLayout(null);
         green = new Color(76,153,0);
         emptyColor = new Color(160,160,160);
@@ -39,10 +36,11 @@ public class WellPanel extends JPanel implements MouseListener {
         currentDisplay = createEmptyWell();
         currentColor = emptyColor;
         removeWell();
-        well = new Well(containerType);
 
     }
+
     /**
+     * Initial display of the well
      *
      * @return
      */
@@ -51,101 +49,26 @@ public class WellPanel extends JPanel implements MouseListener {
         out.setOpaque(false);
         out.addMouseListener(this);
         addMouseListener(this);
-//        String labelText = String.valueOf(well.getVolume());
-//        JLabel label = new JLabel();
-//        out.add(label, BorderLayout.CENTER);
         out.setBounds(View.wellWidth/2,View.wellHeight/2 , View.wellWidth, View.wellHeight);
         return out;
     }
 
-    public void uncolorWell() {
+    /**
+     * Removes cyan border from the Well
+     */
+    public void removeCyanBorder() {
         setBorder(BorderFactory.createLineBorder(Color.CYAN, 0));
     }
-    public void colorWell() {
+
+    /**
+     * Adds cyan border to the Well
+     */
+    public void addCyanBorder() {
         setBorder(BorderFactory.createLineBorder(Color.CYAN, 4));
     }
-    /**
-     *
-     * @param source
-     * @param volume
-     * @throws Exception
-     */
-    public void addVolume(String source, double volume) throws Exception{
-        well.addVolume(source, volume);
-        if (well.isFull()) {
-            currentColor = red;
-        }
-    }
 
     /**
-     *
-     * @param volume
-     * @throws Exception
-     */
-    public void removeVolume(double volume) throws Exception {
-        well.removeVolume(volume);
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void mousePressed(MouseEvent e) {
-        System.out.println("Mouse pressed (# of clicks: "
-                + e.getClickCount() + ")");
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void mouseReleased(MouseEvent e) {
-        System.out.println("Mouse released (# of clicks: "
-                + e.getClickCount() + ")");
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void mouseEntered(MouseEvent e) {
-        View.contentPanel.getContentsFromWell(well.getContents());
-        View.contentPanel.displayContents();
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void mouseExited(MouseEvent e) {
-        View.contentPanel.hideContents();
-    }
-
-    /**
-     *
-     * @param e
-     */
-    public void mouseClicked(MouseEvent e) {
-        System.out.println("Mouse clicked (# of clicks: "
-                + e.getClickCount() + ")");
-    }
-
-    /**
-     *
-     * @param platename
-     * @return
-     */
-    private JPanel createAddPlatePanel(String platename) {
-        JPanel out = new JPanel();
-        out.setBackground(new Color(0,0,50));
-        JLabel label = new JLabel(platename);
-        label.setForeground(Color.WHITE);
-        out.add(label, BorderLayout.CENTER);
-        out.setBounds(0, 0, View.wellWidth, View.wellHeight);
-        return out;
-    }
-
-    /**
+     * Paints the Well with higher resolution graphics than standard Graphics2D
      *
      * @param g
      */
@@ -180,81 +103,34 @@ public class WellPanel extends JPanel implements MouseListener {
     }
 
     /**
-     *
-     * @param tubeName
-     * @param tube
+     * Adds green color when tube is added
      */
-    public void addTubeColor(String tubeName, Container tube) {
-        well.addTube(tubeName, tube);
+    public void addTubeColor() {
         currentColor = green;
         repaint();
     }
 
     /**
-     *
-     * @param tubeName
+     * Removes green color when tube is removed
      */
-    public void removeTubeColor(String tubeName) {
-        well.removeTube();
+    public void removeTubeColor() {
         currentColor = emptyColor;
     }
 
     /**
-     *
+     * Adds black border to the Well
      */
-    public void highlightWell() {
+    public void addBlackBorder() {
         setBorder(BorderFactory.createLineBorder(Color.BLACK, 4));
-//        Color borderColor = Color.PINK;
-//        g2d.setColor(borderColor);
-//        g2d.fillOval(0,0,getWidth()+100, getHeight()+100);
-//        g2d.setColor(currentColor);
-//        g2d.fillOval(0,0,getWidth(), getHeight());
-//        revalidate();
-//        repaint();
-    }
-    public void unhighlightWell() {
-        setBorder(BorderFactory.createLineBorder(Color.BLACK, 0));
     }
 
     /**
-     *
-     * @param plateName
+     * Removes black border from the Well
      */
-    public void addWell(String plateName) {
-        currentDisplay = this.createAddPlatePanel(plateName);
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                removeAll();
-                add(currentDisplay);
-                revalidate();
-                repaint();
-            }
-        });
+    public void removeBlackBorder() {
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 0));
     }
-//    public void displayWell(Color color, int rows, int cols) {
-//        JPanel blackPanel = createBlackPanel();
-//        blackPanel.setBorder(BorderFactory.createLineBorder(color));
-//        for (int i = 0; i < rows; i++) {
-//            for (int j = 0; j < cols; j++) {
-//                JPanel wellPanel = createWellPanel(color, i, j);
-//                SwingUtilities.invokeLater(new Runnable() {
-//                    @Override
-//                    public void runProtocol() {
-//                        removeAll();
-//                        add(blackPanel);
-//
-//                        blackPanel.add(wellPanel);
-//                        revalidate();
-//                        repaint();
-//                    }
-//                });
-//            }
-//        }
 
-    //    }
-
-    //Relay requested from View in response to an "removePlate" step
     private void removeWell() {
         currentDisplay = this.createEmptyWell();
         SwingUtilities.invokeLater(new Runnable() {
@@ -268,6 +144,30 @@ public class WellPanel extends JPanel implements MouseListener {
         });
     }
 
+    public void mousePressed(MouseEvent e) {
+        System.out.println("Mouse pressed (# of clicks: "
+                + e.getClickCount() + ")");
+    }
+
+    public void mouseReleased(MouseEvent e) {
+        System.out.println("Mouse released (# of clicks: "
+                + e.getClickCount() + ")");
+    }
+
+    public void mouseEntered(MouseEvent e) {
+//        View.contentPanel.getContentsFromWell(well.getContents());
+//        View.contentPanel.displayContents();
+    }
+
+    public void mouseExited(MouseEvent e) {
+
+//        View.contentPanel.hideContents();
+    }
+
+    public void mouseClicked(MouseEvent e) {
+        System.out.println("Mouse clicked (# of clicks: "
+                + e.getClickCount() + ")");
+    }
 
 
 }

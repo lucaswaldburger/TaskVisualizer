@@ -9,18 +9,20 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * Extends Professor Anderson's Notification Panel for use across the workspace for both
+ * Eppendorf tubes and PCR tubes in the Rack and PCR plates in the Deck.
  *
  * @author J. Christopher Anderson
+ * @author Lucas M. Waldburger
  */
 public class NotificationPanel extends JPanel {
        
-    private static final Font secondary_font = new Font("Helvetica", 1, 22);
-    private static final Font tertiary_font = new Font("Helvetica", 1, 24);
-    private static final Font body_font = new Font("Helvetica", 3, 18);
-    private static final Font emphasis_font = new Font("Helvetica", 1, 40);
+    private static final Font secondary_font = new Font("Helvetica", Font.BOLD, 22);
+    private static final Font body_font = new Font("Helvetica", Font.PLAIN, 18);
+    private static final Font emphasis_font = new Font("Helvetica", Font.BOLD, 40);
 
     /**
-     *
+     * Constructs the Notification Panel
      */
     public NotificationPanel() {
         setBackground(Color.lightGray);
@@ -48,7 +50,7 @@ public class NotificationPanel extends JPanel {
     }
 
     /**
-     *
+     * Display when Semiprotocol is completed
      */
     public void showComplete() {
         SwingUtilities.invokeLater(new Runnable() {
@@ -68,8 +70,9 @@ public class NotificationPanel extends JPanel {
     }
 
     /**
+     * Displays notification of the current task in the Semiprotocol
      *
-     * @param step
+     * @param step the current task
      */
     public void notify(Task step) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -155,9 +158,10 @@ public class NotificationPanel extends JPanel {
     }
 
     /**
+     * Calculates the location of a Well within a Plate from a label
      *
-     * @param platenameslashA1
-     * @return
+     * @param platenameslashA1 well label
+     * @return location of Well
      */
     private static String calcWellLabel(String platenameslashA1) {
         String well = platenameslashA1;

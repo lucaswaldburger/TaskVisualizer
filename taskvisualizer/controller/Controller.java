@@ -12,6 +12,8 @@ import org.ucb.c5.utils.FileUtils;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Controller for TaskVisualizer with a complete workspace consisting of two components: racks and a deck. For now,
@@ -24,11 +26,10 @@ import java.awt.event.ActionListener;
  * information that I hope the user will find to aid with debugging or further optimizing their program that designs
  * semiprotocol files or follow the logic of their output step by step using the TaskVisualizer.
  *
- *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
  */
-public class Controller {
+public class Controller implements MouseListener{
     private final Semiprotocol protocol;
     private final View view;
     private final Rack rack;
@@ -37,6 +38,12 @@ public class Controller {
     private SemiprotocolPriceSimulator sps;
     private SemiprotocolBurdenSimulator sbs;
 
+    /** Initates the Controller
+     *
+     * @param protocol the Semiprotocol being operated on
+     * @param view the display for the user to visualize the workspace
+     * @throws Exception cannot locate protocol, or error associated with the View
+     */
     public Controller(Semiprotocol protocol, View view) throws Exception{
         // Instantiate and assign class variables
         this.protocol = protocol;
@@ -129,25 +136,25 @@ public class Controller {
      * described in the semiprotocol.
      *
      * @param addcon container to be added to the workspace
-     * @throws Exception
+     * @throws Exception error with AddContainer step
      */
 
     private void populateView(AddContainer addcon) throws Exception {
         Pair<Integer, Integer> position = Well.parseWellLabel(addcon.getLocation());
         if ((addcon.getTubetype().equals(Container.eppendorf_1p5mL) ||
                 addcon.getTubetype().equals(Container.eppendorf_2mL) )
-                && !rack.containsTube(addcon.getName(),ContainerType.TUBE)) {
+                && !rack.containsTube(addcon.getName())) {
             rack.addTube(addcon.getName(),ContainerType.TUBE,addcon.getTubetype(),position.getKey(),position.getValue());
             view.addTubeToRack(addcon.getName(),addcon.getTubetype(),ContainerType.TUBE,position.getKey(),position.getValue());
-        } else if (addcon.getTubetype().equals(Container.pcr_tube) && !rack.containsTube(addcon.getName(),ContainerType.PCR)) {
+        } else if (addcon.getTubetype().equals(Container.pcr_tube) && !rack.containsTube(addcon.getName())) {
             rack.addTube(addcon.getName(),ContainerType.PCR,addcon.getTubetype(),position.getKey(),position.getValue());
             view.addTubeToRack(addcon.getName(),addcon.getTubetype(),ContainerType.PCR,position.getKey(),position.getValue());
         } else if (addcon.getTubetype().equals(Container.pcr_plate_96)) {
-            deck.addPlate(addcon.getName(),position.getKey(),position.getValue());
+            deck.addPlate(addcon.getName(),addcon.isNew(),position.getKey(),position.getValue());
             view.addPlate(addcon.getName(),ContainerType.PCR, position.getKey(), position.getValue());
         } else if (addcon.getTubetype().equals(Container.pcr_strip)) {
             //TODO: Implement pcr stip tube color
-        } else if (rack.containsTube(addcon.getName(), ContainerType.TUBE) || rack.containsTube(addcon.getName(),ContainerType.PCR)) {
+        } else if (rack.containsTube(addcon.getName())) {
             throw new Exception("Tube already exists in workspace");
         } else {
             throw new Exception("Error populating view");
@@ -158,15 +165,15 @@ public class Controller {
      * Removes a container from the specified position in the workspace as specified in the semiprotocl.
      *
      * @param containerName name of container to be removed from the workspace
-     * @throws Exception
+     * @throws Exception error with container Name
      */
     private void unpopulateView(String containerName) throws Exception {
         Pair <Integer,Integer> position;
-        if (rack.containsTube(containerName,ContainerType.TUBE)) {
+        if (rack.containsTube(containerName)) {
             position = rack.getTubePos(ContainerType.TUBE, containerName);
             view.removeTubeFromRack(containerName, ContainerType.TUBE, position.getKey(), position.getValue());
             rack.removeTube(containerName,ContainerType.TUBE);
-        } else if (rack.containsTube(containerName,ContainerType.PCR)) {
+        } else if (rack.containsTube(containerName)) {
             position = rack.getTubePos(ContainerType.PCR, containerName);
             view.removeTubeFromRack(containerName, ContainerType.PCR, position.getKey(), position.getValue());
             rack.removeTube(containerName,ContainerType.PCR);
@@ -189,8 +196,8 @@ public class Controller {
      */
     private void goNext() throws Exception {
         view.resetPipette();
-        view.unhighlightRackTransfer();
-        view.uncolorWell();
+        view.removeBlackBorderFromWells();
+        view.removeCyanBorderFromWell();
 
         if(protocol.getSteps().size() - 1 < currPos) {
             view.endProtocol();
@@ -236,8 +243,8 @@ public class Controller {
                     // Update view
                     view.highlightRackTransfer(rack.getRackType(srcName), srcPosition.getKey(), srcPosition.getValue(),
                             rack.getRackType(dstName), dstPosition.getKey(), dstPosition.getValue());
-                    view.removeVolume(tfer.getVolume(), rack.getRackType(srcName), srcPosition.getKey(), srcPosition.getValue());
-                    view.addVolume(srcName, tfer.getVolume(), rack.getRackType(dstName), dstPosition.getKey(), dstPosition.getValue());
+//                    view.removeVolume(tfer.getVolume(), rack.getRackType(srcName), srcPosition.getKey(), srcPosition.getValue());
+//                    view.addVolume(srcName, tfer.getVolume(), rack.getRackType(dstName), dstPosition.getKey(), dstPosition.getValue());
                 } else if (deck.containsPlate(Deck.calcPlateName(srcName)) && deck.containsPlate(Deck.calcPlateName(dstName))){
                     Pair<Integer,Integer> srcPlatePos = deck.getPlatePos(srcName);
                     Pair<Integer,Integer> srcWell = Well.parseWellLabel(tfer.getSource());
@@ -247,12 +254,12 @@ public class Controller {
 
                     //Color color, int plateRow, int plateCol, int wellRow, int wellCol
 
-                    view.colorWell(srcPlatePos.getKey(), srcPlatePos.getValue(), srcWell.getKey(),srcWell.getValue());
+                    view.addBlackBorderToWells(srcPlatePos.getKey(), srcPlatePos.getValue(), srcWell.getKey(),srcWell.getValue());
 
                     Pair<Integer,Integer> dstPlatePos = deck.getPlatePos(tfer.getDest());
                     Pair<Integer,Integer> dstWell = Well.parseWellLabel(tfer.getDest());
 
-                    view.colorWell(dstPlatePos.getKey(), dstPlatePos.getValue(),dstWell.getKey(),dstWell.getValue());
+                    view.addBlackBorderToWells(dstPlatePos.getKey(), dstPlatePos.getValue(),dstWell.getKey(),dstWell.getValue());
                 }
 //                if (tfer.getSource().equals("deck")) {
 //                    view.highlightDeck(Color.pink, srcPlatePos.getKey(), srcPlatePos.getValue(), srcWell.getKey(), srcWell.getValue());
@@ -261,7 +268,7 @@ public class Controller {
 //                } else if (tfer.getSource().equals("rack")) {
 //                    view.highlightRack(Color.pink, ContainerType.PCR, srcWell.getKey(), srcWell.getValue());
 //                }
-////                view.colorWell(Color.white, srcPlatePos.getKey(), srcPlatePos.getValue(), srcWell.getKey(), srcWell.getValue());
+////                view.addCyanBorder(Color.white, srcPlatePos.getKey(), srcPlatePos.getValue(), srcWell.getKey(), srcWell.getValue());
 //
 //                Pair<Integer,Integer> dstPlatePos = deck.getPlatePos(tfer.getDest());
 //                Pair<Integer,Integer> dstWell = Well.parseWellLabel(tfer.getDest());
@@ -273,7 +280,7 @@ public class Controller {
 //                } else if (tfer.getDest().equals("tube_rack")) {
 //                    view.highlightRack(Color.pink, ContainerType.PCR, dstWell.getKey(), dstWell.getValue());
 //                }
-////                view.colorWell(Color.green, dstPlatePos.getKey(), dstPlatePos.getValue(), dstWell.getKey(), dstWell.getValue());
+////                view.addCyanBorder(Color.green, dstPlatePos.getKey(), dstPlatePos.getValue(), dstWell.getKey(), dstWell.getValue());
                 break;
             case multichannel:
                 Multichannel multi = (Multichannel) task;//TODO: Implement multichannel capability
@@ -284,25 +291,25 @@ public class Controller {
                 tip = sps.getTip(disp.getVolume());
                 view.updatePipette(tip);
 
-                    if (rack.containsTube(destination,ContainerType.TUBE)) {
+                    if (rack.containsTube(destination)) {
                         position = rack.getTubePos(ContainerType.TUBE, destination);
                         System.out.println(position);
                         rack.getTube(destination).addVolume(disp.getReagent().toString(), disp.getVolume());
-                        view.addVolume(disp.getReagent().toString(), disp.getVolume(), ContainerType.TUBE, position.getKey(), position.getValue());
-                        view.colorWell(ContainerType.TUBE, position.getKey(),position.getValue());
-                    } else if (rack.containsTube(destination,ContainerType.PCR)) {
+//                        view.addVolume(disp.getReagent().toString(), disp.getVolume(), ContainerType.TUBE, position.getKey(), position.getValue());
+                        view.addCyanBorderToWell(ContainerType.TUBE, position.getKey(),position.getValue());
+                    } else if (rack.containsTube(destination)) {
                         position = rack.getTubePos(ContainerType.PCR, destination);
-                        view.addVolume(disp.getReagent().toString(), disp.getVolume(), ContainerType.PCR, position.getKey(), position.getValue());
-                        view.colorWell(ContainerType.PCR, position.getKey(),position.getValue());
+//                        view.addVolume(disp.getReagent().toString(), disp.getVolume(), ContainerType.PCR, position.getKey(), position.getValue());
+                        view.addCyanBorderToWell(ContainerType.PCR, position.getKey(),position.getValue());
                     }
 
                 break;
         }
-        view.notify(task);
-        view.currentTask(task);
+        view.notifyNotifPanel(task);
+        view.notifyTaskPanel(task);
         sps.run(task);
         sbs.run(task);
-        view.updatePrice(sps.getReagentTotal(),sps.getTubeTotal(),sps.getTipTotal());
+        view.notifyPricePanel(sps.getReagentTotal(),sps.getTubeTotal(),sps.getTipTotal());
         view.updateBurden(sbs.getCurrentBurden());
         currPos++;
     }
@@ -327,5 +334,28 @@ public class Controller {
 
         //Create the Controller and initiate the GUI
         Controller controller = new Controller(protocol, view);
+    }
+
+    public void mousePressed(MouseEvent e) {
+        System.out.println("Mouse pressed (# of clicks: "
+                + e.getClickCount() + ")");
+    }
+
+    public void mouseReleased(MouseEvent e) {
+        System.out.println("Mouse released (# of clicks: "
+                + e.getClickCount() + ")");
+    }
+
+    public void mouseEntered(MouseEvent e) {
+        System.out.println("Mouse entered");
+    }
+
+    public void mouseExited(MouseEvent e) {
+        System.out.println("Mouse exited");
+    }
+
+    public void mouseClicked(MouseEvent e) {
+        System.out.println("Mouse clicked (# of clicks: "
+                + e.getClickCount() + ")");
     }
 }
