@@ -1,7 +1,7 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 /**
- * This handles configuration information about a 96-well pcr plate. It is a
+ * Defines the configuration information about a 96-well pcr plate. It is a
  * static singleton holding constants currently.
  *
  * Dimensions (and image) derived from:
@@ -16,19 +16,16 @@ package org.ucb.bio134.taskvisualizer.model;
  * @author Lucas M. Waldburger
  */
 public class PCRPlateConfig implements Config {
-
-    private final double xoffset = 1.438;
-    private final double yoffset = 1.124;
     private final int width = 400;
     private final int height = 200;
     private final int numRows = 8;
     private final int numCols = 12;
-    private final int wellheight = height/numRows;
-    private final int wellwidth = width/numCols;
+    private final int wellHeight = height/numRows;
+    private final int wellWidth = width/numCols;
 
     private static PCRPlateConfig config;
 
-    public PCRPlateConfig() {
+    private PCRPlateConfig() {
     }
 
     public static PCRPlateConfig getInstance() {
@@ -42,23 +39,13 @@ public class PCRPlateConfig implements Config {
     }
 
     @Override
-    public double getXoffset() {
-        return xoffset;
+    public int getWellWidth() {
+        return wellWidth;
     }
 
     @Override
-    public double getYoffset() {
-        return yoffset;
-    }
-
-    @Override
-    public int getSubBlockWidth() {
-        return wellwidth;
-    }
-
-    @Override
-    public int getSubBlockHeight() {
-        return wellheight;
+    public int getWellHeight() {
+        return wellHeight;
     }
 
     @Override

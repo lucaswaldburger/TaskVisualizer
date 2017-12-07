@@ -1,25 +1,22 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 /**
- *
+ * Defines the configuration of the deck within the workspace.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
  */
-public class DeckConfig implements Config{
-
-    private final int xoffset = 5;
-    private final int yoffset = 5;
+public class DeckConfig implements Config {
     private final int numRows = 2;
     private final int numCols = 2;
     private final int width = 400 * numCols;
-    private final int height = 200 * numRows + yoffset;
-    private final int wellheight = height/numRows;
-    private final int wellwidth = width/numCols;
+    private final int height = 200 * numRows;
+    private final int wellHeight = height / numRows;
+    private final int wellWidth = width / numCols;
 
     private static DeckConfig config;
 
-    public DeckConfig() {
+    private DeckConfig() {
     }
 
     public static DeckConfig getInstance() {
@@ -31,24 +28,15 @@ public class DeckConfig implements Config{
 
         return config;
     }
+
     @Override
-    public double getXoffset() {
-        return xoffset;
+    public int getWellWidth() {
+        return wellWidth;
     }
 
     @Override
-    public double getYoffset() {
-        return yoffset;
-    }
-
-    @Override
-    public int getSubBlockWidth() {
-        return wellwidth;
-    }
-
-    @Override
-    public int getSubBlockHeight() {
-        return wellheight;
+    public int getWellHeight() {
+        return wellHeight;
     }
 
     @Override
@@ -71,17 +59,3 @@ public class DeckConfig implements Config{
         return numCols;
     }
 }
-//
-//    public static int calcPixels(Double inCm) {
-//        double pixPerCm = DeckConfig.getInstance().pixels_per_cm;
-//        double pix = inCm * pixPerCm / 1.3;
-//        return (int) Math.floor(pix);
-//    }
-//
-//    public static void main(String[] args) {
-//        DeckConfig conf = DeckConfig.getInstance();
-//        System.out.println("pixels_per_cm: " + conf.pixels_per_cm);
-//        System.out.println("monitor_width_in_cm: " + conf.monitor_width);
-//        System.out.println("monitor_height_in_cm: " + conf.monitor_height);
-//    }
-//}

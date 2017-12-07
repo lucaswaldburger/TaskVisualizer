@@ -1,21 +1,17 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 /**
- * Public modifier has been removed since it is redundant.
+ * Defines the configuration of the different types of plates in a workspace.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
  */
 
 public interface Config {
+    //Public modifier has been removed since it is redundant
+    int getWellWidth();
 
-    double getXoffset();
-
-    double getYoffset();
-
-    int getSubBlockWidth();
-
-    int getSubBlockHeight();
+    int getWellHeight();
 
     int getWidth();
 

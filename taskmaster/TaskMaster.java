@@ -9,7 +9,7 @@ import org.ucb.c5.semiprotocol.model.Semiprotocol;
 import org.ucb.c5.utils.FileUtils;
 
 /**
- * This is the executable that would run the TaskDesigner and then
+ * This is the executable that would runProtocol the TaskDesigner and then
  * instantiate the PipetteAid and updateCounter the Inventory
  * 
  * It is not needed for the project at hand, so it is not fully implemented
@@ -41,7 +41,7 @@ public class TaskMaster {
         //Run TaskDesigner
 //        TaskDesigner designer = new TaskDesigner();
 //        designer.initiate();
-//        Semiprotocol[] tasks = designer.run(cfiles);
+//        Semiprotocol[] tasks = designer.runProtocol(cfiles);
         
         //Simulate the final State of plates after completion
         

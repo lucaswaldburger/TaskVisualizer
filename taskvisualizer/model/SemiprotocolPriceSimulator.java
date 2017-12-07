@@ -8,6 +8,8 @@ import org.ucb.c5.utils.FileUtils;
 import java.util.HashMap;
 
 /**
+ * Simulates the price for a Semiprotocol. This version has been tweaked slightly since project 4 to
+ * give the cost at each Task of the protocol, rather than the protocol as a whole.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -19,8 +21,9 @@ public class SemiprotocolPriceSimulator {
     private HashMap<Tip, Integer> tipCount;
 
     /**
+     * Instantiates class variables
      *
-     * @throws Exception
+     * @throws Exception issue instantiating variables
      */
     public void initiate() throws Exception {
         priceCalculator.initiate();
@@ -30,10 +33,11 @@ public class SemiprotocolPriceSimulator {
     }
 
     /**
+     * Updates the HashMaps with reagent, container, and tip counts for a given Task.
      *
-     * @param task
-     * @return
-     * @throws Exception
+     * @param task current task in the Semiprotocol
+     * @return price total
+     * @throws Exception error identifying LabOp
      */
     public double run(Task task) throws Exception {
         Tip tip;
@@ -69,7 +73,15 @@ public class SemiprotocolPriceSimulator {
         return priceCalculator.run(reagentCount, containerCount,
                 tipCount);
     }
-    public double runProtocl(Semiprotocol protocol ) throws Exception {
+
+    /**
+     * Updates the HashMaps with reagent, container, and tip counts for a given Semiprotocol.
+     *
+     * @param protocol the entire Semiprotocol
+     * @return the total price for the Semiprotocol
+     * @throws Exception error updating count HashMaps
+     */
+    public double runProtocol(Semiprotocol protocol) throws Exception {
         HashMap<Reagent, Double> localReagentCount = new HashMap<>();
         HashMap<Container, Integer> localContainerCount = new HashMap<>();
         HashMap<Tip, Integer> localTipCount = new HashMap<>();
@@ -111,11 +123,6 @@ public class SemiprotocolPriceSimulator {
                 localTipCount);
     }
 
-    /**
-     *
-     * @param countMap
-     * @param t
-     */
     private void updateTipCount(HashMap<Tip, Integer> countMap, Tip t) {
         if (countMap.containsKey(t)) {
             countMap.put(t, countMap.get(t) + 1);
@@ -124,12 +131,6 @@ public class SemiprotocolPriceSimulator {
         }
     }
 
-    /**
-     *
-     * @param countMap
-     * @param r
-     * @param v
-     */
     private void updateReagentCount(HashMap<Reagent, Double> countMap,
                                     Reagent r, double v) {
         if (countMap.containsKey(r)) {
@@ -139,11 +140,6 @@ public class SemiprotocolPriceSimulator {
         }
     }
 
-    /**
-     *
-     * @param countMap
-     * @param ac
-     */
     private void updateContainerCount(HashMap<Container, Integer>
                                               countMap, AddContainer ac) {
         Container tube = ac.getTubetype();
@@ -157,11 +153,6 @@ public class SemiprotocolPriceSimulator {
         }
     }
 
-    /**
-     *
-     * @param volume
-     * @return
-     */
     public Tip getTip(double volume) {
         if (volume <= 20) {
             return Tip.P20;
@@ -189,7 +180,7 @@ public class SemiprotocolPriceSimulator {
 
         SemiprotocolPriceSimulator sim = new SemiprotocolPriceSimulator();
         sim.initiate();
-        double price = sim.runProtocl(protocol);
+        double price = sim.runProtocol(protocol);
         System.out.println("$" + price);
         System.out.println(sim.getReagentTotal());
         System.out.println(sim.getTubeTotal());

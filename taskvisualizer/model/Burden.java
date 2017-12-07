@@ -1,6 +1,7 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 /**
+ * Types of actions that result in human burden
  *
  * @author Tong Zhang
  */

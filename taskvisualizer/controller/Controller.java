@@ -238,7 +238,7 @@ public class Controller {
                             rack.getRackType(dstName), dstPosition.getKey(), dstPosition.getValue());
                     view.removeVolume(tfer.getVolume(), rack.getRackType(srcName), srcPosition.getKey(), srcPosition.getValue());
                     view.addVolume(srcName, tfer.getVolume(), rack.getRackType(dstName), dstPosition.getKey(), dstPosition.getValue());
-                } else if (deck.containsPlate(deck.calcPlateName(srcName)) && deck.containsPlate(deck.calcPlateName(dstName))){
+                } else if (deck.containsPlate(Deck.calcPlateName(srcName)) && deck.containsPlate(Deck.calcPlateName(dstName))){
                     Pair<Integer,Integer> srcPlatePos = deck.getPlatePos(srcName);
                     Pair<Integer,Integer> srcWell = Well.parseWellLabel(tfer.getSource());
 

@@ -1,7 +1,7 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 /**
- *
+ * Specifies whether the Container will belong to the rack or the deck.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger

@@ -5,6 +5,8 @@ import java.util.HashMap;
 import org.ucb.c5.utils.FileUtils;
 
 /**
+ * Loads the scores associated with each action that results in human burden then calculates
+ * the total burden for a given Semiprotocol.
  *
  * @author Tong Zhang
  */

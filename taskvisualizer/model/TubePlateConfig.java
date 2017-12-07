@@ -1,29 +1,23 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 /**
- * This handles configuration information about a 4x6 tube plate. It is a
+ * This handles configuration information about a 6x8 tube plate. It is a
  * static singleton holding constants currently.
- *
- * Dimensions (in centimeters) from:
- * https://www.fishersci.com/shop/products/nalgene-microcentrifuge-tube-rack-resmer-manufacturing-technology/14809160
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
  */
 public class TubePlateConfig implements Config {
-
-    private final double xoffset = 1.438;
-    private final double yoffset = 1.124;
     private final int width = 400;
     private final int height = 200;
-    private final int numRows = 8;
-    private final int numCols = 12;
-    private final int wellheight = height/numRows;
-    private final int wellwidth = width/numCols;
+    private final int numRows = 6;
+    private final int numCols = 8;
+    private final int wellHeight = height/numRows;
+    private final int wellWidth = width/numCols;
 
     private static TubePlateConfig config;
 
-    public TubePlateConfig() {
+    private TubePlateConfig() {
     }
 
     public static TubePlateConfig getInstance() {
@@ -36,23 +30,13 @@ public class TubePlateConfig implements Config {
     }
 
     @Override
-    public double getXoffset() {
-        return xoffset;
+    public int getWellWidth() {
+        return wellWidth;
     }
 
     @Override
-    public double getYoffset() {
-        return yoffset;
-    }
-
-    @Override
-    public int getSubBlockWidth() {
-        return wellwidth;
-    }
-
-    @Override
-    public int getSubBlockHeight() {
-        return wellheight;
+    public int getWellHeight() {
+        return wellHeight;
     }
 
     @Override

@@ -8,9 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Calculates the price of a semiprotocol based on set prices of reagents, containers, and tips.
+ * This version has been slightly tweaked since project 4 to access the totals associated with the
+ * three categories previously mentioned.
  *
  * @author J. Christopher Anderson
- * @author Lucas M. Waldburger with peer review from Meital
+ * @author Lucas M. Waldburger
  */
 public class PriceCalculator {
     private HashMap<Reagent, Double> reagentPrice;
@@ -79,12 +82,15 @@ public class PriceCalculator {
     }
 
     /**
+     * Calculates cost based on the reagents, containers,
+     * and tips used.
      *
-     * @param reagentCount
-     * @param tubeCount
-     * @param tipCount
-     * @return
-     * @throws Exception
+     * @param reagentCount reagent name and volume used
+     * @param tubeCount tube name and count used
+     * @param tipCount tip name and count used
+     * @return total cost
+     * @throws Exception invalid user input or key that does not match
+     * a specified reagent, container, or tip
      */
     public double run(Map<Reagent, Double> reagentCount,
                       Map<Container, Integer> tubeCount,
@@ -138,11 +144,6 @@ public class PriceCalculator {
         return tipTotal;
     }
 
-    /**
-     *
-     * @param args
-     * @throws Exception
-     */
     public static void main(String[] args) throws Exception {
         PriceCalculator calc = new PriceCalculator();
         calc.initiate();

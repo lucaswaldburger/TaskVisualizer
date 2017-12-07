@@ -7,6 +7,9 @@ import org.ucb.c5.semiprotocol.model.*;
 import org.ucb.c5.semiprotocol.model.Semiprotocol;
 
 /**
+ * Simulates the human burden for a Semiprotocol. This version has been tweaked slightly from the
+ * original version to give the human burden associated with each Task of the protocol, rather
+ * than the protocol as a whole.
  *
  * @author Tong Zhang
  * @author Lucas M. Waldburger
@@ -19,6 +22,11 @@ public class SemiprotocolBurdenSimulator {
     private HashSet<Reagent> enzyme;
     private int currentBurden;
 
+    /**
+     * Instantiates class variables
+     *
+     * @throws Exception issue instantiating variables
+     */
     public void initiate() throws Exception {
         burdenCalculator  = new BurdenCalculator();
         burdenCalculator.initiate();
@@ -48,6 +56,13 @@ public class SemiprotocolBurdenSimulator {
         enzyme.add(Reagent.Hindiii);
     }
 
+    /**
+     * Updates the HashMaps containing the human burden count
+     *
+     * @param step current task in the Semiprotocol
+     * @return total human burden up to the current step
+     * @throws Exception error adding element to burden count HashMap
+     */
     public int run(Task step) throws Exception {
         HashMap<Burden, Integer> burdenCount = new HashMap<>();
             switch (step.getOperation()) {
@@ -95,10 +110,13 @@ public class SemiprotocolBurdenSimulator {
         return currentBurden;
         }
 
-    public int getCurrentBurden() {
-        return currentBurden;
-    }
-
+    /**
+     * Calculates the total human burden associated with an entire Semiprotocol
+     *
+     * @param protocol the entire Semiprotocol
+     * @return total human burden
+     * @throws Exception error adding element to burden count HashMap
+     */
     public int run(Semiprotocol protocol) throws Exception {
         HashMap<Burden, Integer> burdenCount = new HashMap<>();
 
@@ -147,7 +165,10 @@ public class SemiprotocolBurdenSimulator {
             }
         }
 
-        int totalBurden = burdenCalculator.run(burdenCount);
-        return totalBurden;
+        return burdenCalculator.run(burdenCount);
+    }
+
+    public int getCurrentBurden() {
+        return currentBurden;
     }
 }

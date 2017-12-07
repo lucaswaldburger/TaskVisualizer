@@ -6,6 +6,9 @@ import javafx.util.Pair;
 import org.ucb.c5.semiprotocol.model.Container;
 
 /**
+ * Describes the Deck that is used to hold a configuration of plates in the workspace. For clarification,
+ * Position refers to a Pair description of a row and column. Location refers to String notation as being
+ * in column 1 through 12 and rows A through H (for a 96-well plate).
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
@@ -18,7 +21,7 @@ public class Rack {
     private final Map<String, Pair<Integer,Integer>> pcrNameToPos;
 
     /**
-     *
+     * Constructs the Rack
      */
     public Rack() {
         TubePlateConfig tubePlateConfig = TubePlateConfig.getInstance();
@@ -28,62 +31,67 @@ public class Rack {
         tubeRackWells = new Well[tubePlateConfig.getNumRows()][tubePlateConfig.getNumCols()];
         pcrRackWells = new Well[pcrPlateConfig.getNumRows()][pcrPlateConfig.getNumCols()];
     }
-
+    //TODO: GET CONTAINER TYPE FROM CONTAINER, DON'T NEED BOTH IN SIGNATURE
     /**
+     * Adds a tube to the rack
      *
-     * @param tubeName
-     * @param containerType
+     * @param tubeName name of the tube
+     * @param containerType tube type used for placing into corresponding rack (tube or PCR)
      * @param container
-     * @param row
-     * @param col
+     * @param row position in the tube or PCR rack
+     * @param col position in the tube or PCR rack
      * @throws Exception
      */
     public void addTube(String tubeName, ContainerType containerType, Container container, int row, int col) throws Exception {
         if(tubeRackWells[row][col] != null && pcrRackWells[row][col] != null) {
             throw new Exception("Well does not exist");
         } else if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[row][col] = new Well(tubeName, container, ContainerType.TUBE);
-            tubeNameToPos.put(tubeName, new Pair(row, col));
+            tubeRackWells[row][col].addTube(tubeName, container);
+            tubeNameToPos.put(tubeName, new Pair<>(row, col));
         } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[row][col] = new Well(tubeName, container, ContainerType.PCR);
-            pcrNameToPos.put(tubeName, new Pair(row, col));
+            pcrRackWells[row][col].addTube(tubeName, container);
+            pcrNameToPos.put(tubeName, new Pair<>(row, col));
         } else {
-            throw new Exception("Cannot locate tube to add");
+            throw new Exception("Cannot locate tube to add to the rack");
         }
     }
 
     /**
-     *
-     * @param tubeName
-     * @return
-     * @throws Exception
+     * Whether a tube is in the rack
+     * @param tubeName tube name to be located
+     * @return whether tube is present
      */
     public boolean containsTube(String tubeName) {
         if (tubeNameToPos.containsKey(tubeName)) {
             return tubeNameToPos.containsKey(tubeName);
-        } else if (pcrNameToPos.containsKey(tubeName)) {
-            return pcrNameToPos.containsKey(tubeName);
         } else {
-            return false;
+            return pcrNameToPos.containsKey(tubeName);
         }
     }
 
-    public boolean containsTube(String tubeName,ContainerType containerType) {
-        if (containerType.equals(ContainerType.TUBE)) {
-            return tubeNameToPos.containsKey(tubeName);
-        } else if (containerType.equals(ContainerType.PCR)) {
-            return pcrNameToPos.containsKey(tubeName);
-        } else {
-            return false;
-        }
-    }
+//    /**
+//     *
+//     * @param tubeName
+//     * @param containerType
+//     * @return
+//     */
+//    public boolean containsTube(String tubeName,ContainerType containerType) {
+//        if (containerType.equals(ContainerType.TUBE)) {
+//            return tubeNameToPos.containsKey(tubeName);
+//        } else if (containerType.equals(ContainerType.PCR)) {
+//            return pcrNameToPos.containsKey(tubeName);
+//        } else {
+//            return false;
+//        }
+//    }
 
 
     /**
+     * Removes a tube from the associated rack
      *
-     * @param tubeName
-     * @param containerType
-     * @throws Exception
+     * @param tubeName name of the tube
+     * @param containerType type of the tube
+     * @throws Exception cannot locate the
      */
     public void removeTube(String tubeName, ContainerType containerType) throws Exception{
         Pair<Integer,Integer> position;
@@ -94,30 +102,57 @@ public class Rack {
             position = pcrNameToPos.get(tubeName);
             pcrRackWells[position.getKey()][position.getValue()] = null;
         } else {
-            throw new Exception("Cannot locate tube to remove from workspace");
-        }
-    }
-
-    public void removeVolume(String tubeName, double volume, ContainerType containerType) throws Exception {
-        Pair<Integer,Integer> position;
-        if (containerType.equals(ContainerType.TUBE) && tubeNameToPos.containsKey(tubeName)) {
-            position = tubeNameToPos.get(tubeName);
-            tubeRackWells[position.getKey()][position.getValue()].removeVolume(volume);
-        } else if (containerType.equals(ContainerType.PCR)) {
-            position = pcrNameToPos.get(tubeName);
-            pcrRackWells[position.getKey()][position.getValue()].removeVolume(volume);
-        } else {
-            throw new Exception("Cannot locate tube to remove volume");
+            throw new Exception("Cannot locate tube to remove from the rack");
         }
     }
 
     /**
+     * Removes a tube from the associated rack
      *
-     * @param containerType
-     * @param row
-     * @param col
-     * @return
+     * @param tubeName name of the tube
+     * @throws Exception cannot locate tube
+     */
+    public void removeTube(Well tubeName) throws Exception{
+        Pair<Integer,Integer> position;
+        if (tubeNameToPos.containsKey(tubeName.getTubeName()) && tubeName.getType().equals(ContainerType.TUBE)) {
+            position = tubeNameToPos.get(tubeName.getTubeName());
+            tubeRackWells[position.getKey()][position.getValue()] = null;
+        } else if (pcrNameToPos.containsKey(tubeName.getTubeName()) && tubeName.getType().equals(ContainerType.PCR)) {
+            position = pcrNameToPos.get(tubeName.getTubeName());
+            pcrRackWells[position.getKey()][position.getValue()] = null;
+        } else {
+            throw new Exception("Cannot locate tube to remove from rack");
+        }
+    }
+
+    /**
+     * Remove volume from a tube
+     *
+     * @param tubeName name of the tube
+     * @param volume volume to be removed from the tube
      * @throws Exception
+     */
+    public void removeVolume(Well tubeName, double volume) throws Exception {
+        Pair<Integer,Integer> position;
+        if (tubeNameToPos.containsKey(tubeName.getTubeName()) && tubeName.getType().equals(ContainerType.TUBE)) {
+            position = tubeNameToPos.get(tubeName.getTubeName());
+            tubeRackWells[position.getKey()][position.getValue()].removeVolume(volume);
+        } else if (pcrNameToPos.containsKey(tubeName.getTubeName()) && tubeName.getType().equals(ContainerType.PCR)) {
+            position = pcrNameToPos.get(tubeName.getTubeName());
+            pcrRackWells[position.getKey()][position.getValue()].removeVolume(volume);
+        } else {
+            throw new Exception("Cannot locate tube in rack to remove volume");
+        }
+    }
+
+    /**
+     * Locates the tube at a specified position in the tube or PCR rack
+     *
+     * @param containerType type of the container to be located
+     * @param row in the tube or PCR rack
+     * @param col in the tube or PCR rack
+     * @return tube as a Well object
+     * @throws Exception cannot locate the tube
      */
     public Well getTube (ContainerType containerType, int row, int col) throws Exception{
         if (containerType.equals(ContainerType.TUBE)){
@@ -125,15 +160,16 @@ public class Rack {
         } else if (containerType.equals(ContainerType.PCR)) {
             return pcrRackWells[row][col];
         } else {
-            throw new Exception("Cannot locate tube to get");
+            throw new Exception("Cannot locate tube to get from the rack");
         }
     }
 
     /**
+     * Locates the tube with a specified name in the tube or PCR rack
      *
-     * @param tubeName
-     * @return
-     * @throws Exception
+     * @param tubeName name of the tube to be located
+     * @return tube as a Well object
+     * @throws Exception cannot locate the tube
      */
     public Well getTube(String tubeName) throws Exception{
         Pair<Integer, Integer> position;
@@ -144,37 +180,51 @@ public class Rack {
             position = pcrNameToPos.get(tubeName);
             return pcrRackWells[position.getKey()][position.getValue()];
         } else {
-            throw new Exception("Cannot locate tube to get");
+            throw new Exception("Cannot locate tube to get from the rack");
         }
     }
 
+    /**
+     * Gets the ContainerType of a specified tube name
+     *
+     * @param tubeName name of the tube
+     * @return tube or PCR rack
+     * @throws Exception cannot locate the tube
+     */
     public ContainerType getRackType(String tubeName) throws Exception {
         if (tubeNameToPos.containsKey(tubeName)){
             return ContainerType.TUBE;
         } else if (pcrNameToPos.containsKey(tubeName)) {
             return ContainerType.PCR;
         } else {
-            throw new Exception("Cannot locate tube to get");
-        }
-    }
-
-    public Pair<Integer, Integer> getTubeLocation(String tubeName) throws Exception {
-        Pair<Integer, Integer> position;
-        if (tubeNameToPos.containsKey(tubeName)){
-            return position = tubeNameToPos.get(tubeName);
-        } else if (pcrNameToPos.containsKey(tubeName)) {
-            return position = pcrNameToPos.get(tubeName);
-        } else {
-            throw new Exception("Cannot locate " + tubeName + " to get");
+            throw new Exception("Cannot locate tube to get from the rack");
         }
     }
 
     /**
+     * Get the position of a specified tube name
      *
-     * @param containerType
-     * @param location
-     * @return
-     * @throws Exception
+     * @param tubeName name of the tube
+     * @return position in tube or PCR rack
+     * @throws Exception cannot locate the tube
+     */
+    public Pair<Integer, Integer> getTubeLocation(String tubeName) throws Exception {
+        if (tubeNameToPos.containsKey(tubeName)){
+            return tubeNameToPos.get(tubeName);
+        } else if (pcrNameToPos.containsKey(tubeName)) {
+            return pcrNameToPos.get(tubeName);
+        } else {
+            throw new Exception("Cannot locate " + tubeName + " to get from the rack");
+        }
+    }
+
+    /**
+     * Get the position of a ContainerType and location label
+     *
+     * @param containerType of the tube
+     * @param location of the tube
+     * @return position in the tube or PCR rack
+     * @throws Exception cannot locate the tube
      */
     public Pair<Integer, Integer> getTubePos(ContainerType containerType, String location) throws Exception {
         String name = location;
@@ -187,7 +237,7 @@ public class Rack {
         } else if (containerType.equals(ContainerType.PCR)) {
             return pcrNameToPos.get(name);
         } else {
-            throw new Exception("Cannot locate tube to get");
+            throw new Exception("Cannot locate tube at " + location + " to get from rack");
         }
     }
 

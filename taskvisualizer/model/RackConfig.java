@@ -3,17 +3,15 @@ package org.ucb.bio134.taskvisualizer.model;
 import org.ucb.bio134.taskvisualizer.view.View;
 
 /**
- *
+ * Defines the configuration of the rack within the workspace.
  *
  * @author J. Christopher Anderson
  * @author Lucas M. Waldburger
  */
 
 public class RackConfig implements Config {
-    private final double xoffset = 5;
-    private final double yoffset = 5;
-    private final int subBlockWidth = 50;
-    private final int subBlockHeight = 50;
+    private final int wellWidth = 50;
+    private final int wellHeight = 50;
     private final int numRows = 2;
     private final int numCols = 1;
     private final int width = View.plateWidth * numCols;
@@ -22,7 +20,7 @@ public class RackConfig implements Config {
 
     private static RackConfig config;
 
-    public RackConfig() {
+    private RackConfig() {
     }
 
     public static RackConfig getInstance() {
@@ -33,24 +31,15 @@ public class RackConfig implements Config {
         }
         return config;
     }
+
     @Override
-    public double getXoffset() {
-        return xoffset;
+    public int getWellWidth() {
+        return wellWidth;
     }
 
     @Override
-    public double getYoffset() {
-        return yoffset;
-    }
-
-    @Override
-    public int getSubBlockWidth() {
-        return subBlockWidth;
-    }
-
-    @Override
-    public int getSubBlockHeight() {
-        return subBlockHeight;
+    public int getWellHeight() {
+        return wellHeight;
     }
 
     @Override
