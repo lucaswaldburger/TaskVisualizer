@@ -37,6 +37,14 @@ TaskVisualizer is a simulator to visualize the Semiprotocols from the TaskMaster
 * Updating Well color, contents, and displayed volume
 * Making implementation functional without drastically changing the Semiprotocol structure
 
+### Function a Semiprotocol Validator/Simuator
+- [X] All internal references to plates correspond to tokens introduced in addContainer Tasks
+- [X]	All addContainer Tasks refer to an empty position of the workspace
+- [ ]	All PCR reactions ultimately contain two primers, a template, buffer, dNTPs, and polymerase
+- [ ]	The contents in the PCR matches the specification of the ConstructionFile
+- [ ]	The volumes and dilutions should match the protocol
+- [ ]	Same as previous for digestions and ligations
+<sub><sup>From Bioengineering 134 November 1<sup>st</sup> Lecture</sup></sub>
 ### Next Steps
 - [ ] For Transfer steps, add arrow specifying source to destination
 - [ ] Work on a visual implementation of Multichannel
