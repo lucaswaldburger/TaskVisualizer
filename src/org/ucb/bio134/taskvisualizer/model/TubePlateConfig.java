@@ -16,8 +16,8 @@ public class TubePlateConfig implements Config {
     private final double yoffset = 1.124;
     private final int width = 400;
     private final int height = 200;
-    private final int numRows = 4;
-    private final int numCols = 6;
+    private final int numRows = 8;
+    private final int numCols = 12;
     private final int wellheight = height/numRows;
     private final int wellwidth = width/numCols;
 

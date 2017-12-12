@@ -58,6 +58,12 @@ public class WellPanel extends JPanel implements MouseListener {
         return out;
     }
 
+    public void uncolorWell() {
+        setBorder(BorderFactory.createLineBorder(Color.CYAN, 0));
+    }
+    public void colorWell() {
+        setBorder(BorderFactory.createLineBorder(Color.CYAN, 4));
+    }
     /**
      *
      * @param source
@@ -195,17 +201,19 @@ public class WellPanel extends JPanel implements MouseListener {
 
     /**
      *
-     * @param borderColor
-     * @param wellRow
-     * @param wellCol
      */
-    public void highlightWell(Color borderColor, int wellRow, int wellCol) {
-        borderColor = Color.PINK;
-        g2d.setColor(borderColor);
-        g2d.fillOval(0,0,getWidth()+1, getHeight()+1);
-        g2d.setColor(currentColor);
-        g2d.fillOval(0,0,getWidth(), getHeight());
-        repaint();
+    public void highlightWell() {
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 4));
+//        Color borderColor = Color.PINK;
+//        g2d.setColor(borderColor);
+//        g2d.fillOval(0,0,getWidth()+100, getHeight()+100);
+//        g2d.setColor(currentColor);
+//        g2d.fillOval(0,0,getWidth(), getHeight());
+//        revalidate();
+//        repaint();
+    }
+    public void unhighlightWell() {
+        setBorder(BorderFactory.createLineBorder(Color.BLACK, 0));
     }
 
     /**
@@ -232,7 +240,7 @@ public class WellPanel extends JPanel implements MouseListener {
 //                JPanel wellPanel = createWellPanel(color, i, j);
 //                SwingUtilities.invokeLater(new Runnable() {
 //                    @Override
-//                    public void run() {
+//                    public void runProtocol() {
 //                        removeAll();
 //                        add(blackPanel);
 //

@@ -16,6 +16,9 @@ public class PriceCalculator {
     private HashMap<Reagent, Double> reagentPrice;
     private HashMap<Container, Double> tubePrice;
     private HashMap<Tip, Double> tipPrice;
+    private double reagentTotal = 0.0;
+    private double tubeTotal = 0.0;
+    private double tipTotal = 0.0;
 
     public void initiate() throws Exception {
         reagentPrice = new HashMap<>();
@@ -78,7 +81,6 @@ public class PriceCalculator {
     public double run(Map<Reagent, Double> reagentCount,
                       Map<Container, Integer> tubeCount,
                       Map<Tip, Integer> tipCount) throws Exception {
-
         Reagent reagent;
         Container tube;
         Tip tip;
@@ -90,6 +92,8 @@ public class PriceCalculator {
             Double count = rCPair.getValue();
             price = reagentPrice.get(reagent);
             total += price * count;
+            reagentTotal += price * count;
+
         }
 
         for (Map.Entry<Container, Integer> tuCPair : tubeCount.entrySet()) {
@@ -97,6 +101,7 @@ public class PriceCalculator {
             Integer count = tuCPair.getValue();
             price = tubePrice.get(tube);
             total += price * count;
+            tubeTotal += price * count;
         }
 
         for (Map.Entry<Tip, Integer> tiCPair : tipCount.entrySet()) {

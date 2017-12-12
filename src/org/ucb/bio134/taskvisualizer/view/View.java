@@ -1,5 +1,6 @@
 package org.ucb.bio134.taskvisualizer.view;
 
+import javafx.util.Pair;
 import org.ucb.bio134.taskmaster.model.Tip;
 import org.ucb.bio134.taskvisualizer.model.*;
 import org.ucb.bio134.taskvisualizer.view.panels.*;
@@ -10,6 +11,8 @@ import org.ucb.c5.semiprotocol.model.Task;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  *
@@ -29,6 +32,13 @@ public class View extends JFrame {
     private TaskPanel taskPanel;
     public static ContentPanel contentPanel;
     private PipettePanel pipettePanel;
+
+    private HashSet<Pair<Integer,Integer>> highlightedTube;
+    private HashSet<Pair<Integer,Integer>> highlightedPCR;
+    private HashSet<Pair<Pair<Integer,Integer>,Pair<Integer,Integer>>> highlightedDeck;
+    private HashSet<Pair<Integer,Integer>> coloredTube;
+    private HashSet<Pair<Integer,Integer>> coloredPCR;
+
 
     public static final int plateHeight = 200;
     public static final int plateWidth = 400;
@@ -58,6 +68,12 @@ public class View extends JFrame {
      * Initiates the view module by adding all components to the displayed window.
      */
     public void initiate(){
+        highlightedTube = new HashSet<>();
+        highlightedPCR = new HashSet<>();
+        highlightedDeck = new HashSet<>();
+        coloredTube = new HashSet<>();
+        coloredPCR = new HashSet<>();
+
         getContentPane().setLayout(null);
         getContentPane().setBackground(new Color(96,96,96));
         setTitle("TaskVisualizer");
@@ -82,6 +98,7 @@ public class View extends JFrame {
             }
         }
         getContentPane().add(pcrRack);
+
         /* Add deck plates to the display. Default plate type is PCR (to handle TZ's implementation,
            but could be extended to handle TUBE plate type.
         */
@@ -210,23 +227,74 @@ public class View extends JFrame {
 
     /**
      *
-     * @param reagent
+     * @param source
      * @param volume
      * @param containerType
      * @param row
      * @param col
      * @throws Exception
      */
-    public void addVolToRack(Reagent reagent, double volume, ContainerType containerType, int row, int col) throws Exception{
+    public void addVolume(String source, double volume, ContainerType containerType, int row, int col) throws Exception{
         if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[row][col].addVolume(reagent.toString(),volume);
+            tubeRackWells[row][col].addVolume(source,volume);
         } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[row][col].addVolume(reagent.toString(),volume);
+            pcrRackWells[row][col].addVolume(source,volume);
+        } else {
+            throw new Exception("Invalid rack element to add volume");
+        }
+    }
+    public void removeVolume(double volume, ContainerType containerType, int row, int col) throws Exception{
+        if (containerType.equals(ContainerType.TUBE)) {
+            tubeRackWells[row][col].removeVolume(volume);
+        } else if (containerType.equals(ContainerType.PCR)) {
+            pcrRackWells[row][col].removeVolume(volume);
         } else {
             throw new Exception("Invalid rack element to add volume");
         }
     }
 
+    public void highlightRackTransfer(ContainerType srcType, int srcRow, int srcCol, ContainerType dstType, int dstRow, int dstCol) throws Exception {
+        if (srcType.equals(ContainerType.TUBE)) {
+            highlightedTube.add(new Pair(srcRow,srcCol));
+            tubeRackWells[srcRow][srcCol].highlightWell();
+        } else if (srcType.equals(ContainerType.PCR)) {
+            highlightedPCR.add(new Pair(srcRow,srcCol));
+            pcrRackWells[srcRow][srcCol].highlightWell();
+        } else {
+            throw new Exception("Invalid rack element to add volume");
+        }
+        if (dstType.equals(ContainerType.TUBE)) {
+            highlightedTube.add(new Pair(dstRow,dstCol));
+            tubeRackWells[dstRow][dstCol].highlightWell();
+        } else if (dstType.equals(ContainerType.PCR)) {
+            highlightedPCR.add(new Pair(dstRow,dstCol));
+            pcrRackWells[dstRow][dstCol].highlightWell();
+        } else {
+            throw new Exception("Invalid rack element to add volume");
+        }
+    }
+
+
+    public void unhighlightRackTransfer() throws Exception {
+        for (Pair<Integer,Integer> position : highlightedTube) {
+            tubeRackWells[position.getKey()][position.getValue()].unhighlightWell();
+        }
+        for (Pair<Integer,Integer> position : highlightedPCR) {
+            pcrRackWells[position.getKey()][position.getValue()].unhighlightWell();
+        }
+        for (Pair<Pair<Integer,Integer>,Pair<Integer,Integer>> position : highlightedDeck) {
+            platePanels[position.getKey().getKey()][position.getKey().getValue()].uncolorWell(position.getValue().getKey(),
+                    position.getValue().getValue());
+        }
+
+
+    }
+
+
+    public void colorWell(int plateRow, int plateCol, int wellRow, int wellCol) throws Exception {
+        platePanels[plateRow][plateCol].colorWell(wellRow, wellCol);
+        highlightedDeck.add(new Pair(new Pair(plateRow, plateCol),new Pair(wellRow, wellCol)));
+    }
     /**
      *
      * @param plateName
@@ -269,10 +337,10 @@ public class View extends JFrame {
      * @param wellRow
      * @param wellCol
      */
-    public void highlightDeck(Color color, int plateRow, int plateCols, int wellRow, int wellCol) {
-        //TODO: TEST HIGHLIGHT DECK WELL FUNCTIONALITY
-        platePanels[plateRow][plateCols].getWells()[wellRow][wellCol].highlightWell(color, wellRow, wellCol);
-    }
+//    public void highlightDeck(Color color, int plateRow, int plateCols, int wellRow, int wellCol) {
+//        //TODO: TEST HIGHLIGHT DECK WELL FUNCTIONALITY
+//        platePanels[plateRow][plateCols].getWells()[wellRow][wellCol].highlightWell(color, wellRow, wellCol);
+//    }
 
     /**
      *
@@ -284,17 +352,37 @@ public class View extends JFrame {
     public void highlightRack(Color color, ContainerType containerType, int wellRow, int wellCol) {
         //TODO: TEST HIGHLIGHT RACK WELL FUNCTIONALITY
         if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[wellRow][wellCol].highlightWell(color, wellRow, wellCol);
+            tubeRackWells[wellRow][wellCol].highlightWell();
             return;
         }
-        if (containerType.equals(ContainerType.TUBE)) {
-            pcrRackWells[wellRow][wellCol].highlightWell(color, wellRow, wellCol);
+        if (containerType.equals(ContainerType.PCR)) {
+            pcrRackWells[wellRow][wellCol].highlightWell();
         }
     }
 //    public void colorWell(Color color, int plateRow, int plateCol, int wellRow, int wellCol) throws Exception {
 ////        platePanels[plateRow][plateCol].colorWell(color, wellRow, wellCol);
 //    }
 
+    public void colorWell(ContainerType containerType, int wellRow, int wellCol) throws Exception {
+        if (containerType.equals(ContainerType.TUBE)) {
+            tubeRackWells[wellRow][wellCol].colorWell();
+            coloredTube.add(new Pair(wellRow,wellCol));
+        } else if (containerType.equals(ContainerType.PCR)) {
+            pcrRackWells[wellRow][wellCol].colorWell();
+            coloredPCR.add(new Pair(wellRow,wellCol));
+        } else {
+            throw new Exception("cannot identify well to be colored");
+        }
+    }
+
+    public void uncolorWell() throws Exception {
+        for (Pair<Integer, Integer> positon : coloredTube) {
+            tubeRackWells[positon.getKey()][positon.getValue()].uncolorWell();
+        }
+        for (Pair<Integer, Integer> positon : coloredTube) {
+            pcrRackWells[positon.getKey()][positon.getValue()].uncolorWell();
+        }
+    }
     /**
      *
      */

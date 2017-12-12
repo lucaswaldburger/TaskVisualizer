@@ -13,19 +13,18 @@ import org.ucb.c5.utils.FileUtils;
  */
 public class SemiprotocolPriceSimulator {
     private PriceCalculator priceCalculator = new PriceCalculator();
-
+    private HashMap<Reagent, Double> localReagentCount = new HashMap<>();
+    private HashMap<Container, Integer> localContainerCount = new HashMap<>();
+    private HashMap<Tip, Integer> localTipCount = new HashMap<>();
 
     public void initiate() throws Exception {
-
         priceCalculator.initiate();
 
     }
 
     public double run(Semiprotocol protocol) throws Exception {
 
-        HashMap<Reagent, Double> localReagentCount = new HashMap<>();
-        HashMap<Container, Integer> localContainerCount = new HashMap<>();
-        HashMap<Tip, Integer> localTipCount = new HashMap<>();
+
 
         Tip tip;
         Reagent reagent;
@@ -106,7 +105,7 @@ public class SemiprotocolPriceSimulator {
 
     public static void main(String[] args) throws Exception {
         //Read in the example semiprotocol
-        String text = FileUtils.readResourceFile("semiprotocol/data/alibaba_semiprotocol.txt");
+        String text = FileUtils.readResourceFile("semiprotocol/data/mastermix7.txt");
         ParseSemiprotocol parser = new ParseSemiprotocol();
         parser.initiate();
         Semiprotocol protocol = parser.run(text);

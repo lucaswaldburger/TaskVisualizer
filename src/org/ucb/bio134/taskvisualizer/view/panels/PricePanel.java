@@ -8,6 +8,7 @@ import org.ucb.c5.semiprotocol.model.Transfer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -21,6 +22,7 @@ public class PricePanel extends JPanel {
     private static final Font emphasis_font = new Font("Helvetica", 1, 40);
     private SemiprotocolPriceSimulator sps = new SemiprotocolPriceSimulator();
     private PriceCalculator pc = new PriceCalculator();
+    DecimalFormat dc = new DecimalFormat("0.00");
 
     /**
      *
@@ -73,19 +75,22 @@ public class PricePanel extends JPanel {
 
         add(Box.createVerticalGlue());
 
-        JLabel lbl2 = new JLabel("Reagent Total: " + reagentTotal);
+        String formattedReagentTotal = dc.format(reagentTotal);
+        JLabel lbl2 = new JLabel("Reagent Total: $" + formattedReagentTotal);
         lbl2.setFont(body_font);
         add(lbl2);
 
         add(Box.createVerticalGlue());
 
-        JLabel lbl3 = new JLabel("Container Total: " + containerTotal);
+        String formattedContainerTotal = dc.format(containerTotal);
+        JLabel lbl3 = new JLabel("Container Total: $" + formattedContainerTotal);
         lbl3.setFont(body_font);
         add(lbl3);
 
         add(Box.createVerticalGlue());
 
-        JLabel lbl4 = new JLabel("Tip Total: " + tipTotal);
+        String formattedTipTotal = dc.format(tipTotal);
+        JLabel lbl4 = new JLabel("Tip Total: $" + formattedTipTotal);
         lbl4.setFont(body_font);
         add(lbl4);
 
@@ -95,4 +100,5 @@ public class PricePanel extends JPanel {
         repaint();
 
     }
+
 }

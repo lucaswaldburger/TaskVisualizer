@@ -11,6 +11,7 @@ import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +29,7 @@ public class ContentPanel extends JPanel {
     private SemiprotocolPriceSimulator sps = new SemiprotocolPriceSimulator();
     private PriceCalculator pc = new PriceCalculator();
     private MouseEvent mouseEvent;
+    private DecimalFormat dc;
 
     /**
      *
@@ -36,7 +38,7 @@ public class ContentPanel extends JPanel {
         setBackground(Color.lightGray);
         setLayout(new GridLayout(2, 1));
         setBorder(BorderFactory.createEmptyBorder(0,10,10,10));
-
+        dc = new DecimalFormat("0.00");
         wellContents = new HashMap<>();
 
         //Initial display
@@ -75,7 +77,8 @@ public class ContentPanel extends JPanel {
         int row=0;
         for(Map.Entry<String, Double> entry: wellContents.entrySet()){
             table.setValueAt(entry.getKey(),row,0);
-            table.setValueAt(entry.getValue(),row,1);
+            String formattedVol = dc.format(entry.getValue());
+            table.setValueAt(formattedVol,row,1);
             row++;
         }
 //        `

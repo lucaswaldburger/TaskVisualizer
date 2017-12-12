@@ -39,9 +39,9 @@ public class TaskMaster {
         }
         
         //Run TaskDesigner
-        TaskDesigner designer = new TaskDesigner();
-        designer.initiate();
-        Semiprotocol[] tasks = designer.run(cfiles);
+//        TaskDesigner designer = new TaskDesigner();
+//        designer.initiate();
+//        Semiprotocol[] tasks = designer.run(cfiles);
         
         //Simulate the final State of plates after completion
         

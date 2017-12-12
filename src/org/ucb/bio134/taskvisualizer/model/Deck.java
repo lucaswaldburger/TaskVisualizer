@@ -23,7 +23,7 @@ public class Deck {
         if(plates[row][col] != null) {
             throw new Exception();
         }
-        plates[row][col] = new Plate(plateName, ContainerType.TUBE,PCRPlateConfig.getInstance(),BlockType.DECK);
+        plates[row][col] = new Plate(plateName, ContainerType.PCR,PCRPlateConfig.getInstance(),BlockType.DECK);
         nameToPos.put(plateName, new Pair(row, col));
     }
     
@@ -83,4 +83,14 @@ public class Deck {
         }
         return Well.parseWellLabel(A1);
     }
+    public static String calcPlateName(String location) throws Exception {
+        String A1 = location;
+        if(A1.contains("/")) {
+            String[] splitted = A1.split("/");
+            A1 = splitted[0];
+        }
+        return A1;
+    }
+
+
 }

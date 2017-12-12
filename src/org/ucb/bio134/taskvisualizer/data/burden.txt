@@ -1,0 +1,14 @@
+uncap_pcr_strip	20
+uncap_pcr_tube	4
+uncap_eppen_tube	4
+unseal_plate	3000
+seal_plate	1000
+cap_pcr_tube	2
+cap_eppen_tube	2
+cap_pcr_strip	10
+single_tip_transfer	3
+multichannel_transfer	10
+dispense_enzyme	10
+dispense_buffer	5
+dispense_water	3
+add_label_plate_tube	10

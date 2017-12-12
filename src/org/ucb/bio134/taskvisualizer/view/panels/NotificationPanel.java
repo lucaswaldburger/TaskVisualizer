@@ -1,6 +1,7 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
 import org.ucb.c5.semiprotocol.model.AddContainer;
+import org.ucb.c5.semiprotocol.model.Container;
 import org.ucb.c5.semiprotocol.model.Task;
 import org.ucb.c5.semiprotocol.model.Transfer;
 
@@ -14,6 +15,7 @@ import java.awt.*;
 public class NotificationPanel extends JPanel {
        
     private static final Font secondary_font = new Font("Helvetica", 1, 22);
+    private static final Font tertiary_font = new Font("Helvetica", 1, 24);
     private static final Font body_font = new Font("Helvetica", 3, 18);
     private static final Font emphasis_font = new Font("Helvetica", 1, 40);
 
@@ -79,8 +81,20 @@ public class NotificationPanel extends JPanel {
                     case addContainer:
                         AddContainer addcon = (AddContainer) step;
                         add(Box.createVerticalGlue());
-                        
-                        JLabel lop = new JLabel("Add plate:");
+
+                        String container = "";
+
+                        //TODO: Implement pcr strip tube
+                        if (addcon.getTubetype().equals(Container.eppendorf_1p5mL) ||
+                                addcon.getTubetype().equals(Container.eppendorf_2mL)) {
+                            container = "Eppendorf tube";
+                        } else if (addcon.getTubetype().equals(Container.pcr_tube)) {
+                            container = "PCR tube";
+                        } else if (addcon.getTubetype().equals(Container.pcr_plate_96)) {
+                            container = "PCR plate";
+                        }
+
+                        JLabel lop = new JLabel("Add " + container + ":");
                         lop.setFont(body_font);
                         add(lop);
                         
@@ -110,16 +124,22 @@ public class NotificationPanel extends JPanel {
                         tlname.setFont(emphasis_font);
                         add(tlname);
                         
-                        JLabel tltopos = new JLabel("from: " + calcWellLabel(tfer.getSource()));
+                        JLabel tltopos = new JLabel("from: ");
                         tltopos.setFont(secondary_font);
+                        JLabel tltopos1 = new JLabel(calcWellLabel(tfer.getSource()));
+                        tltopos1.setFont(secondary_font);
                         add(Box.createVerticalGlue());
                         add(tltopos);
+                        add(tltopos1);
                         
-                        JLabel tltopos2 = new JLabel("to: " + calcWellLabel(tfer.getDest()));
+                        JLabel tltopos2 = new JLabel("to: ");
                         tltopos2.setFont(secondary_font);
+                        JLabel tltopos3 = new JLabel(calcWellLabel(tfer.getDest()));
+                        tltopos3.setFont(secondary_font);
                         add(Box.createVerticalGlue());
                         add(tltopos2);
-                        
+                        add(tltopos3);
+
                         add(Box.createVerticalGlue());
                         break;
                     case multichannel:

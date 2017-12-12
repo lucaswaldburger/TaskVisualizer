@@ -16,9 +16,9 @@ public class PriceCalculator {
     private HashMap<Reagent, Double> reagentPrice;
     private HashMap<Container, Double> tubePrice;
     private HashMap<Tip, Double> tipPrice;
-    public double reagentTotal = 0.0;
-    public double tubeTotal = 0.0;
-    public double tipTotal = 0.0;
+    private double reagentTotal = 0.0;
+    private double tubeTotal = 0.0;
+    private double tipTotal = 0.0;
 
     public void initiate() throws Exception {
         reagentPrice = new HashMap<>();
@@ -89,6 +89,9 @@ public class PriceCalculator {
     public double run(Map<Reagent, Double> reagentCount,
                       Map<Container, Integer> tubeCount,
                       Map<Tip, Integer> tipCount) throws Exception {
+        reagentTotal = 0.0;
+        tubeTotal = 0.0;
+        tipTotal = 0.0;
 
         Reagent reagent;
         Container tube;
@@ -119,9 +122,20 @@ public class PriceCalculator {
             total += price * count;
             tipTotal += price * count;
         }
-
         return total;
 
+    }
+
+    public double getReagentTotal() {
+        return reagentTotal;
+    }
+
+    public double getTubeTotal() {
+        return tubeTotal;
+    }
+
+    public double getTipTotal() {
+        return tipTotal;
     }
 
     /**

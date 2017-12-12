@@ -1,0 +1,5 @@
+addContainer	eppendorf_1p5mL	ligation_mastermix	ligation_mastermix/E1.5mL	true
+dispense	water	ligation_mastermix	0.0
+dispense	T4_DNA_Ligase_Buffer_10x	ligation_mastermix	0.0
+dispense	T4_DNA_ligase	ligation_mastermix	0.0
+transfer	ligation_mastermix	Experiment	9.0

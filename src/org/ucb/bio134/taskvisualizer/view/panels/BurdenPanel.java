@@ -5,6 +5,7 @@ import org.ucb.bio134.taskmaster.SemiprotocolPriceSimulator;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -18,6 +19,8 @@ public class BurdenPanel extends JPanel {
     private static final Font emphasis_font = new Font("Helvetica", 1, 40);
     private SemiprotocolPriceSimulator sps = new SemiprotocolPriceSimulator();
     private PriceCalculator pc = new PriceCalculator();
+    DecimalFormat dc = new DecimalFormat("0");
+
 
     /**
      *
@@ -60,7 +63,8 @@ public class BurdenPanel extends JPanel {
 
         add(Box.createVerticalGlue());
 
-        JLabel lbl2 = new JLabel("Total: " + burdenTotal);
+        String formattedBurden = dc.format(burdenTotal);
+        JLabel lbl2 = new JLabel("Total: " + formattedBurden);
         lbl2.setFont(body_font);
         add(lbl2);
 

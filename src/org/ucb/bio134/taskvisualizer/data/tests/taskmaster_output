@@ -1,0 +1,2309 @@
+addContainer	eppendorf_1p5mL	PCR_mastermix	tube/A1	true
+dispense	water	PCR_mastermix	4514.400000000001
+dispense	Q5_Polymerase_Buffer_5x	PCR_mastermix	1584.0000000000002
+dispense	dNTPs_2mM	PCR_mastermix	792.0000000000001
+dispense	Q5_polymerase	PCR_mastermix	79.2
+dispense	water	back1For0_tube/	300.0
+dispense	water	back1Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For0	back1For0_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev0	back1Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For0_tube/	90.0
+dispense	water	dil_back1Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For0_tube/	10uM_back1For0	10.0
+transfer	back1Rev0_tube/A1	10uM_back1Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For0	pcr	2.5
+transfer	10uM_back1Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For0_tube/	300.0
+dispense	water	back2Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For0	back2For0_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev0	back2Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For0_tube/	90.0
+dispense	water	dil_back2Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For0_tube/	10uM_back2For0	10.0
+transfer	back2Rev0_tube/A1	10uM_back2Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For0	pcr	2.5
+transfer	10uM_back2Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor0_tube/	300.0
+dispense	water	partRev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor0	partFor0_tube/	true
+addContainer	eppendorf_1p5mL	partRev0	partRev0_tube/A1	true
+addContainer	eppendorf_1p5mL	bin0_OFF	bin0_OFF_tube/A1	true
+dispense	water	dil_partFor0_tube/	90.0
+dispense	water	dil_partRev0_tube/A1	90.0
+dispense	water	20xdil_bin0_OFF_tube/A1	9.5
+transfer	partFor0_tube/	10uM_partFor0	10.0
+transfer	partRev0_tube/A1	10uM_partRev0	10.0
+transfer	bin0_OFF_tube/A1	20xdil_bin0_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor0	pcr	2.5
+transfer	10uM_partRev0	pcr	2.5
+transfer	20xdil_bin0_OFF	pcr	1.0
+dispense	water	back1For0_tube/	300.0
+dispense	water	back1Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For0	back1For0_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev0	back1Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For0_tube/	90.0
+dispense	water	dil_back1Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For0_tube/	10uM_back1For0	10.0
+transfer	back1Rev0_tube/A1	10uM_back1Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For0	pcr	2.5
+transfer	10uM_back1Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For0_tube/	300.0
+dispense	water	back2Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For0	back2For0_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev0	back2Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For0_tube/	90.0
+dispense	water	dil_back2Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For0_tube/	10uM_back2For0	10.0
+transfer	back2Rev0_tube/A1	10uM_back2Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For0	pcr	2.5
+transfer	10uM_back2Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor0_tube/	300.0
+dispense	water	partRev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor0	partFor0_tube/	true
+addContainer	eppendorf_1p5mL	partRev0	partRev0_tube/A1	true
+addContainer	eppendorf_1p5mL	bin0_SLOW	bin0_SLOW_tube/A1	true
+dispense	water	dil_partFor0_tube/	90.0
+dispense	water	dil_partRev0_tube/A1	90.0
+dispense	water	20xdil_bin0_SLOW_tube/A1	9.5
+transfer	partFor0_tube/	10uM_partFor0	10.0
+transfer	partRev0_tube/A1	10uM_partRev0	10.0
+transfer	bin0_SLOW_tube/A1	20xdil_bin0_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor0	pcr	2.5
+transfer	10uM_partRev0	pcr	2.5
+transfer	20xdil_bin0_SLOW	pcr	1.0
+dispense	water	back1For0_tube/	300.0
+dispense	water	back1Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For0	back1For0_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev0	back1Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For0_tube/	90.0
+dispense	water	dil_back1Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For0_tube/	10uM_back1For0	10.0
+transfer	back1Rev0_tube/A1	10uM_back1Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For0	pcr	2.5
+transfer	10uM_back1Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For0_tube/	300.0
+dispense	water	back2Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For0	back2For0_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev0	back2Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For0_tube/	90.0
+dispense	water	dil_back2Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For0_tube/	10uM_back2For0	10.0
+transfer	back2Rev0_tube/A1	10uM_back2Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For0	pcr	2.5
+transfer	10uM_back2Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor0_tube/	300.0
+dispense	water	partRev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor0	partFor0_tube/	true
+addContainer	eppendorf_1p5mL	partRev0	partRev0_tube/A1	true
+addContainer	eppendorf_1p5mL	bin0_LOW	bin0_LOW_tube/A1	true
+dispense	water	dil_partFor0_tube/	90.0
+dispense	water	dil_partRev0_tube/A1	90.0
+dispense	water	20xdil_bin0_LOW_tube/A1	9.5
+transfer	partFor0_tube/	10uM_partFor0	10.0
+transfer	partRev0_tube/A1	10uM_partRev0	10.0
+transfer	bin0_LOW_tube/A1	20xdil_bin0_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor0	pcr	2.5
+transfer	10uM_partRev0	pcr	2.5
+transfer	20xdil_bin0_LOW	pcr	1.0
+dispense	water	back1For0_tube/	300.0
+dispense	water	back1Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For0	back1For0_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev0	back1Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For0_tube/	90.0
+dispense	water	dil_back1Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For0_tube/	10uM_back1For0	10.0
+transfer	back1Rev0_tube/A1	10uM_back1Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For0	pcr	2.5
+transfer	10uM_back1Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For0_tube/	300.0
+dispense	water	back2Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For0	back2For0_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev0	back2Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For0_tube/	90.0
+dispense	water	dil_back2Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For0_tube/	10uM_back2For0	10.0
+transfer	back2Rev0_tube/A1	10uM_back2Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For0	pcr	2.5
+transfer	10uM_back2Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor0_tube/	300.0
+dispense	water	partRev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor0	partFor0_tube/	true
+addContainer	eppendorf_1p5mL	partRev0	partRev0_tube/A1	true
+addContainer	eppendorf_1p5mL	bin0_MED	bin0_MED_tube/A1	true
+dispense	water	dil_partFor0_tube/	90.0
+dispense	water	dil_partRev0_tube/A1	90.0
+dispense	water	20xdil_bin0_MED_tube/A1	9.5
+transfer	partFor0_tube/	10uM_partFor0	10.0
+transfer	partRev0_tube/A1	10uM_partRev0	10.0
+transfer	bin0_MED_tube/A1	20xdil_bin0_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor0	pcr	2.5
+transfer	10uM_partRev0	pcr	2.5
+transfer	20xdil_bin0_MED	pcr	1.0
+dispense	water	back1For0_tube/	300.0
+dispense	water	back1Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For0	back1For0_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev0	back1Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For0_tube/	90.0
+dispense	water	dil_back1Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For0_tube/	10uM_back1For0	10.0
+transfer	back1Rev0_tube/A1	10uM_back1Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For0	pcr	2.5
+transfer	10uM_back1Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For0_tube/	300.0
+dispense	water	back2Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For0	back2For0_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev0	back2Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For0_tube/	90.0
+dispense	water	dil_back2Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For0_tube/	10uM_back2For0	10.0
+transfer	back2Rev0_tube/A1	10uM_back2Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For0	pcr	2.5
+transfer	10uM_back2Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor0_tube/	300.0
+dispense	water	partRev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor0	partFor0_tube/	true
+addContainer	eppendorf_1p5mL	partRev0	partRev0_tube/A1	true
+addContainer	eppendorf_1p5mL	bin0_HIGH	bin0_HIGH_tube/A1	true
+dispense	water	dil_partFor0_tube/	90.0
+dispense	water	dil_partRev0_tube/A1	90.0
+dispense	water	20xdil_bin0_HIGH_tube/A1	9.5
+transfer	partFor0_tube/	10uM_partFor0	10.0
+transfer	partRev0_tube/A1	10uM_partRev0	10.0
+transfer	bin0_HIGH_tube/A1	20xdil_bin0_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor0	pcr	2.5
+transfer	10uM_partRev0	pcr	2.5
+transfer	20xdil_bin0_HIGH	pcr	1.0
+dispense	water	back1For0_tube/	300.0
+dispense	water	back1Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For0	back1For0_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev0	back1Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For0_tube/	90.0
+dispense	water	dil_back1Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For0_tube/	10uM_back1For0	10.0
+transfer	back1Rev0_tube/A1	10uM_back1Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For0	pcr	2.5
+transfer	10uM_back1Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For0_tube/	300.0
+dispense	water	back2Rev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For0	back2For0_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev0	back2Rev0_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For0_tube/	90.0
+dispense	water	dil_back2Rev0_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For0_tube/	10uM_back2For0	10.0
+transfer	back2Rev0_tube/A1	10uM_back2Rev0	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For0	pcr	2.5
+transfer	10uM_back2Rev0	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor0_tube/	300.0
+dispense	water	partRev0_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor0	partFor0_tube/	true
+addContainer	eppendorf_1p5mL	partRev0	partRev0_tube/A1	true
+addContainer	eppendorf_1p5mL	bin0_UBER	bin0_UBER_tube/A1	true
+dispense	water	dil_partFor0_tube/	90.0
+dispense	water	dil_partRev0_tube/A1	90.0
+dispense	water	20xdil_bin0_UBER_tube/A1	9.5
+transfer	partFor0_tube/	10uM_partFor0	10.0
+transfer	partRev0_tube/A1	10uM_partRev0	10.0
+transfer	bin0_UBER_tube/A1	20xdil_bin0_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor0	pcr	2.5
+transfer	10uM_partRev0	pcr	2.5
+transfer	20xdil_bin0_UBER	pcr	1.0
+dispense	water	back1For1_tube/	300.0
+dispense	water	back1Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For1	back1For1_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev1	back1Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For1_tube/	90.0
+dispense	water	dil_back1Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For1_tube/	10uM_back1For1	10.0
+transfer	back1Rev1_tube/A1	10uM_back1Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For1	pcr	2.5
+transfer	10uM_back1Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For1_tube/	300.0
+dispense	water	back2Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For1	back2For1_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev1	back2Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For1_tube/	90.0
+dispense	water	dil_back2Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For1_tube/	10uM_back2For1	10.0
+transfer	back2Rev1_tube/A1	10uM_back2Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For1	pcr	2.5
+transfer	10uM_back2Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor1_tube/	300.0
+dispense	water	partRev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor1	partFor1_tube/	true
+addContainer	eppendorf_1p5mL	partRev1	partRev1_tube/A1	true
+addContainer	eppendorf_1p5mL	bin1_OFF	bin1_OFF_tube/A1	true
+dispense	water	dil_partFor1_tube/	90.0
+dispense	water	dil_partRev1_tube/A1	90.0
+dispense	water	20xdil_bin1_OFF_tube/A1	9.5
+transfer	partFor1_tube/	10uM_partFor1	10.0
+transfer	partRev1_tube/A1	10uM_partRev1	10.0
+transfer	bin1_OFF_tube/A1	20xdil_bin1_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor1	pcr	2.5
+transfer	10uM_partRev1	pcr	2.5
+transfer	20xdil_bin1_OFF	pcr	1.0
+dispense	water	back1For1_tube/	300.0
+dispense	water	back1Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For1	back1For1_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev1	back1Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For1_tube/	90.0
+dispense	water	dil_back1Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For1_tube/	10uM_back1For1	10.0
+transfer	back1Rev1_tube/A1	10uM_back1Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For1	pcr	2.5
+transfer	10uM_back1Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For1_tube/	300.0
+dispense	water	back2Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For1	back2For1_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev1	back2Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For1_tube/	90.0
+dispense	water	dil_back2Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For1_tube/	10uM_back2For1	10.0
+transfer	back2Rev1_tube/A1	10uM_back2Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For1	pcr	2.5
+transfer	10uM_back2Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor1_tube/	300.0
+dispense	water	partRev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor1	partFor1_tube/	true
+addContainer	eppendorf_1p5mL	partRev1	partRev1_tube/A1	true
+addContainer	eppendorf_1p5mL	bin1_SLOW	bin1_SLOW_tube/A1	true
+dispense	water	dil_partFor1_tube/	90.0
+dispense	water	dil_partRev1_tube/A1	90.0
+dispense	water	20xdil_bin1_SLOW_tube/A1	9.5
+transfer	partFor1_tube/	10uM_partFor1	10.0
+transfer	partRev1_tube/A1	10uM_partRev1	10.0
+transfer	bin1_SLOW_tube/A1	20xdil_bin1_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor1	pcr	2.5
+transfer	10uM_partRev1	pcr	2.5
+transfer	20xdil_bin1_SLOW	pcr	1.0
+dispense	water	back1For1_tube/	300.0
+dispense	water	back1Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For1	back1For1_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev1	back1Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For1_tube/	90.0
+dispense	water	dil_back1Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For1_tube/	10uM_back1For1	10.0
+transfer	back1Rev1_tube/A1	10uM_back1Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For1	pcr	2.5
+transfer	10uM_back1Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For1_tube/	300.0
+dispense	water	back2Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For1	back2For1_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev1	back2Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For1_tube/	90.0
+dispense	water	dil_back2Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For1_tube/	10uM_back2For1	10.0
+transfer	back2Rev1_tube/A1	10uM_back2Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For1	pcr	2.5
+transfer	10uM_back2Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor1_tube/	300.0
+dispense	water	partRev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor1	partFor1_tube/	true
+addContainer	eppendorf_1p5mL	partRev1	partRev1_tube/A1	true
+addContainer	eppendorf_1p5mL	bin1_LOW	bin1_LOW_tube/A1	true
+dispense	water	dil_partFor1_tube/	90.0
+dispense	water	dil_partRev1_tube/A1	90.0
+dispense	water	20xdil_bin1_LOW_tube/A1	9.5
+transfer	partFor1_tube/	10uM_partFor1	10.0
+transfer	partRev1_tube/A1	10uM_partRev1	10.0
+transfer	bin1_LOW_tube/A1	20xdil_bin1_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor1	pcr	2.5
+transfer	10uM_partRev1	pcr	2.5
+transfer	20xdil_bin1_LOW	pcr	1.0
+dispense	water	back1For1_tube/	300.0
+dispense	water	back1Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For1	back1For1_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev1	back1Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For1_tube/	90.0
+dispense	water	dil_back1Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For1_tube/	10uM_back1For1	10.0
+transfer	back1Rev1_tube/A1	10uM_back1Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For1	pcr	2.5
+transfer	10uM_back1Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For1_tube/	300.0
+dispense	water	back2Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For1	back2For1_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev1	back2Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For1_tube/	90.0
+dispense	water	dil_back2Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For1_tube/	10uM_back2For1	10.0
+transfer	back2Rev1_tube/A1	10uM_back2Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For1	pcr	2.5
+transfer	10uM_back2Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor1_tube/	300.0
+dispense	water	partRev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor1	partFor1_tube/	true
+addContainer	eppendorf_1p5mL	partRev1	partRev1_tube/A1	true
+addContainer	eppendorf_1p5mL	bin1_MED	bin1_MED_tube/A1	true
+dispense	water	dil_partFor1_tube/	90.0
+dispense	water	dil_partRev1_tube/A1	90.0
+dispense	water	20xdil_bin1_MED_tube/A1	9.5
+transfer	partFor1_tube/	10uM_partFor1	10.0
+transfer	partRev1_tube/A1	10uM_partRev1	10.0
+transfer	bin1_MED_tube/A1	20xdil_bin1_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor1	pcr	2.5
+transfer	10uM_partRev1	pcr	2.5
+transfer	20xdil_bin1_MED	pcr	1.0
+dispense	water	back1For1_tube/	300.0
+dispense	water	back1Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For1	back1For1_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev1	back1Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For1_tube/	90.0
+dispense	water	dil_back1Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For1_tube/	10uM_back1For1	10.0
+transfer	back1Rev1_tube/A1	10uM_back1Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For1	pcr	2.5
+transfer	10uM_back1Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For1_tube/	300.0
+dispense	water	back2Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For1	back2For1_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev1	back2Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For1_tube/	90.0
+dispense	water	dil_back2Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For1_tube/	10uM_back2For1	10.0
+transfer	back2Rev1_tube/A1	10uM_back2Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For1	pcr	2.5
+transfer	10uM_back2Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor1_tube/	300.0
+dispense	water	partRev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor1	partFor1_tube/	true
+addContainer	eppendorf_1p5mL	partRev1	partRev1_tube/A1	true
+addContainer	eppendorf_1p5mL	bin1_HIGH	bin1_HIGH_tube/A1	true
+dispense	water	dil_partFor1_tube/	90.0
+dispense	water	dil_partRev1_tube/A1	90.0
+dispense	water	20xdil_bin1_HIGH_tube/A1	9.5
+transfer	partFor1_tube/	10uM_partFor1	10.0
+transfer	partRev1_tube/A1	10uM_partRev1	10.0
+transfer	bin1_HIGH_tube/A1	20xdil_bin1_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor1	pcr	2.5
+transfer	10uM_partRev1	pcr	2.5
+transfer	20xdil_bin1_HIGH	pcr	1.0
+dispense	water	back1For1_tube/	300.0
+dispense	water	back1Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For1	back1For1_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev1	back1Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For1_tube/	90.0
+dispense	water	dil_back1Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For1_tube/	10uM_back1For1	10.0
+transfer	back1Rev1_tube/A1	10uM_back1Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For1	pcr	2.5
+transfer	10uM_back1Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For1_tube/	300.0
+dispense	water	back2Rev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For1	back2For1_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev1	back2Rev1_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For1_tube/	90.0
+dispense	water	dil_back2Rev1_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For1_tube/	10uM_back2For1	10.0
+transfer	back2Rev1_tube/A1	10uM_back2Rev1	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For1	pcr	2.5
+transfer	10uM_back2Rev1	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor1_tube/	300.0
+dispense	water	partRev1_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor1	partFor1_tube/	true
+addContainer	eppendorf_1p5mL	partRev1	partRev1_tube/A1	true
+addContainer	eppendorf_1p5mL	bin1_UBER	bin1_UBER_tube/A1	true
+dispense	water	dil_partFor1_tube/	90.0
+dispense	water	dil_partRev1_tube/A1	90.0
+dispense	water	20xdil_bin1_UBER_tube/A1	9.5
+transfer	partFor1_tube/	10uM_partFor1	10.0
+transfer	partRev1_tube/A1	10uM_partRev1	10.0
+transfer	bin1_UBER_tube/A1	20xdil_bin1_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor1	pcr	2.5
+transfer	10uM_partRev1	pcr	2.5
+transfer	20xdil_bin1_UBER	pcr	1.0
+dispense	water	back1For2_tube/	300.0
+dispense	water	back1Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For2	back1For2_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev2	back1Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For2_tube/	90.0
+dispense	water	dil_back1Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For2_tube/	10uM_back1For2	10.0
+transfer	back1Rev2_tube/A1	10uM_back1Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For2	pcr	2.5
+transfer	10uM_back1Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For2_tube/	300.0
+dispense	water	back2Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For2	back2For2_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev2	back2Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For2_tube/	90.0
+dispense	water	dil_back2Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For2_tube/	10uM_back2For2	10.0
+transfer	back2Rev2_tube/A1	10uM_back2Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For2	pcr	2.5
+transfer	10uM_back2Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor2_tube/	300.0
+dispense	water	partRev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor2	partFor2_tube/	true
+addContainer	eppendorf_1p5mL	partRev2	partRev2_tube/A1	true
+addContainer	eppendorf_1p5mL	bin2_OFF	bin2_OFF_tube/A1	true
+dispense	water	dil_partFor2_tube/	90.0
+dispense	water	dil_partRev2_tube/A1	90.0
+dispense	water	20xdil_bin2_OFF_tube/A1	9.5
+transfer	partFor2_tube/	10uM_partFor2	10.0
+transfer	partRev2_tube/A1	10uM_partRev2	10.0
+transfer	bin2_OFF_tube/A1	20xdil_bin2_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor2	pcr	2.5
+transfer	10uM_partRev2	pcr	2.5
+transfer	20xdil_bin2_OFF	pcr	1.0
+dispense	water	back1For2_tube/	300.0
+dispense	water	back1Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For2	back1For2_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev2	back1Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For2_tube/	90.0
+dispense	water	dil_back1Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For2_tube/	10uM_back1For2	10.0
+transfer	back1Rev2_tube/A1	10uM_back1Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For2	pcr	2.5
+transfer	10uM_back1Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For2_tube/	300.0
+dispense	water	back2Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For2	back2For2_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev2	back2Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For2_tube/	90.0
+dispense	water	dil_back2Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For2_tube/	10uM_back2For2	10.0
+transfer	back2Rev2_tube/A1	10uM_back2Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For2	pcr	2.5
+transfer	10uM_back2Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor2_tube/	300.0
+dispense	water	partRev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor2	partFor2_tube/	true
+addContainer	eppendorf_1p5mL	partRev2	partRev2_tube/A1	true
+addContainer	eppendorf_1p5mL	bin2_SLOW	bin2_SLOW_tube/A1	true
+dispense	water	dil_partFor2_tube/	90.0
+dispense	water	dil_partRev2_tube/A1	90.0
+dispense	water	20xdil_bin2_SLOW_tube/A1	9.5
+transfer	partFor2_tube/	10uM_partFor2	10.0
+transfer	partRev2_tube/A1	10uM_partRev2	10.0
+transfer	bin2_SLOW_tube/A1	20xdil_bin2_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor2	pcr	2.5
+transfer	10uM_partRev2	pcr	2.5
+transfer	20xdil_bin2_SLOW	pcr	1.0
+dispense	water	back1For2_tube/	300.0
+dispense	water	back1Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For2	back1For2_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev2	back1Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For2_tube/	90.0
+dispense	water	dil_back1Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For2_tube/	10uM_back1For2	10.0
+transfer	back1Rev2_tube/A1	10uM_back1Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For2	pcr	2.5
+transfer	10uM_back1Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For2_tube/	300.0
+dispense	water	back2Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For2	back2For2_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev2	back2Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For2_tube/	90.0
+dispense	water	dil_back2Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For2_tube/	10uM_back2For2	10.0
+transfer	back2Rev2_tube/A1	10uM_back2Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For2	pcr	2.5
+transfer	10uM_back2Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor2_tube/	300.0
+dispense	water	partRev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor2	partFor2_tube/	true
+addContainer	eppendorf_1p5mL	partRev2	partRev2_tube/A1	true
+addContainer	eppendorf_1p5mL	bin2_LOW	bin2_LOW_tube/A1	true
+dispense	water	dil_partFor2_tube/	90.0
+dispense	water	dil_partRev2_tube/A1	90.0
+dispense	water	20xdil_bin2_LOW_tube/A1	9.5
+transfer	partFor2_tube/	10uM_partFor2	10.0
+transfer	partRev2_tube/A1	10uM_partRev2	10.0
+transfer	bin2_LOW_tube/A1	20xdil_bin2_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor2	pcr	2.5
+transfer	10uM_partRev2	pcr	2.5
+transfer	20xdil_bin2_LOW	pcr	1.0
+dispense	water	back1For2_tube/	300.0
+dispense	water	back1Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For2	back1For2_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev2	back1Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For2_tube/	90.0
+dispense	water	dil_back1Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For2_tube/	10uM_back1For2	10.0
+transfer	back1Rev2_tube/A1	10uM_back1Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For2	pcr	2.5
+transfer	10uM_back1Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For2_tube/	300.0
+dispense	water	back2Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For2	back2For2_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev2	back2Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For2_tube/	90.0
+dispense	water	dil_back2Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For2_tube/	10uM_back2For2	10.0
+transfer	back2Rev2_tube/A1	10uM_back2Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For2	pcr	2.5
+transfer	10uM_back2Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor2_tube/	300.0
+dispense	water	partRev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor2	partFor2_tube/	true
+addContainer	eppendorf_1p5mL	partRev2	partRev2_tube/A1	true
+addContainer	eppendorf_1p5mL	bin2_MED	bin2_MED_tube/A1	true
+dispense	water	dil_partFor2_tube/	90.0
+dispense	water	dil_partRev2_tube/A1	90.0
+dispense	water	20xdil_bin2_MED_tube/A1	9.5
+transfer	partFor2_tube/	10uM_partFor2	10.0
+transfer	partRev2_tube/A1	10uM_partRev2	10.0
+transfer	bin2_MED_tube/A1	20xdil_bin2_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor2	pcr	2.5
+transfer	10uM_partRev2	pcr	2.5
+transfer	20xdil_bin2_MED	pcr	1.0
+dispense	water	back1For2_tube/	300.0
+dispense	water	back1Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For2	back1For2_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev2	back1Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For2_tube/	90.0
+dispense	water	dil_back1Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For2_tube/	10uM_back1For2	10.0
+transfer	back1Rev2_tube/A1	10uM_back1Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For2	pcr	2.5
+transfer	10uM_back1Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For2_tube/	300.0
+dispense	water	back2Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For2	back2For2_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev2	back2Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For2_tube/	90.0
+dispense	water	dil_back2Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For2_tube/	10uM_back2For2	10.0
+transfer	back2Rev2_tube/A1	10uM_back2Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For2	pcr	2.5
+transfer	10uM_back2Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor2_tube/	300.0
+dispense	water	partRev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor2	partFor2_tube/	true
+addContainer	eppendorf_1p5mL	partRev2	partRev2_tube/A1	true
+addContainer	eppendorf_1p5mL	bin2_HIGH	bin2_HIGH_tube/A1	true
+dispense	water	dil_partFor2_tube/	90.0
+dispense	water	dil_partRev2_tube/A1	90.0
+dispense	water	20xdil_bin2_HIGH_tube/A1	9.5
+transfer	partFor2_tube/	10uM_partFor2	10.0
+transfer	partRev2_tube/A1	10uM_partRev2	10.0
+transfer	bin2_HIGH_tube/A1	20xdil_bin2_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor2	pcr	2.5
+transfer	10uM_partRev2	pcr	2.5
+transfer	20xdil_bin2_HIGH	pcr	1.0
+dispense	water	back1For2_tube/	300.0
+dispense	water	back1Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For2	back1For2_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev2	back1Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For2_tube/	90.0
+dispense	water	dil_back1Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For2_tube/	10uM_back1For2	10.0
+transfer	back1Rev2_tube/A1	10uM_back1Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For2	pcr	2.5
+transfer	10uM_back1Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For2_tube/	300.0
+dispense	water	back2Rev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For2	back2For2_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev2	back2Rev2_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For2_tube/	90.0
+dispense	water	dil_back2Rev2_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For2_tube/	10uM_back2For2	10.0
+transfer	back2Rev2_tube/A1	10uM_back2Rev2	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For2	pcr	2.5
+transfer	10uM_back2Rev2	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor2_tube/	300.0
+dispense	water	partRev2_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor2	partFor2_tube/	true
+addContainer	eppendorf_1p5mL	partRev2	partRev2_tube/A1	true
+addContainer	eppendorf_1p5mL	bin2_UBER	bin2_UBER_tube/A1	true
+dispense	water	dil_partFor2_tube/	90.0
+dispense	water	dil_partRev2_tube/A1	90.0
+dispense	water	20xdil_bin2_UBER_tube/A1	9.5
+transfer	partFor2_tube/	10uM_partFor2	10.0
+transfer	partRev2_tube/A1	10uM_partRev2	10.0
+transfer	bin2_UBER_tube/A1	20xdil_bin2_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor2	pcr	2.5
+transfer	10uM_partRev2	pcr	2.5
+transfer	20xdil_bin2_UBER	pcr	1.0
+dispense	water	back1For3_tube/	300.0
+dispense	water	back1Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For3	back1For3_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev3	back1Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For3_tube/	90.0
+dispense	water	dil_back1Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For3_tube/	10uM_back1For3	10.0
+transfer	back1Rev3_tube/A1	10uM_back1Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For3	pcr	2.5
+transfer	10uM_back1Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For3_tube/	300.0
+dispense	water	back2Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For3	back2For3_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev3	back2Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For3_tube/	90.0
+dispense	water	dil_back2Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For3_tube/	10uM_back2For3	10.0
+transfer	back2Rev3_tube/A1	10uM_back2Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For3	pcr	2.5
+transfer	10uM_back2Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor3_tube/	300.0
+dispense	water	partRev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor3	partFor3_tube/	true
+addContainer	eppendorf_1p5mL	partRev3	partRev3_tube/A1	true
+addContainer	eppendorf_1p5mL	bin3_OFF	bin3_OFF_tube/A1	true
+dispense	water	dil_partFor3_tube/	90.0
+dispense	water	dil_partRev3_tube/A1	90.0
+dispense	water	20xdil_bin3_OFF_tube/A1	9.5
+transfer	partFor3_tube/	10uM_partFor3	10.0
+transfer	partRev3_tube/A1	10uM_partRev3	10.0
+transfer	bin3_OFF_tube/A1	20xdil_bin3_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor3	pcr	2.5
+transfer	10uM_partRev3	pcr	2.5
+transfer	20xdil_bin3_OFF	pcr	1.0
+dispense	water	back1For3_tube/	300.0
+dispense	water	back1Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For3	back1For3_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev3	back1Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For3_tube/	90.0
+dispense	water	dil_back1Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For3_tube/	10uM_back1For3	10.0
+transfer	back1Rev3_tube/A1	10uM_back1Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For3	pcr	2.5
+transfer	10uM_back1Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For3_tube/	300.0
+dispense	water	back2Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For3	back2For3_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev3	back2Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For3_tube/	90.0
+dispense	water	dil_back2Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For3_tube/	10uM_back2For3	10.0
+transfer	back2Rev3_tube/A1	10uM_back2Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For3	pcr	2.5
+transfer	10uM_back2Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor3_tube/	300.0
+dispense	water	partRev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor3	partFor3_tube/	true
+addContainer	eppendorf_1p5mL	partRev3	partRev3_tube/A1	true
+addContainer	eppendorf_1p5mL	bin3_SLOW	bin3_SLOW_tube/A1	true
+dispense	water	dil_partFor3_tube/	90.0
+dispense	water	dil_partRev3_tube/A1	90.0
+dispense	water	20xdil_bin3_SLOW_tube/A1	9.5
+transfer	partFor3_tube/	10uM_partFor3	10.0
+transfer	partRev3_tube/A1	10uM_partRev3	10.0
+transfer	bin3_SLOW_tube/A1	20xdil_bin3_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor3	pcr	2.5
+transfer	10uM_partRev3	pcr	2.5
+transfer	20xdil_bin3_SLOW	pcr	1.0
+dispense	water	back1For3_tube/	300.0
+dispense	water	back1Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For3	back1For3_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev3	back1Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For3_tube/	90.0
+dispense	water	dil_back1Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For3_tube/	10uM_back1For3	10.0
+transfer	back1Rev3_tube/A1	10uM_back1Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For3	pcr	2.5
+transfer	10uM_back1Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For3_tube/	300.0
+dispense	water	back2Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For3	back2For3_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev3	back2Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For3_tube/	90.0
+dispense	water	dil_back2Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For3_tube/	10uM_back2For3	10.0
+transfer	back2Rev3_tube/A1	10uM_back2Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For3	pcr	2.5
+transfer	10uM_back2Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor3_tube/	300.0
+dispense	water	partRev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor3	partFor3_tube/	true
+addContainer	eppendorf_1p5mL	partRev3	partRev3_tube/A1	true
+addContainer	eppendorf_1p5mL	bin3_LOW	bin3_LOW_tube/A1	true
+dispense	water	dil_partFor3_tube/	90.0
+dispense	water	dil_partRev3_tube/A1	90.0
+dispense	water	20xdil_bin3_LOW_tube/A1	9.5
+transfer	partFor3_tube/	10uM_partFor3	10.0
+transfer	partRev3_tube/A1	10uM_partRev3	10.0
+transfer	bin3_LOW_tube/A1	20xdil_bin3_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor3	pcr	2.5
+transfer	10uM_partRev3	pcr	2.5
+transfer	20xdil_bin3_LOW	pcr	1.0
+dispense	water	back1For3_tube/	300.0
+dispense	water	back1Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For3	back1For3_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev3	back1Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For3_tube/	90.0
+dispense	water	dil_back1Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For3_tube/	10uM_back1For3	10.0
+transfer	back1Rev3_tube/A1	10uM_back1Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For3	pcr	2.5
+transfer	10uM_back1Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For3_tube/	300.0
+dispense	water	back2Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For3	back2For3_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev3	back2Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For3_tube/	90.0
+dispense	water	dil_back2Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For3_tube/	10uM_back2For3	10.0
+transfer	back2Rev3_tube/A1	10uM_back2Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For3	pcr	2.5
+transfer	10uM_back2Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor3_tube/	300.0
+dispense	water	partRev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor3	partFor3_tube/	true
+addContainer	eppendorf_1p5mL	partRev3	partRev3_tube/A1	true
+addContainer	eppendorf_1p5mL	bin3_MED	bin3_MED_tube/A1	true
+dispense	water	dil_partFor3_tube/	90.0
+dispense	water	dil_partRev3_tube/A1	90.0
+dispense	water	20xdil_bin3_MED_tube/A1	9.5
+transfer	partFor3_tube/	10uM_partFor3	10.0
+transfer	partRev3_tube/A1	10uM_partRev3	10.0
+transfer	bin3_MED_tube/A1	20xdil_bin3_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor3	pcr	2.5
+transfer	10uM_partRev3	pcr	2.5
+transfer	20xdil_bin3_MED	pcr	1.0
+dispense	water	back1For3_tube/	300.0
+dispense	water	back1Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For3	back1For3_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev3	back1Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For3_tube/	90.0
+dispense	water	dil_back1Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For3_tube/	10uM_back1For3	10.0
+transfer	back1Rev3_tube/A1	10uM_back1Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For3	pcr	2.5
+transfer	10uM_back1Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For3_tube/	300.0
+dispense	water	back2Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For3	back2For3_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev3	back2Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For3_tube/	90.0
+dispense	water	dil_back2Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For3_tube/	10uM_back2For3	10.0
+transfer	back2Rev3_tube/A1	10uM_back2Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For3	pcr	2.5
+transfer	10uM_back2Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor3_tube/	300.0
+dispense	water	partRev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor3	partFor3_tube/	true
+addContainer	eppendorf_1p5mL	partRev3	partRev3_tube/A1	true
+addContainer	eppendorf_1p5mL	bin3_HIGH	bin3_HIGH_tube/A1	true
+dispense	water	dil_partFor3_tube/	90.0
+dispense	water	dil_partRev3_tube/A1	90.0
+dispense	water	20xdil_bin3_HIGH_tube/A1	9.5
+transfer	partFor3_tube/	10uM_partFor3	10.0
+transfer	partRev3_tube/A1	10uM_partRev3	10.0
+transfer	bin3_HIGH_tube/A1	20xdil_bin3_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor3	pcr	2.5
+transfer	10uM_partRev3	pcr	2.5
+transfer	20xdil_bin3_HIGH	pcr	1.0
+dispense	water	back1For3_tube/	300.0
+dispense	water	back1Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For3	back1For3_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev3	back1Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For3_tube/	90.0
+dispense	water	dil_back1Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For3_tube/	10uM_back1For3	10.0
+transfer	back1Rev3_tube/A1	10uM_back1Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For3	pcr	2.5
+transfer	10uM_back1Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For3_tube/	300.0
+dispense	water	back2Rev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For3	back2For3_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev3	back2Rev3_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For3_tube/	90.0
+dispense	water	dil_back2Rev3_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For3_tube/	10uM_back2For3	10.0
+transfer	back2Rev3_tube/A1	10uM_back2Rev3	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For3	pcr	2.5
+transfer	10uM_back2Rev3	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor3_tube/	300.0
+dispense	water	partRev3_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor3	partFor3_tube/	true
+addContainer	eppendorf_1p5mL	partRev3	partRev3_tube/A1	true
+addContainer	eppendorf_1p5mL	bin3_UBER	bin3_UBER_tube/A1	true
+dispense	water	dil_partFor3_tube/	90.0
+dispense	water	dil_partRev3_tube/A1	90.0
+dispense	water	20xdil_bin3_UBER_tube/A1	9.5
+transfer	partFor3_tube/	10uM_partFor3	10.0
+transfer	partRev3_tube/A1	10uM_partRev3	10.0
+transfer	bin3_UBER_tube/A1	20xdil_bin3_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor3	pcr	2.5
+transfer	10uM_partRev3	pcr	2.5
+transfer	20xdil_bin3_UBER	pcr	1.0
+dispense	water	back1For4_tube/	300.0
+dispense	water	back1Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For4	back1For4_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev4	back1Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For4_tube/	90.0
+dispense	water	dil_back1Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For4_tube/	10uM_back1For4	10.0
+transfer	back1Rev4_tube/A1	10uM_back1Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For4	pcr	2.5
+transfer	10uM_back1Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For4_tube/	300.0
+dispense	water	back2Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For4	back2For4_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev4	back2Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For4_tube/	90.0
+dispense	water	dil_back2Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For4_tube/	10uM_back2For4	10.0
+transfer	back2Rev4_tube/A1	10uM_back2Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For4	pcr	2.5
+transfer	10uM_back2Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor4_tube/	300.0
+dispense	water	partRev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor4	partFor4_tube/	true
+addContainer	eppendorf_1p5mL	partRev4	partRev4_tube/A1	true
+addContainer	eppendorf_1p5mL	bin4_OFF	bin4_OFF_tube/A1	true
+dispense	water	dil_partFor4_tube/	90.0
+dispense	water	dil_partRev4_tube/A1	90.0
+dispense	water	20xdil_bin4_OFF_tube/A1	9.5
+transfer	partFor4_tube/	10uM_partFor4	10.0
+transfer	partRev4_tube/A1	10uM_partRev4	10.0
+transfer	bin4_OFF_tube/A1	20xdil_bin4_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor4	pcr	2.5
+transfer	10uM_partRev4	pcr	2.5
+transfer	20xdil_bin4_OFF	pcr	1.0
+dispense	water	back1For4_tube/	300.0
+dispense	water	back1Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For4	back1For4_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev4	back1Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For4_tube/	90.0
+dispense	water	dil_back1Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For4_tube/	10uM_back1For4	10.0
+transfer	back1Rev4_tube/A1	10uM_back1Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For4	pcr	2.5
+transfer	10uM_back1Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For4_tube/	300.0
+dispense	water	back2Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For4	back2For4_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev4	back2Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For4_tube/	90.0
+dispense	water	dil_back2Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For4_tube/	10uM_back2For4	10.0
+transfer	back2Rev4_tube/A1	10uM_back2Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For4	pcr	2.5
+transfer	10uM_back2Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor4_tube/	300.0
+dispense	water	partRev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor4	partFor4_tube/	true
+addContainer	eppendorf_1p5mL	partRev4	partRev4_tube/A1	true
+addContainer	eppendorf_1p5mL	bin4_SLOW	bin4_SLOW_tube/A1	true
+dispense	water	dil_partFor4_tube/	90.0
+dispense	water	dil_partRev4_tube/A1	90.0
+dispense	water	20xdil_bin4_SLOW_tube/A1	9.5
+transfer	partFor4_tube/	10uM_partFor4	10.0
+transfer	partRev4_tube/A1	10uM_partRev4	10.0
+transfer	bin4_SLOW_tube/A1	20xdil_bin4_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor4	pcr	2.5
+transfer	10uM_partRev4	pcr	2.5
+transfer	20xdil_bin4_SLOW	pcr	1.0
+dispense	water	back1For4_tube/	300.0
+dispense	water	back1Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For4	back1For4_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev4	back1Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For4_tube/	90.0
+dispense	water	dil_back1Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For4_tube/	10uM_back1For4	10.0
+transfer	back1Rev4_tube/A1	10uM_back1Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For4	pcr	2.5
+transfer	10uM_back1Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For4_tube/	300.0
+dispense	water	back2Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For4	back2For4_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev4	back2Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For4_tube/	90.0
+dispense	water	dil_back2Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For4_tube/	10uM_back2For4	10.0
+transfer	back2Rev4_tube/A1	10uM_back2Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For4	pcr	2.5
+transfer	10uM_back2Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor4_tube/	300.0
+dispense	water	partRev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor4	partFor4_tube/	true
+addContainer	eppendorf_1p5mL	partRev4	partRev4_tube/A1	true
+addContainer	eppendorf_1p5mL	bin4_LOW	bin4_LOW_tube/A1	true
+dispense	water	dil_partFor4_tube/	90.0
+dispense	water	dil_partRev4_tube/A1	90.0
+dispense	water	20xdil_bin4_LOW_tube/A1	9.5
+transfer	partFor4_tube/	10uM_partFor4	10.0
+transfer	partRev4_tube/A1	10uM_partRev4	10.0
+transfer	bin4_LOW_tube/A1	20xdil_bin4_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor4	pcr	2.5
+transfer	10uM_partRev4	pcr	2.5
+transfer	20xdil_bin4_LOW	pcr	1.0
+dispense	water	back1For4_tube/	300.0
+dispense	water	back1Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For4	back1For4_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev4	back1Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For4_tube/	90.0
+dispense	water	dil_back1Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For4_tube/	10uM_back1For4	10.0
+transfer	back1Rev4_tube/A1	10uM_back1Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For4	pcr	2.5
+transfer	10uM_back1Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For4_tube/	300.0
+dispense	water	back2Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For4	back2For4_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev4	back2Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For4_tube/	90.0
+dispense	water	dil_back2Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For4_tube/	10uM_back2For4	10.0
+transfer	back2Rev4_tube/A1	10uM_back2Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For4	pcr	2.5
+transfer	10uM_back2Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor4_tube/	300.0
+dispense	water	partRev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor4	partFor4_tube/	true
+addContainer	eppendorf_1p5mL	partRev4	partRev4_tube/A1	true
+addContainer	eppendorf_1p5mL	bin4_MED	bin4_MED_tube/A1	true
+dispense	water	dil_partFor4_tube/	90.0
+dispense	water	dil_partRev4_tube/A1	90.0
+dispense	water	20xdil_bin4_MED_tube/A1	9.5
+transfer	partFor4_tube/	10uM_partFor4	10.0
+transfer	partRev4_tube/A1	10uM_partRev4	10.0
+transfer	bin4_MED_tube/A1	20xdil_bin4_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor4	pcr	2.5
+transfer	10uM_partRev4	pcr	2.5
+transfer	20xdil_bin4_MED	pcr	1.0
+dispense	water	back1For4_tube/	300.0
+dispense	water	back1Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For4	back1For4_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev4	back1Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For4_tube/	90.0
+dispense	water	dil_back1Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For4_tube/	10uM_back1For4	10.0
+transfer	back1Rev4_tube/A1	10uM_back1Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For4	pcr	2.5
+transfer	10uM_back1Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For4_tube/	300.0
+dispense	water	back2Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For4	back2For4_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev4	back2Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For4_tube/	90.0
+dispense	water	dil_back2Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For4_tube/	10uM_back2For4	10.0
+transfer	back2Rev4_tube/A1	10uM_back2Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For4	pcr	2.5
+transfer	10uM_back2Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor4_tube/	300.0
+dispense	water	partRev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor4	partFor4_tube/	true
+addContainer	eppendorf_1p5mL	partRev4	partRev4_tube/A1	true
+addContainer	eppendorf_1p5mL	bin4_HIGH	bin4_HIGH_tube/A1	true
+dispense	water	dil_partFor4_tube/	90.0
+dispense	water	dil_partRev4_tube/A1	90.0
+dispense	water	20xdil_bin4_HIGH_tube/A1	9.5
+transfer	partFor4_tube/	10uM_partFor4	10.0
+transfer	partRev4_tube/A1	10uM_partRev4	10.0
+transfer	bin4_HIGH_tube/A1	20xdil_bin4_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor4	pcr	2.5
+transfer	10uM_partRev4	pcr	2.5
+transfer	20xdil_bin4_HIGH	pcr	1.0
+dispense	water	back1For4_tube/	300.0
+dispense	water	back1Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For4	back1For4_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev4	back1Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For4_tube/	90.0
+dispense	water	dil_back1Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For4_tube/	10uM_back1For4	10.0
+transfer	back1Rev4_tube/A1	10uM_back1Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For4	pcr	2.5
+transfer	10uM_back1Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For4_tube/	300.0
+dispense	water	back2Rev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For4	back2For4_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev4	back2Rev4_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For4_tube/	90.0
+dispense	water	dil_back2Rev4_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For4_tube/	10uM_back2For4	10.0
+transfer	back2Rev4_tube/A1	10uM_back2Rev4	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For4	pcr	2.5
+transfer	10uM_back2Rev4	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor4_tube/	300.0
+dispense	water	partRev4_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor4	partFor4_tube/	true
+addContainer	eppendorf_1p5mL	partRev4	partRev4_tube/A1	true
+addContainer	eppendorf_1p5mL	bin4_UBER	bin4_UBER_tube/A1	true
+dispense	water	dil_partFor4_tube/	90.0
+dispense	water	dil_partRev4_tube/A1	90.0
+dispense	water	20xdil_bin4_UBER_tube/A1	9.5
+transfer	partFor4_tube/	10uM_partFor4	10.0
+transfer	partRev4_tube/A1	10uM_partRev4	10.0
+transfer	bin4_UBER_tube/A1	20xdil_bin4_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor4	pcr	2.5
+transfer	10uM_partRev4	pcr	2.5
+transfer	20xdil_bin4_UBER	pcr	1.0
+dispense	water	back1For5_tube/	300.0
+dispense	water	back1Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For5	back1For5_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev5	back1Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For5_tube/	90.0
+dispense	water	dil_back1Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For5_tube/	10uM_back1For5	10.0
+transfer	back1Rev5_tube/A1	10uM_back1Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For5	pcr	2.5
+transfer	10uM_back1Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For5_tube/	300.0
+dispense	water	back2Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For5	back2For5_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev5	back2Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For5_tube/	90.0
+dispense	water	dil_back2Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For5_tube/	10uM_back2For5	10.0
+transfer	back2Rev5_tube/A1	10uM_back2Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For5	pcr	2.5
+transfer	10uM_back2Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor5_tube/	300.0
+dispense	water	partRev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor5	partFor5_tube/	true
+addContainer	eppendorf_1p5mL	partRev5	partRev5_tube/A1	true
+addContainer	eppendorf_1p5mL	bin5_OFF	bin5_OFF_tube/A1	true
+dispense	water	dil_partFor5_tube/	90.0
+dispense	water	dil_partRev5_tube/A1	90.0
+dispense	water	20xdil_bin5_OFF_tube/A1	9.5
+transfer	partFor5_tube/	10uM_partFor5	10.0
+transfer	partRev5_tube/A1	10uM_partRev5	10.0
+transfer	bin5_OFF_tube/A1	20xdil_bin5_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor5	pcr	2.5
+transfer	10uM_partRev5	pcr	2.5
+transfer	20xdil_bin5_OFF	pcr	1.0
+dispense	water	back1For5_tube/	300.0
+dispense	water	back1Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For5	back1For5_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev5	back1Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For5_tube/	90.0
+dispense	water	dil_back1Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For5_tube/	10uM_back1For5	10.0
+transfer	back1Rev5_tube/A1	10uM_back1Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For5	pcr	2.5
+transfer	10uM_back1Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For5_tube/	300.0
+dispense	water	back2Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For5	back2For5_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev5	back2Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For5_tube/	90.0
+dispense	water	dil_back2Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For5_tube/	10uM_back2For5	10.0
+transfer	back2Rev5_tube/A1	10uM_back2Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For5	pcr	2.5
+transfer	10uM_back2Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor5_tube/	300.0
+dispense	water	partRev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor5	partFor5_tube/	true
+addContainer	eppendorf_1p5mL	partRev5	partRev5_tube/A1	true
+addContainer	eppendorf_1p5mL	bin5_SLOW	bin5_SLOW_tube/A1	true
+dispense	water	dil_partFor5_tube/	90.0
+dispense	water	dil_partRev5_tube/A1	90.0
+dispense	water	20xdil_bin5_SLOW_tube/A1	9.5
+transfer	partFor5_tube/	10uM_partFor5	10.0
+transfer	partRev5_tube/A1	10uM_partRev5	10.0
+transfer	bin5_SLOW_tube/A1	20xdil_bin5_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor5	pcr	2.5
+transfer	10uM_partRev5	pcr	2.5
+transfer	20xdil_bin5_SLOW	pcr	1.0
+dispense	water	back1For5_tube/	300.0
+dispense	water	back1Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For5	back1For5_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev5	back1Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For5_tube/	90.0
+dispense	water	dil_back1Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For5_tube/	10uM_back1For5	10.0
+transfer	back1Rev5_tube/A1	10uM_back1Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For5	pcr	2.5
+transfer	10uM_back1Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For5_tube/	300.0
+dispense	water	back2Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For5	back2For5_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev5	back2Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For5_tube/	90.0
+dispense	water	dil_back2Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For5_tube/	10uM_back2For5	10.0
+transfer	back2Rev5_tube/A1	10uM_back2Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For5	pcr	2.5
+transfer	10uM_back2Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor5_tube/	300.0
+dispense	water	partRev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor5	partFor5_tube/	true
+addContainer	eppendorf_1p5mL	partRev5	partRev5_tube/A1	true
+addContainer	eppendorf_1p5mL	bin5_LOW	bin5_LOW_tube/A1	true
+dispense	water	dil_partFor5_tube/	90.0
+dispense	water	dil_partRev5_tube/A1	90.0
+dispense	water	20xdil_bin5_LOW_tube/A1	9.5
+transfer	partFor5_tube/	10uM_partFor5	10.0
+transfer	partRev5_tube/A1	10uM_partRev5	10.0
+transfer	bin5_LOW_tube/A1	20xdil_bin5_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor5	pcr	2.5
+transfer	10uM_partRev5	pcr	2.5
+transfer	20xdil_bin5_LOW	pcr	1.0
+dispense	water	back1For5_tube/	300.0
+dispense	water	back1Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For5	back1For5_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev5	back1Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For5_tube/	90.0
+dispense	water	dil_back1Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For5_tube/	10uM_back1For5	10.0
+transfer	back1Rev5_tube/A1	10uM_back1Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For5	pcr	2.5
+transfer	10uM_back1Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For5_tube/	300.0
+dispense	water	back2Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For5	back2For5_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev5	back2Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For5_tube/	90.0
+dispense	water	dil_back2Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For5_tube/	10uM_back2For5	10.0
+transfer	back2Rev5_tube/A1	10uM_back2Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For5	pcr	2.5
+transfer	10uM_back2Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor5_tube/	300.0
+dispense	water	partRev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor5	partFor5_tube/	true
+addContainer	eppendorf_1p5mL	partRev5	partRev5_tube/A1	true
+addContainer	eppendorf_1p5mL	bin5_MED	bin5_MED_tube/A1	true
+dispense	water	dil_partFor5_tube/	90.0
+dispense	water	dil_partRev5_tube/A1	90.0
+dispense	water	20xdil_bin5_MED_tube/A1	9.5
+transfer	partFor5_tube/	10uM_partFor5	10.0
+transfer	partRev5_tube/A1	10uM_partRev5	10.0
+transfer	bin5_MED_tube/A1	20xdil_bin5_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor5	pcr	2.5
+transfer	10uM_partRev5	pcr	2.5
+transfer	20xdil_bin5_MED	pcr	1.0
+dispense	water	back1For5_tube/	300.0
+dispense	water	back1Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For5	back1For5_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev5	back1Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For5_tube/	90.0
+dispense	water	dil_back1Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For5_tube/	10uM_back1For5	10.0
+transfer	back1Rev5_tube/A1	10uM_back1Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For5	pcr	2.5
+transfer	10uM_back1Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For5_tube/	300.0
+dispense	water	back2Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For5	back2For5_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev5	back2Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For5_tube/	90.0
+dispense	water	dil_back2Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For5_tube/	10uM_back2For5	10.0
+transfer	back2Rev5_tube/A1	10uM_back2Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For5	pcr	2.5
+transfer	10uM_back2Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor5_tube/	300.0
+dispense	water	partRev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor5	partFor5_tube/	true
+addContainer	eppendorf_1p5mL	partRev5	partRev5_tube/A1	true
+addContainer	eppendorf_1p5mL	bin5_HIGH	bin5_HIGH_tube/A1	true
+dispense	water	dil_partFor5_tube/	90.0
+dispense	water	dil_partRev5_tube/A1	90.0
+dispense	water	20xdil_bin5_HIGH_tube/A1	9.5
+transfer	partFor5_tube/	10uM_partFor5	10.0
+transfer	partRev5_tube/A1	10uM_partRev5	10.0
+transfer	bin5_HIGH_tube/A1	20xdil_bin5_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor5	pcr	2.5
+transfer	10uM_partRev5	pcr	2.5
+transfer	20xdil_bin5_HIGH	pcr	1.0
+dispense	water	back1For5_tube/	300.0
+dispense	water	back1Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For5	back1For5_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev5	back1Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For5_tube/	90.0
+dispense	water	dil_back1Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For5_tube/	10uM_back1For5	10.0
+transfer	back1Rev5_tube/A1	10uM_back1Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For5	pcr	2.5
+transfer	10uM_back1Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For5_tube/	300.0
+dispense	water	back2Rev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For5	back2For5_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev5	back2Rev5_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For5_tube/	90.0
+dispense	water	dil_back2Rev5_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For5_tube/	10uM_back2For5	10.0
+transfer	back2Rev5_tube/A1	10uM_back2Rev5	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For5	pcr	2.5
+transfer	10uM_back2Rev5	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor5_tube/	300.0
+dispense	water	partRev5_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor5	partFor5_tube/	true
+addContainer	eppendorf_1p5mL	partRev5	partRev5_tube/A1	true
+addContainer	eppendorf_1p5mL	bin5_UBER	bin5_UBER_tube/A1	true
+dispense	water	dil_partFor5_tube/	90.0
+dispense	water	dil_partRev5_tube/A1	90.0
+dispense	water	20xdil_bin5_UBER_tube/A1	9.5
+transfer	partFor5_tube/	10uM_partFor5	10.0
+transfer	partRev5_tube/A1	10uM_partRev5	10.0
+transfer	bin5_UBER_tube/A1	20xdil_bin5_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor5	pcr	2.5
+transfer	10uM_partRev5	pcr	2.5
+transfer	20xdil_bin5_UBER	pcr	1.0
+dispense	water	back1For6_tube/	300.0
+dispense	water	back1Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For6	back1For6_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev6	back1Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For6_tube/	90.0
+dispense	water	dil_back1Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For6_tube/	10uM_back1For6	10.0
+transfer	back1Rev6_tube/A1	10uM_back1Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For6	pcr	2.5
+transfer	10uM_back1Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For6_tube/	300.0
+dispense	water	back2Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For6	back2For6_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev6	back2Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For6_tube/	90.0
+dispense	water	dil_back2Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For6_tube/	10uM_back2For6	10.0
+transfer	back2Rev6_tube/A1	10uM_back2Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For6	pcr	2.5
+transfer	10uM_back2Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor6_tube/	300.0
+dispense	water	partRev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor6	partFor6_tube/	true
+addContainer	eppendorf_1p5mL	partRev6	partRev6_tube/A1	true
+addContainer	eppendorf_1p5mL	bin6_OFF	bin6_OFF_tube/A1	true
+dispense	water	dil_partFor6_tube/	90.0
+dispense	water	dil_partRev6_tube/A1	90.0
+dispense	water	20xdil_bin6_OFF_tube/A1	9.5
+transfer	partFor6_tube/	10uM_partFor6	10.0
+transfer	partRev6_tube/A1	10uM_partRev6	10.0
+transfer	bin6_OFF_tube/A1	20xdil_bin6_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor6	pcr	2.5
+transfer	10uM_partRev6	pcr	2.5
+transfer	20xdil_bin6_OFF	pcr	1.0
+dispense	water	back1For6_tube/	300.0
+dispense	water	back1Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For6	back1For6_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev6	back1Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For6_tube/	90.0
+dispense	water	dil_back1Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For6_tube/	10uM_back1For6	10.0
+transfer	back1Rev6_tube/A1	10uM_back1Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For6	pcr	2.5
+transfer	10uM_back1Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For6_tube/	300.0
+dispense	water	back2Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For6	back2For6_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev6	back2Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For6_tube/	90.0
+dispense	water	dil_back2Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For6_tube/	10uM_back2For6	10.0
+transfer	back2Rev6_tube/A1	10uM_back2Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For6	pcr	2.5
+transfer	10uM_back2Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor6_tube/	300.0
+dispense	water	partRev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor6	partFor6_tube/	true
+addContainer	eppendorf_1p5mL	partRev6	partRev6_tube/A1	true
+addContainer	eppendorf_1p5mL	bin6_SLOW	bin6_SLOW_tube/A1	true
+dispense	water	dil_partFor6_tube/	90.0
+dispense	water	dil_partRev6_tube/A1	90.0
+dispense	water	20xdil_bin6_SLOW_tube/A1	9.5
+transfer	partFor6_tube/	10uM_partFor6	10.0
+transfer	partRev6_tube/A1	10uM_partRev6	10.0
+transfer	bin6_SLOW_tube/A1	20xdil_bin6_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor6	pcr	2.5
+transfer	10uM_partRev6	pcr	2.5
+transfer	20xdil_bin6_SLOW	pcr	1.0
+dispense	water	back1For6_tube/	300.0
+dispense	water	back1Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For6	back1For6_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev6	back1Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For6_tube/	90.0
+dispense	water	dil_back1Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For6_tube/	10uM_back1For6	10.0
+transfer	back1Rev6_tube/A1	10uM_back1Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For6	pcr	2.5
+transfer	10uM_back1Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For6_tube/	300.0
+dispense	water	back2Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For6	back2For6_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev6	back2Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For6_tube/	90.0
+dispense	water	dil_back2Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For6_tube/	10uM_back2For6	10.0
+transfer	back2Rev6_tube/A1	10uM_back2Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For6	pcr	2.5
+transfer	10uM_back2Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor6_tube/	300.0
+dispense	water	partRev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor6	partFor6_tube/	true
+addContainer	eppendorf_1p5mL	partRev6	partRev6_tube/A1	true
+addContainer	eppendorf_1p5mL	bin6_LOW	bin6_LOW_tube/A1	true
+dispense	water	dil_partFor6_tube/	90.0
+dispense	water	dil_partRev6_tube/A1	90.0
+dispense	water	20xdil_bin6_LOW_tube/A1	9.5
+transfer	partFor6_tube/	10uM_partFor6	10.0
+transfer	partRev6_tube/A1	10uM_partRev6	10.0
+transfer	bin6_LOW_tube/A1	20xdil_bin6_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor6	pcr	2.5
+transfer	10uM_partRev6	pcr	2.5
+transfer	20xdil_bin6_LOW	pcr	1.0
+dispense	water	back1For6_tube/	300.0
+dispense	water	back1Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For6	back1For6_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev6	back1Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For6_tube/	90.0
+dispense	water	dil_back1Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For6_tube/	10uM_back1For6	10.0
+transfer	back1Rev6_tube/A1	10uM_back1Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For6	pcr	2.5
+transfer	10uM_back1Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For6_tube/	300.0
+dispense	water	back2Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For6	back2For6_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev6	back2Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For6_tube/	90.0
+dispense	water	dil_back2Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For6_tube/	10uM_back2For6	10.0
+transfer	back2Rev6_tube/A1	10uM_back2Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For6	pcr	2.5
+transfer	10uM_back2Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor6_tube/	300.0
+dispense	water	partRev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor6	partFor6_tube/	true
+addContainer	eppendorf_1p5mL	partRev6	partRev6_tube/A1	true
+addContainer	eppendorf_1p5mL	bin6_MED	bin6_MED_tube/A1	true
+dispense	water	dil_partFor6_tube/	90.0
+dispense	water	dil_partRev6_tube/A1	90.0
+dispense	water	20xdil_bin6_MED_tube/A1	9.5
+transfer	partFor6_tube/	10uM_partFor6	10.0
+transfer	partRev6_tube/A1	10uM_partRev6	10.0
+transfer	bin6_MED_tube/A1	20xdil_bin6_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor6	pcr	2.5
+transfer	10uM_partRev6	pcr	2.5
+transfer	20xdil_bin6_MED	pcr	1.0
+dispense	water	back1For6_tube/	300.0
+dispense	water	back1Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For6	back1For6_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev6	back1Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For6_tube/	90.0
+dispense	water	dil_back1Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For6_tube/	10uM_back1For6	10.0
+transfer	back1Rev6_tube/A1	10uM_back1Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For6	pcr	2.5
+transfer	10uM_back1Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For6_tube/	300.0
+dispense	water	back2Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For6	back2For6_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev6	back2Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For6_tube/	90.0
+dispense	water	dil_back2Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For6_tube/	10uM_back2For6	10.0
+transfer	back2Rev6_tube/A1	10uM_back2Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For6	pcr	2.5
+transfer	10uM_back2Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor6_tube/	300.0
+dispense	water	partRev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor6	partFor6_tube/	true
+addContainer	eppendorf_1p5mL	partRev6	partRev6_tube/A1	true
+addContainer	eppendorf_1p5mL	bin6_HIGH	bin6_HIGH_tube/A1	true
+dispense	water	dil_partFor6_tube/	90.0
+dispense	water	dil_partRev6_tube/A1	90.0
+dispense	water	20xdil_bin6_HIGH_tube/A1	9.5
+transfer	partFor6_tube/	10uM_partFor6	10.0
+transfer	partRev6_tube/A1	10uM_partRev6	10.0
+transfer	bin6_HIGH_tube/A1	20xdil_bin6_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor6	pcr	2.5
+transfer	10uM_partRev6	pcr	2.5
+transfer	20xdil_bin6_HIGH	pcr	1.0
+dispense	water	back1For6_tube/	300.0
+dispense	water	back1Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For6	back1For6_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev6	back1Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For6_tube/	90.0
+dispense	water	dil_back1Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For6_tube/	10uM_back1For6	10.0
+transfer	back1Rev6_tube/A1	10uM_back1Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For6	pcr	2.5
+transfer	10uM_back1Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For6_tube/	300.0
+dispense	water	back2Rev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For6	back2For6_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev6	back2Rev6_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For6_tube/	90.0
+dispense	water	dil_back2Rev6_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For6_tube/	10uM_back2For6	10.0
+transfer	back2Rev6_tube/A1	10uM_back2Rev6	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For6	pcr	2.5
+transfer	10uM_back2Rev6	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor6_tube/	300.0
+dispense	water	partRev6_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor6	partFor6_tube/	true
+addContainer	eppendorf_1p5mL	partRev6	partRev6_tube/A1	true
+addContainer	eppendorf_1p5mL	bin6_UBER	bin6_UBER_tube/A1	true
+dispense	water	dil_partFor6_tube/	90.0
+dispense	water	dil_partRev6_tube/A1	90.0
+dispense	water	20xdil_bin6_UBER_tube/A1	9.5
+transfer	partFor6_tube/	10uM_partFor6	10.0
+transfer	partRev6_tube/A1	10uM_partRev6	10.0
+transfer	bin6_UBER_tube/A1	20xdil_bin6_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor6	pcr	2.5
+transfer	10uM_partRev6	pcr	2.5
+transfer	20xdil_bin6_UBER	pcr	1.0
+dispense	water	back1For7_tube/	300.0
+dispense	water	back1Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For7	back1For7_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev7	back1Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For7_tube/	90.0
+dispense	water	dil_back1Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For7_tube/	10uM_back1For7	10.0
+transfer	back1Rev7_tube/A1	10uM_back1Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For7	pcr	2.5
+transfer	10uM_back1Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For7_tube/	300.0
+dispense	water	back2Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For7	back2For7_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev7	back2Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For7_tube/	90.0
+dispense	water	dil_back2Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For7_tube/	10uM_back2For7	10.0
+transfer	back2Rev7_tube/A1	10uM_back2Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For7	pcr	2.5
+transfer	10uM_back2Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor7_tube/	300.0
+dispense	water	partRev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor7	partFor7_tube/	true
+addContainer	eppendorf_1p5mL	partRev7	partRev7_tube/A1	true
+addContainer	eppendorf_1p5mL	bin7_OFF	bin7_OFF_tube/A1	true
+dispense	water	dil_partFor7_tube/	90.0
+dispense	water	dil_partRev7_tube/A1	90.0
+dispense	water	20xdil_bin7_OFF_tube/A1	9.5
+transfer	partFor7_tube/	10uM_partFor7	10.0
+transfer	partRev7_tube/A1	10uM_partRev7	10.0
+transfer	bin7_OFF_tube/A1	20xdil_bin7_OFF	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor7	pcr	2.5
+transfer	10uM_partRev7	pcr	2.5
+transfer	20xdil_bin7_OFF	pcr	1.0
+dispense	water	back1For7_tube/	300.0
+dispense	water	back1Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For7	back1For7_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev7	back1Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For7_tube/	90.0
+dispense	water	dil_back1Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For7_tube/	10uM_back1For7	10.0
+transfer	back1Rev7_tube/A1	10uM_back1Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For7	pcr	2.5
+transfer	10uM_back1Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For7_tube/	300.0
+dispense	water	back2Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For7	back2For7_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev7	back2Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For7_tube/	90.0
+dispense	water	dil_back2Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For7_tube/	10uM_back2For7	10.0
+transfer	back2Rev7_tube/A1	10uM_back2Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For7	pcr	2.5
+transfer	10uM_back2Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor7_tube/	300.0
+dispense	water	partRev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor7	partFor7_tube/	true
+addContainer	eppendorf_1p5mL	partRev7	partRev7_tube/A1	true
+addContainer	eppendorf_1p5mL	bin7_SLOW	bin7_SLOW_tube/A1	true
+dispense	water	dil_partFor7_tube/	90.0
+dispense	water	dil_partRev7_tube/A1	90.0
+dispense	water	20xdil_bin7_SLOW_tube/A1	9.5
+transfer	partFor7_tube/	10uM_partFor7	10.0
+transfer	partRev7_tube/A1	10uM_partRev7	10.0
+transfer	bin7_SLOW_tube/A1	20xdil_bin7_SLOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor7	pcr	2.5
+transfer	10uM_partRev7	pcr	2.5
+transfer	20xdil_bin7_SLOW	pcr	1.0
+dispense	water	back1For7_tube/	300.0
+dispense	water	back1Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For7	back1For7_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev7	back1Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For7_tube/	90.0
+dispense	water	dil_back1Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For7_tube/	10uM_back1For7	10.0
+transfer	back1Rev7_tube/A1	10uM_back1Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For7	pcr	2.5
+transfer	10uM_back1Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For7_tube/	300.0
+dispense	water	back2Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For7	back2For7_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev7	back2Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For7_tube/	90.0
+dispense	water	dil_back2Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For7_tube/	10uM_back2For7	10.0
+transfer	back2Rev7_tube/A1	10uM_back2Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For7	pcr	2.5
+transfer	10uM_back2Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor7_tube/	300.0
+dispense	water	partRev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor7	partFor7_tube/	true
+addContainer	eppendorf_1p5mL	partRev7	partRev7_tube/A1	true
+addContainer	eppendorf_1p5mL	bin7_LOW	bin7_LOW_tube/A1	true
+dispense	water	dil_partFor7_tube/	90.0
+dispense	water	dil_partRev7_tube/A1	90.0
+dispense	water	20xdil_bin7_LOW_tube/A1	9.5
+transfer	partFor7_tube/	10uM_partFor7	10.0
+transfer	partRev7_tube/A1	10uM_partRev7	10.0
+transfer	bin7_LOW_tube/A1	20xdil_bin7_LOW	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor7	pcr	2.5
+transfer	10uM_partRev7	pcr	2.5
+transfer	20xdil_bin7_LOW	pcr	1.0
+dispense	water	back1For7_tube/	300.0
+dispense	water	back1Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For7	back1For7_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev7	back1Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For7_tube/	90.0
+dispense	water	dil_back1Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For7_tube/	10uM_back1For7	10.0
+transfer	back1Rev7_tube/A1	10uM_back1Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For7	pcr	2.5
+transfer	10uM_back1Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For7_tube/	300.0
+dispense	water	back2Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For7	back2For7_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev7	back2Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For7_tube/	90.0
+dispense	water	dil_back2Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For7_tube/	10uM_back2For7	10.0
+transfer	back2Rev7_tube/A1	10uM_back2Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For7	pcr	2.5
+transfer	10uM_back2Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor7_tube/	300.0
+dispense	water	partRev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor7	partFor7_tube/	true
+addContainer	eppendorf_1p5mL	partRev7	partRev7_tube/A1	true
+addContainer	eppendorf_1p5mL	bin7_MED	bin7_MED_tube/A1	true
+dispense	water	dil_partFor7_tube/	90.0
+dispense	water	dil_partRev7_tube/A1	90.0
+dispense	water	20xdil_bin7_MED_tube/A1	9.5
+transfer	partFor7_tube/	10uM_partFor7	10.0
+transfer	partRev7_tube/A1	10uM_partRev7	10.0
+transfer	bin7_MED_tube/A1	20xdil_bin7_MED	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor7	pcr	2.5
+transfer	10uM_partRev7	pcr	2.5
+transfer	20xdil_bin7_MED	pcr	1.0
+dispense	water	back1For7_tube/	300.0
+dispense	water	back1Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For7	back1For7_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev7	back1Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For7_tube/	90.0
+dispense	water	dil_back1Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For7_tube/	10uM_back1For7	10.0
+transfer	back1Rev7_tube/A1	10uM_back1Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For7	pcr	2.5
+transfer	10uM_back1Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For7_tube/	300.0
+dispense	water	back2Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For7	back2For7_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev7	back2Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For7_tube/	90.0
+dispense	water	dil_back2Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For7_tube/	10uM_back2For7	10.0
+transfer	back2Rev7_tube/A1	10uM_back2Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For7	pcr	2.5
+transfer	10uM_back2Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor7_tube/	300.0
+dispense	water	partRev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor7	partFor7_tube/	true
+addContainer	eppendorf_1p5mL	partRev7	partRev7_tube/A1	true
+addContainer	eppendorf_1p5mL	bin7_HIGH	bin7_HIGH_tube/A1	true
+dispense	water	dil_partFor7_tube/	90.0
+dispense	water	dil_partRev7_tube/A1	90.0
+dispense	water	20xdil_bin7_HIGH_tube/A1	9.5
+transfer	partFor7_tube/	10uM_partFor7	10.0
+transfer	partRev7_tube/A1	10uM_partRev7	10.0
+transfer	bin7_HIGH_tube/A1	20xdil_bin7_HIGH	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor7	pcr	2.5
+transfer	10uM_partRev7	pcr	2.5
+transfer	20xdil_bin7_HIGH	pcr	1.0
+dispense	water	back1For7_tube/	300.0
+dispense	water	back1Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back1For7	back1For7_tube/	true
+addContainer	eppendorf_1p5mL	back1Rev7	back1Rev7_tube/A1	true
+addContainer    eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back1For7_tube/	90.0
+dispense	water	dil_back1Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back1For7_tube/	10uM_back1For7	10.0
+transfer	back1Rev7_tube/A1	10uM_back1Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back1For7	pcr	2.5
+transfer	10uM_back1Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	back2For7_tube/	300.0
+dispense	water	back2Rev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	back2For7	back2For7_tube/	true
+addContainer	eppendorf_1p5mL	back2Rev7	back2Rev7_tube/A1	true
+addContainer	eppendorf_1p5mL	pAPAP1	pAPAP1_tube/A1	true
+dispense	water	dil_back2For7_tube/	90.0
+dispense	water	dil_back2Rev7_tube/A1	90.0
+dispense	water	20xdil_pAPAP1_tube/A1	9.5
+transfer	back2For7_tube/	10uM_back2For7	10.0
+transfer	back2Rev7_tube/A1	10uM_back2Rev7	10.0
+transfer	pAPAP1_tube/A1	20xdil_pAPAP1	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_back2For7	pcr	2.5
+transfer	10uM_back2Rev7	pcr	2.5
+transfer	20xdil_pAPAP1	pcr	1.0
+dispense	water	partFor7_tube/	300.0
+dispense	water	partRev7_tube/A1	300.0
+addContainer	pcr_tube	pcr	tube/A1	true
+addContainer	eppendorf_1p5mL	partFor7	partFor7_tube/	true
+addContainer	eppendorf_1p5mL	partRev7	partRev7_tube/A1	true
+addContainer	eppendorf_1p5mL	bin7_UBER	bin7_UBER_tube/A1	true
+dispense	water	dil_partFor7_tube/	90.0
+dispense	water	dil_partRev7_tube/A1	90.0
+dispense	water	20xdil_bin7_UBER_tube/A1	9.5
+transfer	partFor7_tube/	10uM_partFor7	10.0
+transfer	partRev7_tube/A1	10uM_partRev7	10.0
+transfer	bin7_UBER_tube/A1	20xdil_bin7_UBER	10.0
+transfer	PCR_mastermix	pcr	44.0
+transfer	10uM_partFor7	pcr	2.5
+transfer	10uM_partRev7	pcr	2.5
+transfer	20xdil_bin7_UBER	pcr	1.0

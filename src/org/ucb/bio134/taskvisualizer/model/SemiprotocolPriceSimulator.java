@@ -69,6 +69,47 @@ public class SemiprotocolPriceSimulator {
         return priceCalculator.run(reagentCount, containerCount,
                 tipCount);
     }
+    public double runProtocl(Semiprotocol protocol ) throws Exception {
+        HashMap<Reagent, Double> localReagentCount = new HashMap<>();
+        HashMap<Container, Integer> localContainerCount = new HashMap<>();
+        HashMap<Tip, Integer> localTipCount = new HashMap<>();
+
+        Tip tip;
+        Reagent reagent;
+        double volume;
+
+        for (Task task : protocol.getSteps() ) {
+            LabOp labOp = task.getOperation();
+            switch (labOp) {
+                case addContainer:
+                    AddContainer ac = (AddContainer) task;
+                    updateContainerCount(localContainerCount, ac);
+                    break;
+                case removeContainer:
+                    RemoveContainer rc = (RemoveContainer) task;
+                    break;
+                case transfer:
+                    Transfer t = (Transfer) task;
+                    tip = getTip(t.getVolume());
+                    updateTipCount(localTipCount, tip);
+                    break;
+                case dispense:
+                    Dispense d = (Dispense) task;
+                    tip = getTip(d.getVolume());
+                    reagent = d.getReagent();
+                    volume = d.getVolume();
+                    updateTipCount(localTipCount, tip);
+                    updateReagentCount(localReagentCount, reagent, volume);
+                    break;
+                case multichannel:
+                    Multichannel m = (Multichannel) task;
+                    break;
+            }
+        }
+
+        return priceCalculator.run(localReagentCount, localContainerCount,
+                localTipCount);
+    }
 
     /**
      *
@@ -130,27 +171,29 @@ public class SemiprotocolPriceSimulator {
             return Tip.P1000;
         }
     }
-
     public double getReagentTotal() {
-        return priceCalculator.reagentTotal;
+        return priceCalculator.getReagentTotal();
     }
     public double getTubeTotal(){
-        return priceCalculator.tubeTotal;
+        return priceCalculator.getTubeTotal();
     }
     public double getTipTotal() {
-        return priceCalculator.tipTotal;
+        return priceCalculator.getTipTotal();
     }
     public static void main(String[] args) throws Exception {
         //Read in the example semiprotocol
-        String text = FileUtils.readResourceFile("semiprotocol/data/alibaba_semiprotocol.txt");
+        String text = FileUtils.readResourceFile("semiprotocol/data/mastermix7.txt");
         ParseSemiprotocol parser = new ParseSemiprotocol();
         parser.initiate();
         Semiprotocol protocol = parser.run(text);
 
-//        SemiprotocolPriceSimulator sim = new SemiprotocolPriceSimulator();
-//        sim.initiate();
-//        double price = sim.run(protocol);
-//        System.out.println("$" + price);
+        SemiprotocolPriceSimulator sim = new SemiprotocolPriceSimulator();
+        sim.initiate();
+        double price = sim.runProtocl(protocol);
+        System.out.println("$" + price);
+        System.out.println(sim.getReagentTotal());
+        System.out.println(sim.getTubeTotal());
+        System.out.println(sim.getTipTotal());
 //        sim.getReagentTotal();
 //        sim.getTubeTotal();
 //        sim.getTipTotal();

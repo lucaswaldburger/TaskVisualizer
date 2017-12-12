@@ -2,6 +2,10 @@ package org.ucb.bio134.taskvisualizer.model;
 
 import javafx.util.Pair;
 import org.ucb.c5.semiprotocol.model.Container;
+import org.ucb.c5.semiprotocol.model.Reagent;
+
+import javax.swing.*;
+import java.awt.*;
 import java.util.HashMap;
 
 /**
@@ -38,7 +42,8 @@ public class Well {
         this.tubeName = null;
         this.tube = null;
         this.plateType = plateType;
-        this.currentVolume = 0.0;
+//        this.currentVolume = 0.0;
+        this.currentVolume = 200.0;
         this.contents = new HashMap<>();
         this.mixture = new HashMap<>();
     }
@@ -54,7 +59,8 @@ public class Well {
         this.tube = tube;
         this.plateType = plateType;
         calcMaxVolume(tube);
-        this.currentVolume = 0.0;
+//        this.currentVolume = 0.0;
+        this.currentVolume = 200.0;
         this.contents = new HashMap<>();
         this.mixture = new HashMap<>();
     }
@@ -99,12 +105,11 @@ public class Well {
         if (container == Container.eppendorf_2mL)
             this.maxVol = 1900.0;
         if (container == Container.pcr_tube)
-            this.maxVol= 200.0;
+            this.maxVol= 300.0;
         if (container == Container.pcr_strip)
             this.maxVol = 200.0 * 8;
         if (container == Container.pcr_plate_96)
             this.maxVol = 200.0 * 96; }
-
 //    /**
 //     *
 //     * @param plateType
@@ -171,7 +176,8 @@ public class Well {
     public void addVolume(String source, Double amount) throws Exception {
         //Check if the well has enough space for the additional volume
         if (currentVolume + amount > maxVol) {
-            throw new Exception("New volume exceeds maximum volume of container in well");
+            throw new Exception("New volume of " + amount + " exceeds maximum volume of container in " + source
+            + " since new volume is " + (currentVolume + amount) + " and maximum volume is " + maxVol);
         } else {
             currentVolume += amount;
             mixture.put(source, amount/currentVolume);
@@ -190,9 +196,9 @@ public class Well {
      */
     public void removeVolume(Double amount) throws Exception {
         // Check for sufficient volume
-        System.out.println(currentVolume);
         if (currentVolume - amount < 0.0) {
-            throw new Exception("Removal of volume results in negative value");
+            throw new Exception("Removal of volume from " + tubeName + " results in negative value since " +
+                    "volume to add is " + amount + " current volume is " + currentVolume);
         } else {
             currentVolume -= amount;
             for (String content : contents.keySet()) {

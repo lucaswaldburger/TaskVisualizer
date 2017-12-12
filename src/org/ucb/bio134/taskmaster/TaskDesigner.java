@@ -201,7 +201,7 @@ public class TaskDesigner {
                         getDeckLocation(primer1Dilution), true));
                 pcrSteps.add(new Dispense(Reagent.water, getDeckLocation(primer1Dilution),
                         90));
-                pcrSteps.add(new Transfer(primer1Tube, getDeckLocation(primer1Dilution), 10));
+                pcrSteps.add(new Transfer(primer1Tube, getDeckLocation(primer1Dilution), 10,true));
                 oligoInventory.replace(primer1, oligoInventory.get(primer1) - 10);
                 dilutionInventory.put(primer1Dilution,100.0);
             } else {
@@ -214,7 +214,7 @@ public class TaskDesigner {
                 pcrSteps.add(new AddContainer(Container.eppendorf_1p5mL, primer2Dilution,
                         getDeckLocation(primer2Dilution), true));
                 pcrSteps.add(new Dispense(Reagent.water, getDeckLocation(primer2Dilution), 90));
-                pcrSteps.add(new Transfer(primer2Tube, getDeckLocation(primer2Dilution), 10));
+                pcrSteps.add(new Transfer(primer2Tube, getDeckLocation(primer2Dilution), 10,true));
                 oligoInventory.replace(primer2,oligoInventory.get(primer2) - 10);
                 dilutionInventory.put(primer2Dilution,100.0);
             } else {
@@ -228,7 +228,7 @@ public class TaskDesigner {
                         getDeckLocation(templateDilution), true));
                 pcrSteps.add(new Dispense(Reagent.water, getDeckLocation(templateDilution),
                         9.5));
-                pcrSteps.add(new Transfer(templateTube, getDeckLocation(templateDilution), 0.5));
+                pcrSteps.add(new Transfer(templateTube, getDeckLocation(templateDilution), 0.5,true));
                 dilutionInventory.put(templateDilution,10.0);
             } else {
                 pcrSteps.add(new AddContainer(Container.eppendorf_1p5mL, templateDilution,
@@ -236,12 +236,12 @@ public class TaskDesigner {
             }
 
             // Add diluted oligos and template plasmid to the pcr tube
-            pcrSteps.add(new Transfer(mastermix, containerLocations.get(containerIndex), 44));
-            pcrSteps.add(new Transfer(primer1Dilution, containerLocations.get(containerIndex), 2.5));
+            pcrSteps.add(new Transfer(mastermix, containerLocations.get(containerIndex), 44,true));
+            pcrSteps.add(new Transfer(primer1Dilution, containerLocations.get(containerIndex), 2.5,true));
             dilutionInventory.replace(primer1Dilution, dilutionInventory.get(primer1Dilution) - 2.5);
-            pcrSteps.add(new Transfer(primer2Dilution, containerLocations.get(containerIndex), 2.5));
+            pcrSteps.add(new Transfer(primer2Dilution, containerLocations.get(containerIndex), 2.5, true));
             dilutionInventory.replace(primer2Dilution, dilutionInventory.get(primer2Dilution) - 2.5);
-            pcrSteps.add(new Transfer(templateDilution, containerLocations.get(containerIndex), 1));
+            pcrSteps.add(new Transfer(templateDilution, containerLocations.get(containerIndex), 1, true));
             dilutionInventory.replace(templateDilution, dilutionInventory.get(templateDilution) - 1);
             containerIndex++;
         }
@@ -329,9 +329,9 @@ public class TaskDesigner {
         }
 
         for (Ligation lig : ligations) {
-            ligationSteps.add(new Transfer(mastermix, containerLocations.get(containerIndex), 9.0));
+            ligationSteps.add(new Transfer(mastermix, containerLocations.get(containerIndex), 9.0,true));
             for (String fragment : lig.getFragments()) {
-                ligationSteps.add(new Transfer(fragment,containerLocations.get(containerIndex),1.0));
+                ligationSteps.add(new Transfer(fragment,containerLocations.get(containerIndex),1.0,true));
             }
             containerIndex++;
         }
@@ -409,8 +409,8 @@ public class TaskDesigner {
 
         for (Digestion dig : digestions) {
             String substrate = dig.getSubstrate();
-            digestionSteps.add(new Transfer(mastermix,containerLocations.get(containerIndex),volPerDigestation));
-            digestionSteps.add(new Transfer(substrate, containerLocations.get(containerIndex),5.0));
+            digestionSteps.add(new Transfer(mastermix,containerLocations.get(containerIndex),volPerDigestation,true));
+            digestionSteps.add(new Transfer(substrate, containerLocations.get(containerIndex),5.0,true));
             containerIndex++;
         }
         return new Semiprotocol(digestionSteps);
@@ -426,7 +426,7 @@ public class TaskDesigner {
         digestionSteps.add(new Dispense(Reagent.T4_DNA_ligase,assemblyTubeLocation,0.5));
         digestionSteps.add(new Dispense(Reagent.valueOf(assembly.getEnzyme().toString()),assemblyTubeLocation,0.5));
         for (String fragment : assembly.getFragments()) {
-            digestionSteps.add(new Transfer(fragment, assemblyTubeLocation,1.0));
+            digestionSteps.add(new Transfer(fragment, assemblyTubeLocation,1.0,true));
         }
         assemblyCount++;
     }
