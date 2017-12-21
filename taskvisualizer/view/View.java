@@ -27,7 +27,8 @@ public class View extends JFrame {
     private JButton nextButton;
     private JButton playButton;
     private JButton endButton;
-    private JButton simulateButton;
+//    private JButton simulateButton;
+    private JButton openButton;
 
     private NotificationPanel notifPanel;
     private PricePanel pricePanel;
@@ -75,6 +76,7 @@ public class View extends JFrame {
         highlightedDeck = new HashSet<>();
         coloredTube = new HashSet<>();
         coloredPCR = new HashSet<>();
+
 
         getContentPane().setLayout(null);
         getContentPane().setBackground(new Color(96,96,96));
@@ -130,10 +132,15 @@ public class View extends JFrame {
         playButton.setBounds(windowOffset + wellWidth * 3,windowOffset * 3 + plateHeight * 2, wellWidth * 3, wellHeight);
         getContentPane().add(playButton);
 
-        // Add simulate button to go through entire semiprotocol steps while considering the human burden for each step
-        simulateButton = new JButton("Simulate");
-        simulateButton.setBounds(windowOffset + wellWidth * 6,windowOffset * 3 + plateHeight * 2, wellWidth * 3, wellHeight);
-        getContentPane().add(simulateButton);
+//        // Add simulate button to go through entire semiprotocol steps while considering the human burden for each step
+//        simulateButton = new JButton("Simulate");
+//        simulateButton.setBounds(windowOffset + wellWidth * 6,windowOffset * 3 + plateHeight * 2, wellWidth * 3, wellHeight);
+//        getContentPane().add(simulateButton);
+
+        //Add upload button to allow the user to select the semiprotocol they would like to visualize
+        openButton = new JButton("Upload");
+        openButton.setBounds(windowOffset + wellWidth * 6,windowOffset * 3 + plateHeight * 2, wellWidth * 3, wellHeight);
+        getContentPane().add(openButton);
 
         // Add end button to go through entire semiprotocol steps and view the final state
         endButton = new JButton("End");
@@ -157,7 +164,7 @@ public class View extends JFrame {
 
         // Add the content panel to view the contents in a well when the user's mouse goes over it
         contentPanel = new ContentPanel();
-        int cpH = plateHeight + 150 -wellHeight-windowOffset;
+        int cpH = plateHeight + 150 - wellHeight-windowOffset;
         contentPanel.setBounds(windowOffset,windowOffset * 4 + plateHeight * 2 + wellHeight ,plateWidth,plateHeight + 150 -wellHeight-windowOffset);
         getContentPane().add(contentPanel);
 
@@ -177,7 +184,7 @@ public class View extends JFrame {
         pack();
         setVisible(true);
     }
-    public JButton getNextBtn() {
+    public JButton getNextButton() {
         return nextButton;
     }
     public JButton getPlayButton() {
@@ -186,8 +193,13 @@ public class View extends JFrame {
     public JButton getEndButton() {
         return endButton;
     }
-    public JButton getSimulateButton() {
-        return simulateButton;
+//    public JButton getSimulateButton() {
+//        return simulateButton;
+//    }
+    public JButton getOpenButton() {return openButton;}
+
+    public TaskPanel getTaskPanel() {
+        return taskPanel;
     }
 
     /**
