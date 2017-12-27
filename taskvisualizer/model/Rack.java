@@ -3,7 +3,9 @@ package org.ucb.bio134.taskvisualizer.model;
 import java.util.HashMap;
 import java.util.Map;
 import javafx.util.Pair;
+import org.ucb.c5.semiprotocol.model.AddContainer;
 import org.ucb.c5.semiprotocol.model.Container;
+import sun.jvm.hotspot.opto.Block;
 
 /**
  * Describes the Deck that is used to hold a configuration of plates in the workspace. For clarification,
@@ -35,22 +37,26 @@ public class Rack {
     /**
      * Adds a tube to the rack
      *
-     * @param tubeName name of the tube
-     * @param containerType tube type used for placing into corresponding rack (tube or PCR)
-     * @param container
+     * @param container to be added to tube or PCR rack
      * @param row position in the tube or PCR rack
      * @param col position in the tube or PCR rack
      * @throws Exception
      */
-    public void addTube(String tubeName, ContainerType containerType, Container container, int row, int col) throws Exception {
+    public void addTube(AddContainer container, int row, int col) throws Exception {
+        String containerName = container.getName();
+        ContainerType containerType = calcContainerType(container.getTubetype());
+
+
         if(tubeRackWells[row][col] != null && pcrRackWells[row][col] != null) {
             throw new Exception("Well does not exist");
         } else if (containerType.equals(ContainerType.TUBE)) {
-            tubeRackWells[row][col].addTube(tubeName, container);
-            tubeNameToPos.put(tubeName, new Pair<>(row, col));
+            tubeRackWells[row][col] = new Well(containerType,BlockType.RACK,container.isNew());
+            tubeRackWells[row][col].addTube(container);
+            tubeNameToPos.put(containerName, new Pair<>(row, col));
         } else if (containerType.equals(ContainerType.PCR)) {
-            pcrRackWells[row][col].addTube(tubeName, container);
-            pcrNameToPos.put(tubeName, new Pair<>(row, col));
+            tubeRackWells[row][col] = new Well(containerType,BlockType.RACK,container.isNew());
+            pcrRackWells[row][col].addTube(container);
+            pcrNameToPos.put(containerName, new Pair<>(row, col));
         } else {
             throw new Exception("Cannot locate tube to add to the rack");
         }
@@ -255,5 +261,15 @@ public class Rack {
             A1 = splitted[1];
         }
         return Well.parseWellLabel(A1);
+    }
+    public static ContainerType calcContainerType(Container con) throws Exception {
+        if ((con.equals(Container.eppendorf_1p5mL) ||
+                con.equals(Container.eppendorf_2mL))) {
+            return ContainerType.TUBE;
+        } else if (con.equals(Container.pcr_tube) || con.equals(Container.pcr_strip)) {
+            return ContainerType.PCR;
+        } else {
+            throw new Exception("Error calculating container type");
+        }
     }
 }

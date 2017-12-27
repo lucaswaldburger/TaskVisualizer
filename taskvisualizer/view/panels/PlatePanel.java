@@ -18,16 +18,21 @@ public class PlatePanel extends JPanel {
     private JPanel currentDisplay;
     private Config config;
     private WellPanel[][] wells;
+    private ContainerType con;
+    private BlockType block;
     private HashSet<Pair<Integer,Integer>> highlightedWells;
 
     /**
      * Constructs the Plate Panel
      *
-     * @param type of Plate used to determine appropriate configuration
+     * @param con Plate used to determine appropriate configuration
+     * @param block block corresponding to Plate
      */
-    public PlatePanel(ContainerType type) {
+    public PlatePanel(ContainerType con, BlockType block) {
         setLayout(new GridBagLayout());
-        calcConfig(type);
+        calcConfig(con);
+        this.block = block;
+        this.con = con;
         currentDisplay = createEmptyPosition();
         wells = new WellPanel[config.getNumRows()][config.getNumCols()];
         removePlate();
@@ -85,13 +90,13 @@ public class PlatePanel extends JPanel {
      *
      * @return WellPanels of the Plate Panel
      */
-    public WellPanel[][] addWells() {
+    public WellPanel[][] addWells(boolean isNew) {
         for (int row = 0; row < config.getNumRows(); row++) {
             for (int col = 0; col < config.getNumCols(); col++) {
                 int xpos = View.windowOffset + col * config.getWellWidth();
                 int ypos = View.windowOffset + row * config.getWellHeight();
                 //Create and add the panel
-                wells[row][col] = new WellPanel();
+                wells[row][col] = new WellPanel(con, block, isNew);
                 wells[row][col].setBounds(xpos ,ypos , config.getWellWidth(), config.getWellHeight());
 
 

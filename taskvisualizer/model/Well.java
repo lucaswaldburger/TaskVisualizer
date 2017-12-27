@@ -1,6 +1,7 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 import javafx.util.Pair;
+import org.ucb.c5.semiprotocol.model.AddContainer;
 import org.ucb.c5.semiprotocol.model.Container;
 import org.ucb.c5.semiprotocol.model.Reagent;
 
@@ -23,18 +24,6 @@ public class Well {
     private double maxVol;
     private ContainerType plateType;
     private BlockType block;
-
-//    /**
-//     * Constructs an empty well object
-//     */
-//    public Well() {
-//        this.tubeName = null;
-//        this.currentVolume = 0.0;
-//        this.maxVol = 0.0;
-//        this.tube = null;
-//        this.contents = new HashMap<>();
-//        this.mixture = new HashMap<>();
-//    }
 
     /**
      * Constructs an empty well object as part of a plate
@@ -76,10 +65,11 @@ public class Well {
     /**
      * Adds a tube to the Well
      *
-     * @param tubeName name of the tube
-     * @param tube type of tube
+     * @param addcon container to be added
      */
-    public void addTube(String tubeName, Container tube) throws Exception {
+    public void addTube(AddContainer addcon) throws Exception {
+        this.tube = addcon.getTubetype();
+
         if (block.equals(BlockType.DECK)) {
             throw new Exception("Cannot add tube to deck");
         } else if (calcTubeType(tube).equals(ContainerType.TUBE) && !plateType.equals(ContainerType.TUBE)){
@@ -87,10 +77,11 @@ public class Well {
         } else if (calcTubeType(tube).equals(ContainerType.PCR) && !plateType.equals(ContainerType.PCR)) {
             throw new Exception("Cannot add PCR type to non-PCR type plate");
         }
-        this.tubeName = tubeName;
-        this.tube = tube;
+        this.tubeName = addcon.getName();
+        this.tube = addcon.getTubetype();
         calcMaxVolume(tube);
     }
+
 
     /**
      * Remove the tube from the Well
@@ -169,10 +160,11 @@ public class Well {
      * @throws Exception no tube present in rack well or results in overflow
      */
     public void addVolume(String source, Double amount) throws Exception {
-        if (tube == null && block.equals(BlockType.RACK)) {
-            throw new Exception ("Cannot add " + amount + " uL of " + source + " to well since there is " +
-                    "no container");
-        } else if (currentVolume + amount > maxVol) {
+//        if (tube == null && block.equals(BlockType.RACK )) {
+//            throw new Exception ("Cannot add " + amount + " uL of " + source + " to well since there is " +
+//                    "no container");
+//        } else
+        if (currentVolume + amount > maxVol) {
             throw new Exception("New volume of " + amount + " exceeds maximum volume of container in " + source
             + " since new volume is " + (currentVolume + amount) + " and maximum volume is " + maxVol);
         } else {

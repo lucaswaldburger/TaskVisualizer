@@ -34,6 +34,7 @@ public class ContentPanel extends JPanel {
     private PriceCalculator pc = new PriceCalculator();
     private MouseEvent mouseEvent;
     private DecimalFormat dc;
+    private String tubeName;
 
     /**
      * Constructs the Contents Panel
@@ -63,13 +64,17 @@ public class ContentPanel extends JPanel {
         this.wellContents = contents;
     }
 
+    public void getTubeName(String name) {
+        this.tubeName = name;
+    }
+
     /**
      * Displays the contents of a Well when moused over
      */
     public void displayContents() {
         removeAll();
 
-        JLabel lbl1 = new JLabel("Contents");
+        JLabel lbl1 = new JLabel(tubeName);
         lbl1.setHorizontalTextPosition(JLabel.RIGHT);
         lbl1.setVerticalTextPosition(JLabel.BOTTOM);
         lbl1.setFont(secondary_font);

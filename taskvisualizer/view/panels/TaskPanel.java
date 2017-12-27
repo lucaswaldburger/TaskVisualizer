@@ -106,4 +106,20 @@ public class TaskPanel extends JPanel {
             }
         });
     }
+    public void append(String message) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                removeAll();
+                add(Box.createVerticalGlue());
+
+                JLabel lbl1 = new JLabel(message);
+                lbl1.setFont(emphasis_font);
+                add(lbl1);
+
+                revalidate();
+                repaint();
+            }
+        });
+    }
 }

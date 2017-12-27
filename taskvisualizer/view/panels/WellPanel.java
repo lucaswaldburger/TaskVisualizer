@@ -1,11 +1,16 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
+import org.ucb.bio134.taskvisualizer.model.BlockType;
+import org.ucb.bio134.taskvisualizer.model.ContainerType;
+import org.ucb.bio134.taskvisualizer.model.Well;
 import org.ucb.bio134.taskvisualizer.view.View;
+import org.ucb.c5.semiprotocol.model.AddContainer;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.HashMap;
 
 /**
  * Displays the Well as a filled circle with a color. For the Rack, a green circle represents that a tube
@@ -23,13 +28,15 @@ public class WellPanel extends JPanel implements MouseListener {
     private Color green;
     private Color emptyColor;
     private Color red;
+    private Well well;
 
 
     /**
      * Constructs the Well Panel
      */
-    public WellPanel() {
+    public WellPanel(ContainerType con, BlockType block, boolean isNew) {
         setLayout(null);
+        well = new Well(con,block,isNew);
         green = new Color(76,153,0);
         emptyColor = new Color(160,160,160);
         red = new Color(204,0,0);
@@ -53,6 +60,21 @@ public class WellPanel extends JPanel implements MouseListener {
         return out;
     }
 
+    public void addVolume(String source, double volume) throws Exception{
+        well.addVolume(source, volume);
+        if (well.isFull()) {
+            currentColor = red;
+        }
+    }
+
+    /**
+     *
+     * @param volume
+     * @throws Exception
+     */
+    public void removeVolume(double volume) throws Exception {
+        well.removeVolume(volume);
+    }
     /**
      * Removes cyan border from the Well
      */
@@ -105,7 +127,8 @@ public class WellPanel extends JPanel implements MouseListener {
     /**
      * Adds green color when tube is added
      */
-    public void addTubeColor() {
+    public void addTubeColor(AddContainer addcon) throws Exception {
+        well.addTube(addcon);
         currentColor = green;
         repaint();
     }
@@ -155,13 +178,12 @@ public class WellPanel extends JPanel implements MouseListener {
     }
 
     public void mouseEntered(MouseEvent e) {
-//        View.contentPanel.getContentsFromWell(well.getContents());
-//        View.contentPanel.displayContents();
+        View.contentPanel.getContentsFromWell(well.getContents());
+        View.contentPanel.getTubeName(well.getTubeName());
+        View.contentPanel.displayContents();
     }
 
     public void mouseExited(MouseEvent e) {
-
-//        View.contentPanel.hideContents();
     }
 
     public void mouseClicked(MouseEvent e) {
@@ -169,5 +191,7 @@ public class WellPanel extends JPanel implements MouseListener {
                 + e.getClickCount() + ")");
     }
 
-
+    public HashMap getContents() {
+        return well.getContents();
+    }
 }

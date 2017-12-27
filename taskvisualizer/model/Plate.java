@@ -1,6 +1,7 @@
 package org.ucb.bio134.taskvisualizer.model;
 
 import javafx.util.Pair;
+import org.ucb.c5.semiprotocol.model.AddContainer;
 import org.ucb.c5.semiprotocol.model.Container;
 import java.util.HashMap;
 import java.util.Map;
@@ -50,24 +51,23 @@ public class Plate {
      * Adds a tube to the plate only if it is an element of the rack since the deck consists of PCR plates
      * in this version.
      *
-     * @param containerName name of the tube
      * @param container specifies the type of tube
      * @param row of tube in plate
      * @param col of tube in plate
      * @throws Exception invalid well, well does not exist, or adding a container to the deck
      */
-    public void addTube(String containerName, Container container, int row, int col) throws Exception {
+    public void addTube(AddContainer container, int row, int col) throws Exception {
         if(wells[row][col] != null) {
             throw new Exception("Well does not exist, possibly out of bounds");
         } else if (block.equals(BlockType.RACK)) {
-            wells[row][col].addTube(containerName, container);
+            wells[row][col].addTube(container);
         } else if (block.equals(BlockType.DECK)) {
             throw new IllegalArgumentException("Cannot add tube to deck");
         } else {
             throw new IllegalArgumentException("Invalid block type");
         }
-        nameToPos.put(containerName, new Pair<>(row, col));
-        posToName.put(new Pair<>(row, col), containerName);
+        nameToPos.put(container.getName(), new Pair<>(row, col));
+        posToName.put(new Pair<>(row, col), container.getName());
     }
 
     /**
@@ -98,6 +98,7 @@ public class Plate {
             throw new IllegalArgumentException("Invalid container name provided by user");
         }
     }
+
 
     public Well getWell(int row, int col) {
         return wells[row][col];
