@@ -52,6 +52,7 @@ While I focused on the Visualization/Simulation, I can see this project being ex
 - [ ]	The contents in the PCR matches the specification of the ConstructionFile
 - [ ]	The volumes and dilutions should match the protocol
 - [ ]	Same as previous for digestions and ligations
+
 <sub><sup>From Bioengineering 134 November 1<sup>st</sup> Lecture</sup></sub>
 
 ### Authors
