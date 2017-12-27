@@ -10,8 +10,8 @@ package org.ucb.bio134.taskvisualizer.model;
 public class TubePlateConfig implements Config {
     private final int width = 400;
     private final int height = 200;
-    private final int numRows = 6;
-    private final int numCols = 8;
+    private final int numRows = 8;
+    private final int numCols = 12;
     private final int wellHeight = height/numRows;
     private final int wellWidth = width/numCols;
 

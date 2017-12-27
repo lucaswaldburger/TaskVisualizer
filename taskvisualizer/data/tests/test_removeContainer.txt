@@ -1,8 +1,6 @@
 addContainer	pcr_plate_96	alibaba_oligos	deck/A1	FALSE
-removeContainer	pcr_plate_96	alibaba_oligos	deck/A1	FALSE
+removeContainer pcr_plate_96	alibaba_oligos	deck/A1	FALSE
 addContainer	eppendorf_1p5mL	alibaba_oligos	tube/A1	FALSE
 removeContainer	eppendorf_1p5mL	alibaba_oligos	tube/A1	FALSE
 addContainer	pcr_tube	alibaba_oligos	pcr/A1	FALSE
 removeContainer	pcr_tube	alibaba_oligos	pcr/A1	FALSE
-
-
