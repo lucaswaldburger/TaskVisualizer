@@ -14,7 +14,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Controller for TaskVisualizer with a complete workspace consisting of two components: racks and a deck. For now,
@@ -31,7 +34,7 @@ import java.io.File;
  * @author Lucas M. Waldburger
  */
 public class Controller implements MouseListener{
-    private final Semiprotocol protocol;
+    private Semiprotocol protocol;
     private final View view;
     private final Rack rack;
     private final Deck deck;
@@ -42,16 +45,18 @@ public class Controller implements MouseListener{
 
     /** Initates the Controller
      *
-     * @param protocol the Semiprotocol being operated on
      * @param view the display for the user to visualize the workspace
      * @throws Exception cannot locate protocol, or error associated with the View
      */
-    public Controller(Semiprotocol protocol, View view) throws Exception{
+    public Controller(View view) throws Exception{
         // Instantiate and assign class variables
-        this.protocol = protocol;
         this.view = view;
         this.rack = new Rack();
         this.deck = new Deck();
+        this.protocol = null;
+
+        ParseSemiprotocol parser = new ParseSemiprotocol();
+        parser.initiate();
 
         // Instantiate SemiprotocolPriceSimulator for the 'Price Tracker' panel
         sps = new SemiprotocolPriceSimulator();
@@ -101,17 +106,45 @@ public class Controller implements MouseListener{
         // Allows user to select a Semiprotocol file from their directory
         view.getOpenButton().addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e){
                 //Handle open button action.
                     int returnVal = fc.showOpenDialog(view);
 
                     if (returnVal == JFileChooser.APPROVE_OPTION) {
-                        File file = fc.getSelectedFile();
-                        //This is where a real application would open the file.
-                        view.getTaskPanel().append("Opening: " + file.getName());
+
+                        BufferedReader reader = null;
+
+                        File file = null;
+                        try {
+                            file = fc.getSelectedFile();
+                            reader = new BufferedReader(new FileReader(file));
+
+                            String line;
+
+                            StringBuilder sb = new StringBuilder();
+
+                            while ((line = reader.readLine()) != null) {
+                                sb.append(line).append("\n");
+                            }
+
+                            protocol = parser.run(sb.toString());
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                        } finally {
+                            try {
+                                reader.close();
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                        view.getTaskPanel().append("Selected: " + file.getName());
                     } else {
                         view.getTaskPanel().append("Open command cancelled by user");
                     }
+
+
+
+
             }
         });
 
@@ -333,17 +366,11 @@ public class Controller implements MouseListener{
 //        String text = FileUtils.readResourceFile("semiprotocol/data/test_removeContainer.txt");
 
 
-        String text = FileUtils.readResourceFile("semiprotocol/data/mastermix7.txt");
-
-        ParseSemiprotocol parser = new ParseSemiprotocol();
-        parser.initiate();
-        Semiprotocol protocol = parser.run(text);
-
         //Create the View
         View view = new View();
 
         //Create the Controller and initiate the GUI
-        Controller controller = new Controller(protocol, view);
+        Controller controller = new Controller(view);
     }
 
     public void mousePressed(MouseEvent e) {
