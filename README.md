@@ -58,7 +58,7 @@ While I focused on the Visualization/Simulation, I can see this project being ex
 
 * **Lucas M. Waldburger** *TaskVisualizer MVC framework*
 * **Tong Zhang** *TaskMaster 2.0 and Burden calculator*
-* **J. Christopher Anderson** *PipetteAid framework as a reference*
+* **Doctor J. Christopher Anderson** *PipetteAid framework as a reference*
 
 ### Acknowledgments
 
