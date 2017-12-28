@@ -2,12 +2,11 @@ package org.ucb.bio134.taskvisualizer;
 
 import javafx.util.Pair;
 import org.ucb.bio134.taskmaster.model.Tip;
-import org.ucb.bio134.taskvisualizer.model.*;
+import org.ucb.bio134.taskvisualizer.model.visualizer.*;
 import org.ucb.bio134.taskvisualizer.view.View;
 import org.ucb.c5.semiprotocol.ParseSemiprotocol;
 import org.ucb.c5.semiprotocol.model.*;
 import org.ucb.c5.semiprotocol.model.Container;
-import org.ucb.c5.utils.FileUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -119,11 +118,10 @@ public class Controller implements MouseListener{
                             file = fc.getSelectedFile();
                             reader = new BufferedReader(new FileReader(file));
 
-                            String line;
-
+                            String line = reader.readLine();
                             StringBuilder sb = new StringBuilder();
 
-                            while ((line = reader.readLine()) != null) {
+                            while (line != null) {
                                 sb.append(line).append("\n");
                             }
 

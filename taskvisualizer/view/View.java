@@ -2,7 +2,7 @@ package org.ucb.bio134.taskvisualizer.view;
 
 import javafx.util.Pair;
 import org.ucb.bio134.taskmaster.model.Tip;
-import org.ucb.bio134.taskvisualizer.model.*;
+import org.ucb.bio134.taskvisualizer.model.visualizer.*;
 import org.ucb.bio134.taskvisualizer.view.panels.*;
 import org.ucb.c5.semiprotocol.model.AddContainer;
 import org.ucb.c5.semiprotocol.model.Container;

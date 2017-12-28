@@ -1,7 +1,7 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
 import javafx.util.Pair;
-import org.ucb.bio134.taskvisualizer.model.*;
+import org.ucb.bio134.taskvisualizer.model.visualizer.*;
 import org.ucb.bio134.taskvisualizer.view.View;
 
 import java.awt.*;

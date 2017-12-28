@@ -1,8 +1,8 @@
 package org.ucb.bio134.taskvisualizer.view.panels;
 
-import org.ucb.bio134.taskvisualizer.model.BlockType;
-import org.ucb.bio134.taskvisualizer.model.ContainerType;
-import org.ucb.bio134.taskvisualizer.model.Well;
+import org.ucb.bio134.taskvisualizer.model.visualizer.BlockType;
+import org.ucb.bio134.taskvisualizer.model.visualizer.ContainerType;
+import org.ucb.bio134.taskvisualizer.model.visualizer.Well;
 import org.ucb.bio134.taskvisualizer.view.View;
 import org.ucb.c5.semiprotocol.model.AddContainer;
 
